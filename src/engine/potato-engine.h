@@ -6,10 +6,19 @@
 #include "potato-render.h"
 #include "potato-script-base.h"
 
+
+// =============================================================================
+// POTATO ENGINE CLASS
+// =============================================================================
+
 class potato_engine {
 public:
     potato_engine();
     ~potato_engine();
+
+    int window_w = 800;
+    int window_h = 600;
+    char window_title[256] = "Potato Engine";
 
     bool initialize();
     void update(float delta_time);

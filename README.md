@@ -1,21 +1,6 @@
 # 🥔 Potato Engine
 
-Egy egyszerű, **teljesen hordozható** játékmotor SDL3 alapokra építve.
-
-## 🚀 Gyors Kezdés (3 parancs!)
-
-```cmd
-configure.bat    # Konfigurálja a projektet
-build.bat        # Build-eli
-build\potato_engine.exe   # Futtatja
-```
-
-## ✨ Miért Hordozható?
-
-- ✅ **Bárhova másolhatod** - működik bármilyen könyvtárnévvel
-- ✅ **Nincs hardcoded útvonal** - CMake automatikusan generálja őket
-- ✅ **Új játék 1 paranccsal**: `create_new_game.bat my_game`
-- ✅ **Git-friendly** - build artifacts automatikusan ignorálva
+Egy egyszerű    játékmotor SDL3 alapokra építve.
 
 ## 🎮 Új Játék Létrehozása
 

@@ -23,6 +23,53 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
 # EXCLUDE_FROM_ALL: nem installáljuk az SDL-t, csak használjuk
 add_subdirectory(SDL EXCLUDE_FROM_ALL)
 
+# Find SDL3_image - próbáljunk különböző módokat
+find_package(SDL3_image QUIET)
+
+if(NOT SDL3_image_FOUND)
+    # Próbáljuk meg pkg-config-kal
+    find_package(PkgConfig QUIET)
+    if(PkgConfig_FOUND)
+        pkg_check_modules(SDL3_image QUIET SDL3_image)
+    endif()
+endif()
+
+# Ha még mindig nem találtuk meg, próbáljuk meg manuálisan
+if(NOT SDL3_image_FOUND)
+    # First prefer a bundled copy inside the project's SDL directory (if user placed it there)
+    set(_PROJECT_SDL3_IMAGE_ROOT "${CMAKE_SOURCE_DIR}/SDL/SDL3_image-3.2.4/x86_64-w64-mingw32")
+
+    find_path(SDL3_IMAGE_INCLUDE_DIR SDL3_image/SDL_image.h PATHS
+        ${_PROJECT_SDL3_IMAGE_ROOT}/include
+        C:/msys64/ucrt64/include
+        /usr/include
+        /usr/local/include
+    )
+
+    # Try common library filenames/locations (static import libs on MinGW use libSDL3_image.dll.a)
+    find_library(SDL3_IMAGE_LIBRARY NAMES SDL3_image SDL3_image-3 libSDL3_image libSDL3_image.dll.a PATHS
+        ${_PROJECT_SDL3_IMAGE_ROOT}/lib
+        C:/msys64/ucrt64/lib
+        /usr/lib
+        /usr/local/lib
+    )
+
+    if(SDL3_IMAGE_INCLUDE_DIR AND SDL3_IMAGE_LIBRARY)
+        message(STATUS "Found SDL3_image manually at include=${SDL3_IMAGE_INCLUDE_DIR} lib=${SDL3_IMAGE_LIBRARY}")
+        set(SDL3_image_FOUND TRUE)
+    endif()
+endif()
+
+if(SDL3_image_FOUND)
+    message(STATUS "SDL3_image found - image loading will be enabled")
+else()
+    message(STATUS "WARNING: SDL3_image not found - image loading will be disabled")
+    message(STATUS "To enable image loading, install SDL3_image:")
+    message(STATUS "  Windows/MSYS2: pacman -S mingw-w64-ucrt-x86_64-SDL3_image")
+    message(STATUS "  Linux: sudo apt install libsdl3-image-dev")
+    message(STATUS "  macOS: brew install sdl3-image")
+endif()
+
 # =============================================================================
 # SOURCE FILES
 # =============================================================================
@@ -47,8 +94,28 @@ add_executable(${PROJECT_NAME}
 # A src/ könyvtár elérhető #include direktívákban
 target_include_directories(${PROJECT_NAME} PRIVATE src)
 
+# Add SDL3_image include directories
+if(SDL3_image_FOUND)
+    if(SDL3_image_INCLUDE_DIRS)
+        target_include_directories(${PROJECT_NAME} PRIVATE ${SDL3_image_INCLUDE_DIRS})
+    elseif(SDL3_IMAGE_INCLUDE_DIR)
+        target_include_directories(${PROJECT_NAME} PRIVATE ${SDL3_IMAGE_INCLUDE_DIR})
+    endif()
+endif()
+
 # =============================================================================
 # LINKING
 # =============================================================================
 # Link SDL3 könyvtárral
 target_link_libraries(${PROJECT_NAME} PRIVATE SDL3::SDL3)
+
+# Link SDL3_image if found
+if(SDL3_image_FOUND)
+    if(SDL3_image_LIBRARIES)
+        target_link_libraries(${PROJECT_NAME} PRIVATE ${SDL3_image_LIBRARIES})
+    elseif(SDL3_IMAGE_LIBRARY)
+        target_link_libraries(${PROJECT_NAME} PRIVATE ${SDL3_IMAGE_LIBRARY})
+    elseif(TARGET SDL3_image::SDL3_image)
+        target_link_libraries(${PROJECT_NAME} PRIVATE SDL3_image::SDL3_image)
+    endif()
+endif()

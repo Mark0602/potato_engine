@@ -1,6 +1,9 @@
 #include <SDL3/SDL.h>
 #include "engine/potato-engine.h"
 #include "engine/potato-script-registry.h"
+#include "potato-structures.h"
+#include "engine/potato-texture.h"
+#include "engine/potato-gameobject.h"
 
 int main(int argc, char* argv[]) {
     potato_engine engine;

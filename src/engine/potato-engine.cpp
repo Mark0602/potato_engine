@@ -1,4 +1,6 @@
 #include "potato-engine.h"
+#include "potato-structures.h"
+#include "potato-render.h"
 #include <iostream>
 
 
@@ -17,9 +19,9 @@ bool potato_engine::initialize() {
     }
 
     window = SDL_CreateWindow(
-        "Potato Engine",
-        800,
-        600,
+        window_title,
+        window_w,
+        window_h,
         0
     );
 
@@ -58,8 +60,25 @@ bool potato_engine::initialize() {
         return false;
     }
 
+    SDL_Renderer* sdl_renderer = nullptr;
+    // Create SDL Renderer
+    if (renderer->get_render_mode() == RENDER_MODE_BASIC) {
+        std::cerr << "Renderer not set to BASIC mode!" << std::endl;
+        sdl_renderer = SDL_CreateRenderer(window, nullptr);
+    }
+
+    if (sdl_renderer == nullptr && renderer->get_render_mode() == RENDER_MODE_BASIC) {
+        std::cerr << "SDL Renderer could not be created! SDL_Error: " << SDL_GetError() << std::endl;
+        SDL_ReleaseWindowFromGPUDevice(device, window);
+        SDL_DestroyGPUDevice(device);
+        device = nullptr;
+        SDL_DestroyWindow(window);
+        window = nullptr;
+        return false;
+    }
+
     // Create renderer
-    renderer = new potato_render(window, device);
+    renderer = new potato_render(window, device, sdl_renderer);
 
     return true;
 }

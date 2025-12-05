@@ -1,22 +1,31 @@
 #include "potato-render.h"
+#include "potato-vertex-buffer.h"
 
-potato_render::potato_render(SDL_Window* window, SDL_GPUDevice* device)
-    : window(window), device(device) {
-}
 
-potato_render::~potato_render() {
-}
 
-void potato_render::render() {
+class potato_render {
+public:
+    potato_render(SDL_Window* window, SDL_GPUDevice* device, SDL_Renderer* renderer);
+    ~potato_render();
+
+private:
+    SDL_Window* window;
+    SDL_GPUDevice* device;
+    SDL_Renderer* renderer;
+    potato_render_mode render_mode;
+
+public:
+    
+void render() {
     // Acquire command buffer
-    SDL_GPUCommandBuffer* cmdbuf = SDL_AcquireGPUCommandBuffer(device);
+    SDL_GPUCommandBuffer* cmdbuf = SDL_AcquireGPUCommandBuffer(this->device);
     if (cmdbuf == nullptr) {
         return;
     }
 
     // Acquire swapchain texture
     SDL_GPUTexture* swapchain_texture;
-    if (!SDL_AcquireGPUSwapchainTexture(cmdbuf, window, &swapchain_texture, nullptr, nullptr)) {
+    if (!SDL_AcquireGPUSwapchainTexture(cmdbuf, this->window, &swapchain_texture, nullptr, nullptr)) {
         SDL_SubmitGPUCommandBuffer(cmdbuf);
         return;
     }
@@ -44,3 +53,6 @@ void potato_render::render() {
     // Submit command buffer
     SDL_SubmitGPUCommandBuffer(cmdbuf);
 }
+
+
+};
