@@ -1,7 +1,7 @@
-#include "potato-engine.h"
-#include "potato-script-base.h"
-#include "potato-texture.h"
-
+#pragma once
+#include <cstdint>
+#include <vector>
+#include <float.h>
 
 // =============================================================================
 // POS STRUCTURE
@@ -10,6 +10,7 @@
 struct pos {
     float x = 0.0f;
     float y = 0.0f;
+    //float z = 0.0f;
     float rotation = 0.0f;  // in degrees
     float w = 1.0f;
     float h = 1.0f;
@@ -37,18 +38,55 @@ struct pos {
 // COLOR STRUCTURE
 // =============================================================================
 typedef struct color {
-    uint8_t r;
-    uint8_t g;
-    uint8_t b;
-    uint8_t a;
-} color;
+    uint8_t r, g, b, a;
+
+    // SDL_FColor get_sdl_fcolor() {
+    //     return SDL_FColor = {}
+    // }
+};
 
 // =============================================================================
 // VERTEX STRUCTURE
 // =============================================================================
-typedef struct vertex {
-    float x, y;
-    color color;
+struct vertex {
+    float x, y, z;
+    float u, v;
+    color col;
+
+    void set_position(float px, float py) {
+        x = px;
+        y = py;
+        z = 0;
+    }
+
+    void set_position(float px, float py, float pz) {
+        x = px;
+        y = py;
+        z = pz;
+    }
+
+    void set_uv(float tu, float tv) {
+        u = tu;
+        v = tv;
+    }
+
+    void set_color(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha) {
+        col.r = red;
+        col.g = green;
+        col.b = blue;
+        col.a = alpha;
+    }
+
+    void set_color(color color) {
+        this->col = color;
+    }
+
+    float get_x() const { return x; }
+    float get_y() const { return y; }
+    float get_z() const { return z; }
+    float get_u() const { return u; }
+    float get_v() const { return v; }
+    color get_color() const { return col; }
 };
 
 

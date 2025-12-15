@@ -15,10 +15,19 @@
 
 potato_texture::potato_texture(const std::string& file_path)
     : m_file_path(file_path)
-    , m_texture(nullptr)
+    , m_sdltexture(nullptr)
+    , m_gputexture(nullptr)
+    , m_device(nullptr)
     , m_width(0)
     , m_height(0)
 {
+    if (!m_file_path.empty()) {
+        load();
+    }
+    if (m_gputexture && m_sdltexture) { 
+        debug::error("Please avoid using both gpu and sdl textures in potato_texture, as it may lead to resource management issues. In this scenario, the gpu texture will be prioritized.");
+        m_sdltexture = nullptr;
+    }
 }
 
 potato_texture::~potato_texture() {
@@ -30,46 +39,18 @@ potato_texture::~potato_texture() {
 // =============================================================================
 
 bool potato_texture::load() {
-    // Unload previous texture if exists
-    unload();
-
-#if !HAS_SDL_IMAGE
-    std::cerr << "SDL_image not available - cannot load texture: " << m_file_path << std::endl;
-    std::cerr << "Please install SDL3_image to enable image loading" << std::endl;
-    return false;
-#endif
-
-#ifdef HAS_SDL_IMAGE_REAL
-    // Load image using SDL_image
-    SDL_Surface* surface = IMG_Load(m_file_path.c_str());
-    if (!surface) {
-        std::cerr << "Failed to load texture: " << m_file_path << std::endl;
-        std::cerr << "SDL_image Error: " << SDL_GetError() << std::endl;
-        return false;
-    }
-
-    // Store dimensions
-    m_width = surface->w;
-    m_height = surface->h;
-
-    std::cout << "Loaded texture: " << m_file_path 
-              << " (" << m_width << "x" << m_height << ")" << std::endl;
-
-    SDL_DestroySurface(surface);
+    //m_gputexture = SDL_CreateGPUTexture(m_device)
     return true;
-#else
-    std::cerr << "SDL_image not compiled - cannot load texture: " << m_file_path << std::endl;
-    return false;
-#endif
 }
 
 void potato_texture::unload() {
-    if (m_texture) {
-        // Note: SDL3 uses SDL_DestroyTexture for SDL_Texture
-        // For GPU textures, we'd use SDL_ReleaseGPUTexture
-        // This depends on your rendering backend
-        SDL_DestroyTexture(m_texture);
-        m_texture = nullptr;
+    if (m_sdltexture) {
+        SDL_DestroyTexture(m_sdltexture);
+        m_sdltexture = nullptr;
+    }
+    if (m_gputexture) {
+        SDL_ReleaseGPUTexture(m_device, m_gputexture);
+        m_gputexture = nullptr;
     }
     m_width = 0;
     m_height = 0;

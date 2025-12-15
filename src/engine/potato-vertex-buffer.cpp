@@ -24,7 +24,7 @@ potato_vertex_buffer::potato_vertex_buffer(SDL_GPUDevice* device, size_t max_ver
 
     // GPU vertex buffer
     SDL_GPUBufferCreateInfo buffer_info{};
-    buffer_info.size  = max_vertices * sizeof(vertex);
+    buffer_info.size  = max_vertices * sizeof(m_vertex_count);
     buffer_info.usage = SDL_GPU_BUFFERUSAGE_VERTEX;
 
     m_gpu_buffer = SDL_CreateGPUBuffer(device, &buffer_info);
@@ -132,13 +132,14 @@ void potato_vertex_buffer::update_gpu_buffer(SDL_GPUCommandBuffer* cmdbuf) {
         return;
     }
 
-    const size_t size_bytes = m_vertex_count * sizeof(vertex);
+    const size_t size_bytes = m_vertex_count * sizeof(m_vertices);
+    //const size_t size_bytes = m_vertex_count * sizeof(vertex);
 
     // 1) CPU -> transfer buffer (Map + memcpy)
     void* mapped = SDL_MapGPUTransferBuffer(
         m_device,
         m_transfer_buffer,
-        true
+        false // was true
     );
 
     if (!mapped) {
@@ -146,7 +147,8 @@ void potato_vertex_buffer::update_gpu_buffer(SDL_GPUCommandBuffer* cmdbuf) {
         return;
     }
 
-    std::memcpy(mapped, m_vertices.data(), size_bytes);
+    //std::memcpy(mapped, m_vertices.data(), size_bytes);
+    SDL_memcpy(mapped, m_vertices.data(), size_bytes);
 
     SDL_UnmapGPUTransferBuffer(m_device, m_transfer_buffer);
 
@@ -157,18 +159,21 @@ void potato_vertex_buffer::update_gpu_buffer(SDL_GPUCommandBuffer* cmdbuf) {
         return;
     }
 
+    SDL_GPUTransferBufferLocation src{
+        .transfer_buffer = m_transfer_buffer,
+        .offset = 0
+    };
+    SDL_GPUBufferRegion dst{
+        .buffer = m_gpu_buffer,
+        .offset = 0,
+        .size   = size_bytes
+    };
+
     SDL_UploadToGPUBuffer(
         copy_pass,
-        &(SDL_GPUTransferBufferLocation){
-            .transfer_buffer = m_transfer_buffer,
-            .offset          = 0
-        },
-        &(SDL_GPUBufferRegion){
-            .buffer = m_gpu_buffer,
-            .offset = 0,
-            .size   = size_bytes
-        },
-        false
+        &src,
+        &dst,
+        true // was false
     );
 
     SDL_EndGPUCopyPass(copy_pass);
