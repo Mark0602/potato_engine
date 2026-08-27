@@ -33,7 +33,7 @@ SceneManager::instance().request_scene(1);
 void AnimGroup::add(Anim a)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Adds an Anim to the group.
 
@@ -47,7 +47,7 @@ Adds an Anim to the group.
 void StaggeredSlideIn::add(Object *obj, Vec target_pos, Vec offset, float dur, float delay, std::function< float(float)> ease=Ease::out_back)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Adds or registers data with the owning engine service. The caller must keep borrowed objects valid for as long as the receiving service uses them.
 
@@ -66,7 +66,7 @@ Adds or registers data with the owning engine service. The caller must keep borr
 float Ease::in_out_quad(float t)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Performs the in out quad operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -80,7 +80,7 @@ Performs the in out quad operation for the owning engine component. The exact in
 float Ease::in_quad(float t)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Performs the in quad operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -94,7 +94,7 @@ Performs the in quad operation for the owning engine component. The exact inputs
 bool Anim::is_running() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -106,7 +106,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 bool AnimGroup::is_running() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -118,7 +118,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 bool StaggeredSlideIn::is_running() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -130,7 +130,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 float Ease::linear(float t)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Performs the linear operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -144,7 +144,7 @@ Performs the linear operation for the owning engine component. The exact inputs,
 Anim make_fade_in(Object *obj, float dur, std::function< float(float)> ease=Ease::out_quad, std::function< void()> on_done=nullptr)
 ~~~
 
-**Access:** public  **Returns:** `Anim`
+**Access:** public  **Returns:** `Anim`  **Engine version:** Potato Engine 1.0.0
 
 Creates an Anim that fades an object in. The object's opacity will be increased from 0 to 1 over the specified duration.
 
@@ -161,7 +161,7 @@ Creates an Anim that fades an object in. The object's opacity will be increased 
 Anim make_fade_out(Object *obj, float dur, std::function< float(float)> ease=Ease::in_quad, std::function< void()> on_done=nullptr)
 ~~~
 
-**Access:** public  **Returns:** `Anim`
+**Access:** public  **Returns:** `Anim`  **Engine version:** Potato Engine 1.0.0
 
 Creates an Anim that fades an object out and hides it. The object's opacity will be reduced from 1 to 0 over the specified duration. After the animation completes, the object will be hidden and its opacity will be reset to 1.
 
@@ -178,7 +178,7 @@ Creates an Anim that fades an object out and hides it. The object's opacity will
 AnimGroup make_slide_in(Object *obj, Vec target_pos, Vec offset, float dur, std::function< float(float)> ease=Ease::out_back, std::function< void()> on_done=nullptr)
 ~~~
 
-**Access:** public  **Returns:** `AnimGroup`
+**Access:** public  **Returns:** `AnimGroup`  **Engine version:** Potato Engine 1.0.0
 
 Creates an AnimGroup that slides an object into view and fades it in. The object will be moved from (target_pos + offset) to target_pos over the specified duration, and its opacity will be increased from 0 to 1. After the animation completes, the object will be fully visible and interactive.
 
@@ -197,7 +197,7 @@ Creates an AnimGroup that slides an object into view and fades it in. The object
 AnimGroup make_slide_out(Object *obj, Vec offset, float dur, std::function< float(float)> ease=Ease::in_quad, std::function< void()> on_done=nullptr)
 ~~~
 
-**Access:** public  **Returns:** `AnimGroup`
+**Access:** public  **Returns:** `AnimGroup`  **Engine version:** Potato Engine 1.0.0
 
 Creates an AnimGroup that slides an object out of view and fades it out. The object will be moved to (current position + offset) over the specified duration, and its opacity will be reduced to 0. After the animation completes, the object will be hidden.
 
@@ -215,7 +215,7 @@ Creates an AnimGroup that slides an object out of view and fades it out. The obj
 float Ease::out_back(float t)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Easing function that creates a "back" effect, where the animation overshoots and then returns to the target value. This function is useful for creating animations that have a sense of elasticity or bounce.
 
@@ -229,7 +229,7 @@ Easing function that creates a "back" effect, where the animation overshoots and
 float Ease::out_cubic(float t)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Creates or emits a new engine value using the supplied configuration. Determine ownership from the return type and the owning pool or service.
 
@@ -243,7 +243,7 @@ Creates or emits a new engine value using the supplied configuration. Determine 
 float Ease::out_elastic(float t)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Easing function that creates an "elastic" effect, where the animation oscillates before settling. This function is useful for creating animations that have a spring-like or bouncy behavior.
 
@@ -257,7 +257,7 @@ Easing function that creates an "elastic" effect, where the animation oscillates
 float Ease::out_quad(float t)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Performs the out elastic operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -271,7 +271,7 @@ Performs the out elastic operation for the owning engine component. The exact in
 float Anim::progress() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Performs the progress operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -283,7 +283,7 @@ Performs the progress operation for the owning engine component. The exact input
 void Anim::start(float dur, float f, float t, std::function< float(float)> ease, std::function< void(float)> apply_fn, std::function< void()> done_fn=nullptr)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component into its active state and makes it eligible for subsequent updates or playback. Repeated calls follow the state rules of the owning type.
 
@@ -302,7 +302,7 @@ Moves the component into its active state and makes it eligible for subsequent u
 void StaggeredSlideIn::start()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component into its active state and makes it eligible for subsequent updates or playback. Repeated calls follow the state rules of the owning type.
 
@@ -314,7 +314,7 @@ Moves the component into its active state and makes it eligible for subsequent u
 void Anim::tick(float dt)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Advances or processes the component for the current frame or time interval. Call it from the lifecycle phase expected by the owning service.
 
@@ -328,7 +328,7 @@ Advances or processes the component for the current frame or time interval. Call
 void AnimGroup::tick(float dt)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Ticks all Anim objects in the group by the specified delta time. If all Anim objects have completed, the on_done callback will be invoked.
 
@@ -342,7 +342,7 @@ Ticks all Anim objects in the group by the specified delta time. If all Anim obj
 void StaggeredSlideIn::tick(float dt)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Advances or processes the component for the current frame or time interval. Call it from the lifecycle phase expected by the owning service.
 
@@ -366,7 +366,7 @@ fade.tick(delta_seconds);
 virtual Object::~Object()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Header usage example value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -378,7 +378,7 @@ Constructs a Header usage example value from the parameters shown below. Default
 void Object_Pool::add(Object *obj)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Adds an object to the pool.
 
@@ -392,7 +392,7 @@ Adds an object to the pool.
 void Object::add_tag(const std::string &tag)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Adds or registers data with the owning engine service. The caller must keep borrowed objects valid for as long as the receiving service uses them.
 
@@ -406,7 +406,7 @@ Adds or registers data with the owning engine service. The caller must keep borr
 void Object::attach_script(script *s)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Attaches a script to this object. The script's owner pointer will be set to this object. The script will be added to Engine::object_scripts and its on_start() method will be called immediately, when this function is called. Every instance of script is responsible for cleaning up its own resources in on_destroy(). Every instance of this object is responsible for calling on_destroy() on its attached script before the script is deleted. Every instance of script is responsible for removing itself from Engine::object_scripts when it is destroyed. If you want to use a script in multiple objects, create a new instance for each object.
 
@@ -420,7 +420,7 @@ Attaches a script to this object. The script's owner pointer will be set to this
 Button::Button()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Adds or registers data with the owning engine service. The caller must keep borrowed objects valid for as long as the receiving service uses them.
 
@@ -432,7 +432,7 @@ Adds or registers data with the owning engine service. The caller must keep borr
 void Object::center_on_screen()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Centers the object on the screen based on the current window size. Uses Engine::window to get the current window dimensions.
 
@@ -444,7 +444,7 @@ Centers the object on the screen based on the current window size. Uses Engine::
 void UI_Object::configure_as_ui()
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the center on screen operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -456,7 +456,7 @@ Performs the center on screen operation for the owning engine component. The exa
 void Object::detach_script()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Detaches and deletes the script from this object, if any.
 
@@ -468,7 +468,7 @@ Detaches and deletes the script from this object, if any.
 virtual void Object::draw(SDL_Renderer *renderer)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Renders the object using its texture at its current pos and size. Does nothing if the texture is not loaded. Logs a warning if a logger is set.
 
@@ -482,7 +482,7 @@ Renders the object using its texture at its current pos and size. Does nothing i
 Transform Progress_Bar::fill_transform() const
 ~~~
 
-**Access:** public  **Returns:** `Transform`
+**Access:** public  **Returns:** `Transform`  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -494,7 +494,7 @@ Removes or releases the selected state from this engine component. References to
 std::vector< Object * > Object_Pool::find_all_by_tag(const std::string &tag) const
 ~~~
 
-**Access:** public  **Returns:** `std::vector< Object * >`
+**Access:** public  **Returns:** `std::vector< Object * >`  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -508,7 +508,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 Object * Object_Pool::find_by_name(const std::string &name) const
 ~~~
 
-**Access:** public  **Returns:** `Object *`
+**Access:** public  **Returns:** `Object *`  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -522,7 +522,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 Object * Object_Pool::find_by_tag(const std::string &tag) const
 ~~~
 
-**Access:** public  **Returns:** `Object *`
+**Access:** public  **Returns:** `Object *`  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -536,7 +536,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 void Object::free()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Releases the texture and resets state.
 
@@ -548,7 +548,7 @@ Releases the texture and resets state.
 std::vector< Object * > Object_Pool::get_all() const
 ~~~
 
-**Access:** public  **Returns:** `std::vector< Object * >`
+**Access:** public  **Returns:** `std::vector< Object * >`  **Engine version:** Potato Engine 1.0.0
 
 Returns a vector of all objects in the pool.
 
@@ -560,7 +560,7 @@ Returns a vector of all objects in the pool.
 IFont * UI_Object::get_font() const
 ~~~
 
-**Access:** public  **Returns:** `IFont *`
+**Access:** public  **Returns:** `IFont *`  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -572,7 +572,7 @@ Removes or releases the selected state from this engine component. References to
 Object_Pool * Object::get_object_pool() const
 ~~~
 
-**Access:** public  **Returns:** `Object_Pool *`
+**Access:** public  **Returns:** `Object_Pool *`  **Engine version:** Potato Engine 1.0.0
 
 Returns the object pool that manages this object.
 
@@ -584,7 +584,7 @@ Returns the object pool that manages this object.
 Transform Object::get_transform() const
 ~~~
 
-**Access:** public  **Returns:** `Transform`
+**Access:** public  **Returns:** `Transform`  **Engine version:** Potato Engine 1.0.0
 
 Returns the current transform of the object.
 
@@ -596,7 +596,7 @@ Returns the current transform of the object.
 bool Object::has_tag(const std::string &tag) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -610,7 +610,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 void Object::hide()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Hides the object by setting its visibility to false and making it input transparent.
 
@@ -622,7 +622,7 @@ Hides the object by setting its visibility to false and making it input transpar
 bool UI_Object::is_interactive() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component out of its active state or ends the current operation. Any retained resource ownership remains governed by the owning class.
 
@@ -634,7 +634,7 @@ Moves the component out of its active state or ends the current operation. Any r
 virtual Draw Object::make_draw_command() const
 ~~~
 
-**Access:** public  **Returns:** `Draw`
+**Access:** public  **Returns:** `Draw`  **Engine version:** Potato Engine 1.0.0
 
 Creates or emits a new engine value using the supplied configuration. Determine ownership from the return type and the owning pool or service.
 
@@ -646,7 +646,7 @@ Creates or emits a new engine value using the supplied configuration. Determine 
 float UI_Value::normalized_value() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Computes the named mathematical result from the supplied values without intentionally changing them. Units and coordinate conventions follow the parameter types and surrounding API.
 
@@ -658,7 +658,7 @@ Computes the named mathematical result from the supplied values without intentio
 Object::Object(float x, float y, float w, float h, float rx=0.f, float ry=0.f, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs an Object from individual floats.
 
@@ -680,7 +680,7 @@ Constructs an Object from individual floats.
 Object::Object(float x, float y, float w, float h, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs an Object from individual floats, with default rotation and logger.
 
@@ -700,7 +700,7 @@ Constructs an Object from individual floats, with default rotation and logger.
 Object::Object(Transform transform, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Object value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -717,7 +717,7 @@ Constructs a Object value from the parameters shown below. Default arguments pro
 Object::Object(Vec p, Vec s, Vec r={0.0f, 0.0f}, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs an Object from Vec structs.
 
@@ -736,7 +736,7 @@ Constructs an Object from Vec structs.
 Object_Pool::Object_Pool()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Object value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -748,7 +748,7 @@ Constructs a Object value from the parameters shown below. Default arguments pro
 bool Button::on_click(const Vec &mouse_pos) const override
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Returns true if mouse_pos is within the object's bounding box (alias for on_hover).
 
@@ -762,7 +762,7 @@ Returns true if mouse_pos is within the object's bounding box (alias for on_hove
 bool UI_Object::on_click(const Vec &mouse_pos) const override
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Returns true if mouse_pos is within the object's bounding box (alias for on_hover).
 
@@ -776,7 +776,7 @@ Returns true if mouse_pos is within the object's bounding box (alias for on_hove
 virtual bool Object::on_click(const Vec &mouse_pos) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Returns true if mouse_pos is within the object's bounding box (alias for on_hover).
 
@@ -790,7 +790,7 @@ Returns true if mouse_pos is within the object's bounding box (alias for on_hove
 bool Button::on_hover(const Vec &mouse_pos) const override
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Returns true if mouse_pos is within the object's bounding box.
 
@@ -804,7 +804,7 @@ Returns true if mouse_pos is within the object's bounding box.
 bool UI_Object::on_hover(const Vec &mouse_pos) const override
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Returns true if mouse_pos is within the object's bounding box.
 
@@ -818,7 +818,7 @@ Returns true if mouse_pos is within the object's bounding box.
 virtual bool Object::on_hover(const Vec &mouse_pos) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Returns true if mouse_pos is within the object's bounding box.
 
@@ -832,7 +832,7 @@ Returns true if mouse_pos is within the object's bounding box.
 UI_Object & UI_Object::operator=(const UI_Object &)=delete
 ~~~
 
-**Access:** public  **Returns:** `UI_Object &`
+**Access:** public  **Returns:** `UI_Object &`  **Engine version:** Potato Engine 1.0.0
 
 Handles an engine lifecycle callback or input event. Override or call it only at the event-processing phase described by the owning type.
 
@@ -846,7 +846,7 @@ Handles an engine lifecycle callback or input event. Override or call it only at
 void Object::position_update(const Vec &pos2)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Moves the object to the given position.
 
@@ -860,7 +860,7 @@ Moves the object to the given position.
 Progress_Bar::Progress_Bar()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Performs the position update operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -872,7 +872,7 @@ Performs the position update operation for the owning engine component. The exac
 Progress_Bar::Progress_Bar(float x, float y, float w, float h, float minimum=0.0f, float maximum=1.0f, float initial_value=0.0f, UI_Orientation direction=UI_Orientation::Horizontal, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Progress_Bar value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -896,7 +896,7 @@ Constructs a Progress_Bar value from the parameters shown below. Default argumen
 Progress_Bar::Progress_Bar(Vec p, Vec s, float minimum=0.0f, float maximum=1.0f, float initial_value=0.0f, UI_Orientation direction=UI_Orientation::Horizontal, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Progress_Bar value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -918,7 +918,7 @@ Constructs a Progress_Bar value from the parameters shown below. Default argumen
 void Object::register_with_pool()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Adds or registers data with the owning engine service. The caller must keep borrowed objects valid for as long as the receiving service uses them.
 
@@ -930,7 +930,7 @@ Adds or registers data with the owning engine service. The caller must keep borr
 void Object_Pool::remove(Object *obj)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes an object from the pool.
 
@@ -944,7 +944,7 @@ Removes an object from the pool.
 void Object::remove_tag(const std::string &tag)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -958,7 +958,7 @@ Removes or releases the selected state from this engine component. References to
 void Object::rotation_update(const Vec &rotation2)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Rotates the object to the given angle and facing direction.
 
@@ -972,7 +972,7 @@ Rotates the object to the given angle and facing direction.
 void Object::scale_centered(float scale_factor, bool animated=false, float anim_speed=10.0f)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Scales the object around its center by a given factor.
 
@@ -988,7 +988,7 @@ Scales the object around its center by a given factor.
 void Object::scale_centered_condition(float scale_factor, Vec original_size, bool condition, bool animated=false, float anim_speed=10.0f)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Scales the object around its center by a given factor when the condition is met, otherwise resets to original size. Useful for hover effects or conditional scaling.
 
@@ -1006,7 +1006,7 @@ Scales the object around its center by a given factor when the condition is met,
 void Toggle::set_checked(bool value)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the rotation update operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -1020,7 +1020,7 @@ Performs the rotation update operation for the owning engine component. The exac
 void UI_Object::set_enabled(bool value)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -1034,7 +1034,7 @@ Updates the selected property using the supplied value. The change applies to su
 void UI_Object::set_font(IFont *font)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -1048,7 +1048,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Object::set_input_transparent(bool transparent)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets whether the object should ignore hover/click checks.
 
@@ -1062,7 +1062,7 @@ Sets whether the object should ignore hover/click checks.
 void Object::set_logger(Logger *l)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the logger for the object.
 
@@ -1076,7 +1076,7 @@ Sets the logger for the object.
 void Object::set_object_pool(Object_Pool *objp)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the object pool that manages this object. Automatically adds the object to the pool if not already present.
 
@@ -1090,7 +1090,7 @@ Sets the object pool that manages this object. Automatically adds the object to 
 void UI_Value::set_range(float minimum, float maximum)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -1105,7 +1105,7 @@ Updates the selected property using the supplied value. The change applies to su
 void UI_Value::set_step(float value_step)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -1119,7 +1119,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Object::set_texture(Texture *t)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the texture for the object.
 
@@ -1133,7 +1133,7 @@ Sets the texture for the object.
 void Object::set_texture_opacity(float alpha)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Changes the opacity of the texture.
 
@@ -1147,7 +1147,7 @@ Changes the opacity of the texture.
 void Object::set_transform(const Transform &new_transform)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the transform of the object.
 
@@ -1161,7 +1161,7 @@ Sets the transform of the object.
 bool UI_Value::set_value(float new_value)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -1175,7 +1175,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Object::show()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Shows the object by setting its visibility to true and making it respond to input.
 
@@ -1187,7 +1187,7 @@ Shows the object by setting its visibility to true and making it respond to inpu
 void Object::size_update(const Vec &size2)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Resizes the object to the given size.
 
@@ -1201,7 +1201,7 @@ Resizes the object to the given size.
 Slider::Slider()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Moves the component into its active state and makes it eligible for subsequent updates or playback. Repeated calls follow the state rules of the owning type.
 
@@ -1213,7 +1213,7 @@ Moves the component into its active state and makes it eligible for subsequent u
 Slider::Slider(float x, float y, float w, float h, float minimum=0.0f, float maximum=1.0f, float initial_value=0.0f, UI_Orientation direction=UI_Orientation::Horizontal, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr, float value_step=0.0f)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Slider value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1238,7 +1238,7 @@ Constructs a Slider value from the parameters shown below. Default arguments pro
 Slider::Slider(Vec p, Vec s, float minimum=0.0f, float maximum=1.0f, float initial_value=0.0f, UI_Orientation direction=UI_Orientation::Horizontal, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr, float value_step=0.0f)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Slider value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1261,7 +1261,7 @@ Constructs a Slider value from the parameters shown below. Default arguments pro
 virtual void Object::submit_draw_commands(Render_Pool &render_pool)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Submits every draw command needed by this object.
 
@@ -1275,7 +1275,7 @@ Submits every draw command needed by this object.
 Vec Slider::thumb_center() const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Adds or registers data with the owning engine service. The caller must keep borrowed objects valid for as long as the receiving service uses them.
 
@@ -1287,7 +1287,7 @@ Adds or registers data with the owning engine service. The caller must keep borr
 Transform Slider::thumb_transform(Vec thumb_size) const
 ~~~
 
-**Access:** public  **Returns:** `Transform`
+**Access:** public  **Returns:** `Transform`  **Engine version:** Potato Engine 1.0.0
 
 Performs the thumb transform operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -1301,7 +1301,7 @@ Performs the thumb transform operation for the owning engine component. The exac
 Toggle::Toggle()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Toggle value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1313,7 +1313,7 @@ Constructs a Toggle value from the parameters shown below. Default arguments pro
 Toggle::Toggle(float x, float y, float w, float h, bool initial_state=false, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Toggle value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1334,7 +1334,7 @@ Constructs a Toggle value from the parameters shown below. Default arguments pro
 Toggle::Toggle(Vec p, Vec s, bool initial_state=false, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Toggle value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1353,7 +1353,7 @@ Constructs a Toggle value from the parameters shown below. Default arguments pro
 bool Toggle::toggle_at(const Vec &pointer_pos)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the toggle at operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -1367,7 +1367,7 @@ Performs the toggle at operation for the owning engine component. The exact inpu
 void Object::toggle_visibility()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Toggles the visibility and input transparency of the object. If the object is currently visible, it will be hidden and made input transparent. If the object is currently hidden, it will be shown and made responsive to input.
 
@@ -1379,7 +1379,7 @@ Toggles the visibility and input transparency of the object. If the object is cu
 UI_Object::UI_Object()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Performs the toggle visibility operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -1391,7 +1391,7 @@ Performs the toggle visibility operation for the owning engine component. The ex
 UI_Object::UI_Object()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a UI_Object value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1403,7 +1403,7 @@ Constructs a UI_Object value from the parameters shown below. Default arguments 
 UI_Object::UI_Object(const UI_Object &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a UI_Object value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1417,7 +1417,7 @@ Constructs a UI_Object value from the parameters shown below. Default arguments 
 UI_Object::UI_Object(const UI_Object &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a UI_Object value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1431,7 +1431,7 @@ Constructs a UI_Object value from the parameters shown below. Default arguments 
 UI_Object::UI_Object(float x, float y, float w, float h, float rx, float ry=0.0f, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a UI_Object value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1453,7 +1453,7 @@ Constructs a UI_Object value from the parameters shown below. Default arguments 
 UI_Object::UI_Object(float x, float y, float w, float h, float rx, float ry=0.0f, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a UI_Object value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1475,7 +1475,7 @@ Constructs a UI_Object value from the parameters shown below. Default arguments 
 UI_Object::UI_Object(float x, float y, float w, float h, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a UI_Object value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1495,7 +1495,7 @@ Constructs a UI_Object value from the parameters shown below. Default arguments 
 UI_Object::UI_Object(float x, float y, float w, float h, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a UI_Object value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1515,7 +1515,7 @@ Constructs a UI_Object value from the parameters shown below. Default arguments 
 UI_Object::UI_Object(Transform transform, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a UI_Object value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1532,7 +1532,7 @@ Constructs a UI_Object value from the parameters shown below. Default arguments 
 UI_Object::UI_Object(Transform transform, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a UI_Object value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1549,7 +1549,7 @@ Constructs a UI_Object value from the parameters shown below. Default arguments 
 UI_Object::UI_Object(Vec p, Vec s, Vec r={0.0f, 0.0f}, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a UI_Object value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1568,7 +1568,7 @@ Constructs a UI_Object value from the parameters shown below. Default arguments 
 UI_Object::UI_Object(Vec p, Vec s, Vec r={0.0f, 0.0f}, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a UI_Object value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1587,7 +1587,7 @@ Constructs a UI_Object value from the parameters shown below. Default arguments 
 UI_Value::UI_Value()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a UI_Value value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1599,7 +1599,7 @@ Constructs a UI_Value value from the parameters shown below. Default arguments p
 UI_Value::UI_Value(float minimum, float maximum, float initial_value, float value_step=0.0f)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a UI_Value value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1616,7 +1616,7 @@ Constructs a UI_Value value from the parameters shown below. Default arguments p
 bool Slider::update_from_pointer(const Vec &pointer_pos)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Advances or processes the component for the current frame or time interval. Call it from the lifecycle phase expected by the owning service.
 
@@ -1630,7 +1630,7 @@ Advances or processes the component for the current frame or time interval. Call
 float Slider::value_at(const Vec &pointer_pos) const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Performs the value at operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -1654,7 +1654,7 @@ Engine::object_pool->add(player);
 Entity::~Entity()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Header usage example value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1666,7 +1666,7 @@ Constructs a Header usage example value from the parameters shown below. Default
 void Entity::activate()
 ~~~
 
-**Access:** public  **Returns:** `void`
+**Access:** public  **Returns:** `void`  **Engine version:** Potato Engine 1.0.0
 
 Activates the entity, allowing it to be updated and rendered.
 
@@ -1678,7 +1678,7 @@ Activates the entity, allowing it to be updated and rendered.
 void Entity::deactivate()
 ~~~
 
-**Access:** public  **Returns:** `void`
+**Access:** public  **Returns:** `void`  **Engine version:** Potato Engine 1.0.0
 
 Deactivates the entity, preventing it from being updated or rendered.
 
@@ -1690,7 +1690,7 @@ Deactivates the entity, preventing it from being updated or rendered.
 Entity::Entity()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Moves the component into its active state and makes it eligible for subsequent updates or playback. Repeated calls follow the state rules of the owning type.
 
@@ -1702,7 +1702,7 @@ Moves the component into its active state and makes it eligible for subsequent u
 Entity::Entity(Transform t, Texture *tex=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Entity value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1719,7 +1719,7 @@ Constructs a Entity value from the parameters shown below. Default arguments pro
 Entity::Entity(Vec p, Vec s, Vec r={0.0f, 0.0f}, Texture *t=nullptr, Object_Pool *objp=nullptr, Logger *l=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Entity value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1738,7 +1738,7 @@ Constructs a Entity value from the parameters shown below. Default arguments pro
 void Entity::free()
 ~~~
 
-**Access:** public  **Returns:** `void`
+**Access:** public  **Returns:** `void`  **Engine version:** Potato Engine 1.0.0
 
 Frees the entity's resources and marks it as inactive. This method should be called when the entity is no longer needed to avoid memory leaks.
 
@@ -1750,7 +1750,7 @@ Frees the entity's resources and marks it as inactive. This method should be cal
 Vec Entity::get_pos() const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the position of the entity.
 
@@ -1762,7 +1762,7 @@ Gets the position of the entity.
 Texture * Entity::get_texture() const
 ~~~
 
-**Access:** public  **Returns:** `Texture *`
+**Access:** public  **Returns:** `Texture *`  **Engine version:** Potato Engine 1.0.0
 
 Gets the size of the entity.
 
@@ -1774,7 +1774,7 @@ Gets the size of the entity.
 bool Entity::is_alive() const
 ~~~
 
-**Access:** public  **Returns:** `bool`
+**Access:** public  **Returns:** `bool`  **Engine version:** Potato Engine 1.0.0
 
 Checks if the entity is alive based on its health and lifetime.
 
@@ -1786,7 +1786,7 @@ Checks if the entity is alive based on its health and lifetime.
 void Entity::set_pos(const Vec &new_pos)
 ~~~
 
-**Access:** public  **Returns:** `void`
+**Access:** public  **Returns:** `void`  **Engine version:** Potato Engine 1.0.0
 
 Sets the position of the entity.
 
@@ -1800,7 +1800,7 @@ Sets the position of the entity.
 void Entity::set_texture(Texture *new_texture)
 ~~~
 
-**Access:** public  **Returns:** `void`
+**Access:** public  **Returns:** `void`  **Engine version:** Potato Engine 1.0.0
 
 Sets the texture of the entity.
 
@@ -1824,7 +1824,7 @@ enemy.activate();
 Particle_Emitter::~Particle_Emitter()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -1836,7 +1836,7 @@ Removes or releases the selected state from this engine component. References to
 void Particle_Emitter::draw(SDL_Renderer *renderer)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws all active particles using the provided SDL renderer.
 
@@ -1850,7 +1850,7 @@ Draws all active particles using the provided SDL renderer.
 void Particle::draw(SDL_Renderer *renderer)
 ~~~
 
-**Access:** public  **Returns:** `void`
+**Access:** public  **Returns:** `void`  **Engine version:** Potato Engine 1.0.0
 
 Draws the particle using its texture at its current position and size.
 
@@ -1864,7 +1864,7 @@ Draws the particle using its texture at its current position and size.
 void Particle_Emitter::free()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -1876,7 +1876,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 bool Particle_Emitter::is_alive() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if the emitter is still active (either has remaining duration or active particles).
 
@@ -1888,7 +1888,7 @@ Checks if the emitter is still active (either has remaining duration or active p
 bool Particle::is_alive() const
 ~~~
 
-**Access:** public  **Returns:** `bool`
+**Access:** public  **Returns:** `bool`  **Engine version:** Potato Engine 1.0.0
 
 Checks if the particle is still alive (i.e., its lifetime is greater than zero).
 
@@ -1900,7 +1900,7 @@ Checks if the particle is still alive (i.e., its lifetime is greater than zero).
 Particle::Particle(Vec pos, Vec psize, Texture *tex, Vec vel, float lifetime, ParticlePattern pattern, Vec origin, float angle, float orbit_radius, float orbit_speed)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Particle with the specified properties.
 
@@ -1923,7 +1923,7 @@ Constructs a Particle with the specified properties.
 Particle_Emitter::Particle_Emitter(Vec pos, Vec particle_size, float radius, float duration, int max_particles, float emit_rate, float particle_lifetime, ParticlePattern pattern, std::vector< Texture * > textures, Logger *logger=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Particle_Emitter with the specified properties.
 
@@ -1946,7 +1946,7 @@ Constructs a Particle_Emitter with the specified properties.
 void Particle_Emitter::spawn_particle()
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -1958,7 +1958,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 void Particle_Emitter::update(float dt)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the emitter and its particles.
 
@@ -1972,7 +1972,7 @@ Updates the emitter and its particles.
 void Particle::update(float dt)
 ~~~
 
-**Access:** public  **Returns:** `void`
+**Access:** public  **Returns:** `void`  **Engine version:** Potato Engine 1.0.0
 
 Updates the particle's position and state based on its movement pattern and elapsed time.
 
@@ -1996,7 +1996,7 @@ emitter.update(delta_seconds);
 TextBox::~TextBox() override
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Advances or processes the component for the current frame or time interval. Call it from the lifecycle phase expected by the owning service.
 
@@ -2008,7 +2008,7 @@ Advances or processes the component for the current frame or time interval. Call
 void TextBox::blur()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the blur operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2020,7 +2020,7 @@ Performs the blur operation for the owning engine component. The exact inputs, r
 void TextBox::clear()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -2032,7 +2032,7 @@ Removes or releases the selected state from this engine component. References to
 void Label::clear_shadow()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -2044,7 +2044,7 @@ Removes or releases the selected state from this engine component. References to
 void Label::draw(SDL_Renderer *renderer) override
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws the label immediately with the assigned font.
 
@@ -2058,7 +2058,7 @@ Draws the label immediately with the assigned font.
 void TextBox::erase_next_character()
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -2070,7 +2070,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 void TextBox::erase_previous_character()
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -2082,7 +2082,7 @@ Removes or releases the selected state from this engine component. References to
 void TextBox::finish(SDL_Scancode release_scancode)
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component out of its active state or ends the current operation. Any retained resource ownership remains governed by the owning class.
 
@@ -2096,7 +2096,7 @@ Moves the component out of its active state or ends the current operation. Any r
 bool TextBox::focus(bool clear_existing_text=true)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the focus operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2110,7 +2110,7 @@ Performs the focus operation for the owning engine component. The exact inputs, 
 Color Label::get_color() const
 ~~~
 
-**Access:** public  **Returns:** `Color`
+**Access:** public  **Returns:** `Color`  **Engine version:** Potato Engine 1.0.0
 
 Gets the label color.
 
@@ -2122,7 +2122,7 @@ Gets the label color.
 std::size_t TextBox::get_cursor_position() const
 ~~~
 
-**Access:** public  **Returns:** ``std::size_t``
+**Access:** public  **Returns:** ``std::size_t``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -2134,7 +2134,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 IFont * Label::get_font() const
 ~~~
 
-**Access:** public  **Returns:** `IFont *`
+**Access:** public  **Returns:** `IFont *`  **Engine version:** Potato Engine 1.0.0
 
 Gets the currently assigned font.
 
@@ -2146,7 +2146,7 @@ Gets the currently assigned font.
 std::size_t TextBox::get_max_length() const
 ~~~
 
-**Access:** public  **Returns:** ``std::size_t``
+**Access:** public  **Returns:** ``std::size_t``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -2158,7 +2158,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 const std::string & TextBox::get_prefix() const
 ~~~
 
-**Access:** public  **Returns:** ``const std::string &``
+**Access:** public  **Returns:** ``const std::string &``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -2170,7 +2170,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 float Label::get_scale() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Gets the draw scale used by the font.
 
@@ -2182,7 +2182,7 @@ Gets the draw scale used by the font.
 const std::string & Label::get_text() const
 ~~~
 
-**Access:** public  **Returns:** ``const std::string &``
+**Access:** public  **Returns:** ``const std::string &``  **Engine version:** Potato Engine 1.0.0
 
 Gets the current text of the label.
 
@@ -2194,7 +2194,7 @@ Gets the current text of the label.
 const std::string & TextBox::get_value() const
 ~~~
 
-**Access:** public  **Returns:** ``const std::string &``
+**Access:** public  **Returns:** ``const std::string &``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -2206,7 +2206,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 TextBox_Result TextBox::handle_event(const SDL_Event &event)
 ~~~
 
-**Access:** public  **Returns:** `TextBox_Result`
+**Access:** public  **Returns:** `TextBox_Result`  **Engine version:** Potato Engine 1.0.0
 
 Handles an engine lifecycle callback or input event. Override or call it only at the event-processing phase described by the owning type.
 
@@ -2220,7 +2220,7 @@ Handles an engine lifecycle callback or input event. Override or call it only at
 void TextBox::insert_text(const std::string &text)
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the insert text operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2234,7 +2234,7 @@ Performs the insert text operation for the owning engine component. The exact in
 bool TextBox::is_focused() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -2246,7 +2246,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 Label::Label()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Label value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2258,7 +2258,7 @@ Constructs a Label value from the parameters shown below. Default arguments prov
 Label::Label(const Label &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Label value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2272,7 +2272,7 @@ Constructs a Label value from the parameters shown below. Default arguments prov
 Label::Label(const Transform &transform, const std::string &text, IFont *font=nullptr, Logger *logger=nullptr, Object_Pool *object_pool=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Label object with no assigned font.
 
@@ -2290,7 +2290,7 @@ Constructs a Label object with no assigned font.
 Label::Label(const Vec &pos, const Vec &size, const Vec &rot, const std::string &text, const std::string &font_name, Logger *logger=nullptr, Object_Pool *object_pool=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Label object and resolves its font from Engine::asset_pool.
 
@@ -2310,7 +2310,7 @@ Constructs a Label object and resolves its font from Engine::asset_pool.
 Label::Label(const Vec &pos, const Vec &size, const Vec &rot, const std::string &text, IFont *font, Logger *logger=nullptr, Object_Pool *object_pool=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Label object with a borrowed font pointer.
 
@@ -2330,7 +2330,7 @@ Constructs a Label object with a borrowed font pointer.
 Label::Label(const Vec &pos, const Vec &size, const Vec &rot, const std::string &text, Logger *logger=nullptr, Object_Pool *object_pool=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Label object with no assigned font.
 
@@ -2349,7 +2349,7 @@ Constructs a Label object with no assigned font.
 Draw Label::make_draw_command() const override
 ~~~
 
-**Access:** public  **Returns:** `Draw`
+**Access:** public  **Returns:** `Draw`  **Engine version:** Potato Engine 1.0.0
 
 Creates a font draw command for Render_Pool.
 
@@ -2361,7 +2361,7 @@ Creates a font draw command for Render_Pool.
 static std::size_t TextBox::next_utf8_boundary(const std::string &text, std::size_t position)
 ~~~
 
-**Access:** private  **Storage:** static  **Returns:** ``std::size_t``
+**Access:** private  **Storage:** static  **Returns:** ``std::size_t``  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Label value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2376,7 +2376,7 @@ Constructs a Label value from the parameters shown below. Default arguments prov
 TextBox & TextBox::operator=(const TextBox &)=delete
 ~~~
 
-**Access:** public  **Returns:** `TextBox &`
+**Access:** public  **Returns:** `TextBox &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -2390,7 +2390,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 static std::size_t TextBox::previous_utf8_boundary(const std::string &text, std::size_t position)
 ~~~
 
-**Access:** private  **Storage:** static  **Returns:** ``std::size_t``
+**Access:** private  **Storage:** static  **Returns:** ``std::size_t``  **Engine version:** Potato Engine 1.0.0
 
 Performs the previous utf8 boundary operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2405,7 +2405,7 @@ Performs the previous utf8 boundary operation for the owning engine component. T
 void TextBox::refresh_display_text()
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the refresh display text operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2417,7 +2417,7 @@ Performs the refresh display text operation for the owning engine component. The
 Vec Label::resize_to_text()
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Updates the Object size from the current font and text.
 
@@ -2429,7 +2429,7 @@ Updates the Object size from the current font and text.
 void Label::set_color(const Color &new_color)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the label color.
 
@@ -2443,7 +2443,7 @@ Sets the label color.
 void Label::set_font(IFont *new_font)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the borrowed font pointer used for rendering.
 
@@ -2457,7 +2457,7 @@ Sets the borrowed font pointer used for rendering.
 bool Label::set_font_from_asset_pool(const std::string &font_name)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Resolves and sets the font from Engine::asset_pool.
 
@@ -2471,7 +2471,7 @@ Resolves and sets the font from Engine::asset_pool.
 void TextBox::set_max_length(std::size_t maximum_bytes)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the resize to text operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2485,7 +2485,7 @@ Performs the resize to text operation for the owning engine component. The exact
 void TextBox::set_prefix(const std::string &prefix)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -2499,7 +2499,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Label::set_scale(float new_scale)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the draw scale used by the font.
 
@@ -2513,7 +2513,7 @@ Sets the draw scale used by the font.
 void Label::set_shadow(const Vec &offset, const Color &color)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Enables a simple drop shadow rendered immediately behind the text.
 
@@ -2528,7 +2528,7 @@ Enables a simple drop shadow rendered immediately behind the text.
 void Label::set_text(const std::string &new_text)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the text of the label.
 
@@ -2542,7 +2542,7 @@ Sets the text of the label.
 void TextBox::set_value(const std::string &value)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -2556,7 +2556,7 @@ Updates the selected property using the supplied value. The change applies to su
 static std::string TextBox::single_line_text(std::string text)
 ~~~
 
-**Access:** private  **Storage:** static  **Returns:** ``std::string``
+**Access:** private  **Storage:** static  **Returns:** ``std::string``  **Engine version:** Potato Engine 1.0.0
 
 Performs the single line text operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2570,7 +2570,7 @@ Performs the single line text operation for the owning engine component. The exa
 void Label::submit_draw_commands(Render_Pool &render_pool) override
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Adds or registers data with the owning engine service. The caller must keep borrowed objects valid for as long as the receiving service uses them.
 
@@ -2584,7 +2584,7 @@ Adds or registers data with the owning engine service. The caller must keep borr
 TextBox::TextBox(const TextBox &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a TextBox value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2598,7 +2598,7 @@ Constructs a TextBox value from the parameters shown below. Default arguments pr
 TextBox::TextBox(const Transform &transform={}, IFont *font=nullptr, Object_Pool *object_pool=nullptr, Logger *logger=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a TextBox value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2625,7 +2625,7 @@ score.set_color(Color::white());
 void SceneManager::cancel_scene_request()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Header usage example value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2637,7 +2637,7 @@ Constructs a Header usage example value from the parameters shown below. Default
 void SceneManager::complete_transition(int id)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the complete transition operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2651,7 +2651,7 @@ Performs the complete transition operation for the owning engine component. The 
 bool SceneManager::consume_scene_request(int &out_id)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the consume scene request operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2665,7 +2665,7 @@ Performs the consume scene request operation for the owning engine component. Th
 int SceneManager::current_scene() const
 ~~~
 
-**Access:** public  **Returns:** ``int``
+**Access:** public  **Returns:** ``int``  **Engine version:** Potato Engine 1.0.0
 
 Performs the current scene operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2677,7 +2677,7 @@ Performs the current scene operation for the owning engine component. The exact 
 const std::string & SceneManager::current_scene_name() const
 ~~~
 
-**Access:** public  **Returns:** ``const std::string &``
+**Access:** public  **Returns:** ``const std::string &``  **Engine version:** Potato Engine 1.0.0
 
 Returns the name of the currently active scene. Returns an empty string if the current ID was not registered with a name.
 
@@ -2689,7 +2689,7 @@ Returns the name of the currently active scene. Returns an empty string if the c
 void SceneManager::enqueue_load_step(int scene_id, const std::string &label, std::function< bool()> step, float weight=1.0f)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the current scene name operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2706,7 +2706,7 @@ Performs the current scene name operation for the owning engine component. The e
 void SceneManager::enqueue_load_task(int scene_id, const std::string &label, std::function< void()> action, float weight=1.0f)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Adds or registers data with the owning engine service. The caller must keep borrowed objects valid for as long as the receiving service uses them.
 
@@ -2723,7 +2723,7 @@ Adds or registers data with the owning engine service. The caller must keep borr
 bool SceneManager::has_scene_request() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -2735,7 +2735,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 static SceneManager & SceneManager::instance()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `SceneManager &`
+**Access:** public  **Storage:** static  **Returns:** `SceneManager &`  **Engine version:** Potato Engine 1.0.0
 
 Performs the instance operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2747,7 +2747,7 @@ Performs the instance operation for the owning engine component. The exact input
 void SceneManager::register_scene(int id, const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Associates an integer ID with a human-readable name. Can be called multiple times to register all scenes up front.
 
@@ -2762,7 +2762,7 @@ Associates an integer ID with a human-readable name. Can be called multiple time
 bool SceneManager::request_scene(const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Adds or registers data with the owning engine service. The caller must keep borrowed objects valid for as long as the receiving service uses them.
 
@@ -2776,7 +2776,7 @@ Adds or registers data with the owning engine service. The caller must keep borr
 bool SceneManager::request_scene(int id)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Requests a deferred scene transition.
 
@@ -2790,7 +2790,7 @@ Requests a deferred scene transition.
 int SceneManager::requested_scene() const
 ~~~
 
-**Access:** public  **Returns:** ``int``
+**Access:** public  **Returns:** ``int``  **Engine version:** Potato Engine 1.0.0
 
 Queues or records the requested engine transition. The operation may complete later during the appropriate frame phase.
 
@@ -2802,7 +2802,7 @@ Queues or records the requested engine transition. The operation may complete la
 const std::string & SceneManager::scene_name(int id) const
 ~~~
 
-**Access:** public  **Returns:** ``const std::string &``
+**Access:** public  **Returns:** ``const std::string &``  **Engine version:** Potato Engine 1.0.0
 
 Performs the scene name operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2816,7 +2816,7 @@ Performs the scene name operation for the owning engine component. The exact inp
 SceneManager::SceneManager()=default
 ~~~
 
-**Access:** private
+**Access:** private  **Engine version:** Potato Engine 1.0.0
 
 Constructs a SceneManager value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2828,7 +2828,7 @@ Constructs a SceneManager value from the parameters shown below. Default argumen
 void SceneManager::set_scene(const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Switches the active scene by name. Does nothing if the name was never registered.
 
@@ -2842,7 +2842,7 @@ Switches the active scene by name. Does nothing if the name was never registered
 void SceneManager::set_scene(int id)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Switches the active scene by numeric ID.
 
@@ -2856,7 +2856,7 @@ Switches the active scene by numeric ID.
 std::vector< Load_Task > SceneManager::take_load_tasks(int scene_id)
 ~~~
 
-**Access:** public  **Returns:** `std::vector< Load_Task >`
+**Access:** public  **Returns:** `std::vector< Load_Task >`  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -2879,7 +2879,7 @@ SceneManager::instance().request_scene(1);
 virtual script::~script()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Header usage example value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2891,7 +2891,7 @@ Constructs a Header usage example value from the parameters shown below. Default
 virtual int script::execution_order() const
 ~~~
 
-**Access:** public  **Returns:** ``int``
+**Access:** public  **Returns:** ``int``  **Engine version:** Potato Engine 1.0.0
 
 Controls the order this script is updated and rendered. Lower value = called earlier. Default is 0. Override via the SCRIPT_ORDER(n) macro inside the class.
 
@@ -2903,7 +2903,7 @@ Controls the order this script is updated and rendered. Lower value = called ear
 virtual void script::on_destroy()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Called once when the script is about to be destroyed. Release any resources allocated in on_start.
 
@@ -2915,7 +2915,7 @@ Called once when the script is about to be destroyed. Release any resources allo
 virtual void script::on_event(const SDL_Event &event)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Called for every SDL event before on_update.
 
@@ -2929,7 +2929,7 @@ Called for every SDL event before on_update.
 virtual void script::on_post_render()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Called after the world render queue and lighting pass have finished.
 
@@ -2941,7 +2941,7 @@ Called after the world render queue and lighting pass have finished.
 virtual void script::on_render()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Called every frame during the render phase. Runs after on_update. Use for custom draw calls or debug overlays.
 
@@ -2953,7 +2953,7 @@ Called every frame during the render phase. Runs after on_update. Use for custom
 virtual void script::on_start()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Called once when the script is first created, before the first frame. Use this to load textures, initialise state, etc.
 
@@ -2965,7 +2965,7 @@ Called once when the script is first created, before the first frame. Use this t
 virtual void script::on_update(float delta_time)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Called every frame before rendering.
 
@@ -2979,7 +2979,7 @@ Called every frame before rendering.
 virtual int script::scene_id() const
 ~~~
 
-**Access:** public  **Returns:** ``int``
+**Access:** public  **Returns:** ``int``  **Engine version:** Potato Engine 1.0.0
 
 The scene this script belongs to. The script's on_update, on_render and on_event are only called when the active scene matches this value. Return -1 (default) to run in every scene regardless of the active scene. Override via the SCRIPT_SCENE(id) macro inside the class.
 
@@ -3002,7 +3002,7 @@ public:
 std::vector< script * > script_registry::create_all_scripts()
 ~~~
 
-**Access:** public  **Returns:** `std::vector< script * >`
+**Access:** public  **Returns:** `std::vector< script * >`  **Engine version:** Potato Engine 1.0.0
 
 Creates all registered scripts and sorts them by execution_order(). Lower execution_order() values appear first. The caller takes ownership of the returned pointers.
 
@@ -3014,7 +3014,7 @@ Creates all registered scripts and sorts them by execution_order(). Lower execut
 static script_registry & script_registry::instance()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `script_registry &`
+**Access:** public  **Storage:** static  **Returns:** `script_registry &`  **Engine version:** Potato Engine 1.0.0
 
 Performs the execution order operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -3026,7 +3026,7 @@ Performs the execution order operation for the owning engine component. The exac
 void script_registry::register_script(script_factory factory)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Registers a factory function that creates one script instance. Called automatically by REGISTER_SCRIPT at startup.
 
@@ -3040,7 +3040,7 @@ Registers a factory function that creates one script instance. Called automatica
 script_registry::script_registry()=default
 ~~~
 
-**Access:** private
+**Access:** private  **Engine version:** Potato Engine 1.0.0
 
 Adds or registers data with the owning engine service. The caller must keep borrowed objects valid for as long as the receiving service uses them.
 
@@ -3051,6 +3051,7 @@ Adds or registers data with the owning engine service. The caller must keep borr
 ~~~cpp
 REGISTER_SCRIPT(PlayerScript, 1, 0);
 ~~~
+
 
 
 

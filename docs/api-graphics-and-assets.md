@@ -35,7 +35,7 @@ Engine::render_pool->submit(hero_draw);
 GPU_Renderer::~GPU_Renderer()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Destroys the instance and releases the engine resources it owns. Objects borrowed from other services are not implicitly transferred unless the owning type states otherwise.
 
@@ -47,7 +47,7 @@ Destroys the instance and releases the engine resources it owns. Objects borrowe
 Render_Pool::~Render_Pool()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Destroys the instance and releases the engine resources it owns. Objects borrowed from other services are not implicitly transferred unless the owning type states otherwise.
 
@@ -59,7 +59,7 @@ Destroys the instance and releases the engine resources it owns. Objects borrowe
 bool GPU_Renderer::begin_frame()
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -71,7 +71,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 void Render_Pool::clear()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Clears all draw commands from the pool. This does not delete the textures or objects; it simply clears the list of commands to be drawn.
 
@@ -83,7 +83,7 @@ Clears all draw commands from the pool. This does not delete the textures or obj
 SDL_GPUDevice * GPU_Renderer::device() const
 ~~~
 
-**Access:** public  **Returns:** ``SDL_GPUDevice *``
+**Access:** public  **Returns:** ``SDL_GPUDevice *``  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -95,7 +95,7 @@ Removes or releases the selected state from this engine component. References to
 Draw::Draw()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Draw value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -107,7 +107,7 @@ Constructs a Draw value from the parameters shown below. Default arguments provi
 Draw::Draw(IFont *font, const std::string &text, const Transform &transform, const Color &tint, uint8_t z_index=128, float scale=1.0f)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a text draw command with the specified font, text, transform, tint, z-index and scale.
 
@@ -126,7 +126,7 @@ Constructs a text draw command with the specified font, text, transform, tint, z
 Draw::Draw(Texture *texture, const Transform &transform, const Color &tint, uint8_t z_index=128)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Draw_Command with the specified texture, transform, tint, and z-index.
 
@@ -143,7 +143,7 @@ Constructs a Draw_Command with the specified texture, transform, tint, and z-ind
 Draw::Draw(Texture *texture, const Transform &transform, uint8_t z_index)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Draw_Command with the specified texture, transform, and z-index.
 
@@ -159,7 +159,7 @@ Constructs a Draw_Command with the specified texture, transform, and z-index.
 Draw::Draw(Texture *texture, const Transform &transform)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Draw_Command with the specified texture and transform.
 
@@ -174,7 +174,7 @@ Constructs a Draw_Command with the specified texture and transform.
 const char * GPU_Renderer::driver_name() const
 ~~~
 
-**Access:** public  **Returns:** ``const char *``
+**Access:** public  **Returns:** ``const char *``  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Draw value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -186,7 +186,7 @@ Constructs a Draw value from the parameters shown below. Default arguments provi
 bool Render_Pool::empty() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if the render pool is empty (no draw commands).
 
@@ -198,7 +198,7 @@ Checks if the render pool is empty (no draw commands).
 void GPU_Renderer::end_frame()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -210,7 +210,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 void Render_Pool::flush()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sorts the draw commands by z-index and submits them to the SDL renderer. This should be called once per frame to render all queued draw commands.
 
@@ -222,7 +222,7 @@ Sorts the draw commands by z-index and submits them to the SDL renderer. This sh
 GPU_Renderer::GPU_Renderer()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Advances or processes the component for the current frame or time interval. Call it from the lifecycle phase expected by the owning service.
 
@@ -234,7 +234,7 @@ Advances or processes the component for the current frame or time interval. Call
 GPU_Renderer::GPU_Renderer(const GPU_Renderer &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a GPU_Renderer value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -248,7 +248,7 @@ Constructs a GPU_Renderer value from the parameters shown below. Default argumen
 bool GPU_Renderer::init(SDL_Window *window)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the init operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -262,7 +262,7 @@ Performs the init operation for the owning engine component. The exact inputs, r
 GPU_Renderer & GPU_Renderer::operator=(const GPU_Renderer &)=delete
 ~~~
 
-**Access:** public  **Returns:** `GPU_Renderer &`
+**Access:** public  **Returns:** `GPU_Renderer &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -276,7 +276,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 Render_Pool::Render_Pool(SDL_Renderer *renderer)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Render_Pool.
 
@@ -290,7 +290,7 @@ Constructs a Render_Pool.
 SDL_Renderer * GPU_Renderer::renderer() const
 ~~~
 
-**Access:** public  **Returns:** ``SDL_Renderer *``
+**Access:** public  **Returns:** ``SDL_Renderer *``  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Render_Pool value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -302,7 +302,7 @@ Constructs a Render_Pool value from the parameters shown below. Default argument
 void GPU_Renderer::shutdown()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component out of its active state or ends the current operation. Any retained resource ownership remains governed by the owning class.
 
@@ -314,7 +314,7 @@ Moves the component out of its active state or ends the current operation. Any r
 size_t Render_Pool::size() const
 ~~~
 
-**Access:** public  **Returns:** ``size_t``
+**Access:** public  **Returns:** ``size_t``  **Engine version:** Potato Engine 1.0.0
 
 Returns the number of draw commands in the render pool.
 
@@ -326,7 +326,7 @@ Returns the number of draw commands in the render pool.
 void Render_Pool::submit(const Draw &draw_command)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Submits a draw command to the render pool. If both the texture and font are null, or the command is not visible, it will be ignored.
 
@@ -350,7 +350,7 @@ Engine::render_pool->submit(command);
 virtual Texture::~Texture()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Frees the underlying SDL_Texture.
 
@@ -362,7 +362,7 @@ Frees the underlying SDL_Texture.
 void Texture::draw(SDL_Renderer *renderer, const SDL_FRect *src, const SDL_FRect *dst) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws a sub-region of the texture into a destination rectangle.
 
@@ -378,7 +378,7 @@ Draws a sub-region of the texture into a destination rectangle.
 void Texture::draw(SDL_Renderer *renderer, const Vec &pos, const Vec &size, const Vec &rotation) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws the texture at pos scaled to size and rotated by rotation.
 
@@ -395,7 +395,7 @@ Draws the texture at pos scaled to size and rotated by rotation.
 void Texture::draw(SDL_Renderer *renderer, const Vec &pos, const Vec &size) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws the texture at pos scaled to size.
 
@@ -411,7 +411,7 @@ Draws the texture at pos scaled to size.
 void Texture::draw(SDL_Renderer *renderer, const Vec &pos) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws the texture at pos using its native size.
 
@@ -426,7 +426,7 @@ Draws the texture at pos using its native size.
 void Texture::draw_ex(SDL_Renderer *renderer, const SDL_FRect *source, const Transform &transform, const Color &tint) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the size operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -443,7 +443,7 @@ Performs the size operation for the owning engine component. The exact inputs, r
 void Texture::draw_ex(SDL_Renderer *renderer, const Transform &transform, const Color &tint) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws the texture with a Transform and Color tint.
 
@@ -459,7 +459,7 @@ Draws the texture with a Transform and Color tint.
 void Texture::draw_ex(SDL_Renderer *renderer, const Vec &pos, const Vec &size, double angle, const Vec *center, SDL_FlipMode flip) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws the texture with rotation and/or flip.
 
@@ -478,7 +478,7 @@ Draws the texture with rotation and/or flip.
 void Texture::free()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Destroys the SDL_Texture and resets internal state.
 
@@ -490,7 +490,7 @@ Destroys the SDL_Texture and resets internal state.
 SDL_GPUTexture * Texture::get_gpu_texture() const
 ~~~
 
-**Access:** public  **Returns:** ``SDL_GPUTexture *``
+**Access:** public  **Returns:** ``SDL_GPUTexture *``  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -502,7 +502,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 float Texture::get_height() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -514,7 +514,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 std::string Texture::get_path() const
 ~~~
 
-**Access:** public  **Returns:** ``std::string``
+**Access:** public  **Returns:** ``std::string``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -526,7 +526,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 SDL_ScaleMode Texture::get_scale_mode() const
 ~~~
 
-**Access:** public  **Returns:** ``SDL_ScaleMode``
+**Access:** public  **Returns:** ``SDL_ScaleMode``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -538,7 +538,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 SDL_Texture * Texture::get_sdl_texture() const
 ~~~
 
-**Access:** public  **Returns:** ``SDL_Texture *``
+**Access:** public  **Returns:** ``SDL_Texture *``  **Engine version:** Potato Engine 1.0.0
 
 Returns the underlying SDL_Texture pointer.
 
@@ -550,7 +550,7 @@ Returns the underlying SDL_Texture pointer.
 SDL_Texture * Texture::get_SDL_Texture() const
 ~~~
 
-**Access:** public  **Returns:** ``SDL_Texture *``
+**Access:** public  **Returns:** ``SDL_Texture *``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -562,7 +562,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 Vec Texture::get_size() const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -574,7 +574,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 std::string Texture::get_texture_path() const
 ~~~
 
-**Access:** public  **Returns:** ``std::string``
+**Access:** public  **Returns:** ``std::string``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -586,7 +586,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 float Texture::get_width() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -598,7 +598,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 bool Texture::has_alpha_mask() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -610,7 +610,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 bool Texture::is_fully_transparent() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if the texture is fully transparent (all pixels have alpha = 0).
 
@@ -622,7 +622,7 @@ Checks if the texture is fully transparent (all pixels have alpha = 0).
 bool Texture::is_gpu_backed() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -634,7 +634,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 bool Texture::is_loaded() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -646,7 +646,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 bool Texture::is_pixel_opaque(int x, int y, uint8_t alpha_threshold=1) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -662,7 +662,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 bool Texture::is_region_transparent(const SDL_FRect &region, uint8_t alpha_threshold=1) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if a rectangular region of the texture is fully transparent.
 
@@ -677,7 +677,7 @@ Checks if a rectangular region of the texture is fully transparent.
 bool Texture::load(SDL_Renderer *renderer, const std::string &path)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 (Re)loads the texture from a file path.
 
@@ -692,7 +692,7 @@ bool Texture::load(SDL_Renderer *renderer, const std::string &path)
 bool Texture::load_from_surface(SDL_Renderer *renderer, SDL_Surface *surface)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 (Re)loads the texture from an SDL_Surface.
 
@@ -707,7 +707,7 @@ bool Texture::load_from_surface(SDL_Renderer *renderer, SDL_Surface *surface)
 Texture & Texture::operator=(const Texture &)=delete
 ~~~
 
-**Access:** public  **Returns:** `Texture &`
+**Access:** public  **Returns:** `Texture &`  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -721,7 +721,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 Texture & Texture::operator=(Texture &&other) noexcept
 ~~~
 
-**Access:** public  **Returns:** `Texture &`
+**Access:** public  **Returns:** `Texture &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -735,7 +735,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 void Texture::set_scale_mode(SDL_ScaleMode scale_mode)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Changes the scale mode (texture filtering).
 
@@ -749,7 +749,7 @@ Changes the scale mode (texture filtering).
 void Texture::set_texture_opacity(float alpha)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Changes the opacity of the texture.
 
@@ -763,7 +763,7 @@ Changes the opacity of the texture.
 Texture::Texture()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -775,7 +775,7 @@ Updates the selected property using the supplied value. The change applies to su
 Texture::Texture(const Texture &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Texture value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -789,7 +789,7 @@ Constructs a Texture value from the parameters shown below. Default arguments pr
 Texture::Texture(SDL_Renderer *renderer, const std::string &path, Logger *logger=nullptr, SDL_ScaleMode scale_mode=SDL_SCALEMODE_PIXELART)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Loads a texture from a file.
 
@@ -806,7 +806,7 @@ Loads a texture from a file.
 Texture::Texture(SDL_Renderer *renderer, SDL_Surface *surface, Logger *logger=nullptr, SDL_ScaleMode scale_mode=SDL_SCALEMODE_PIXELART)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Creates a texture from an existing SDL_Surface.
 
@@ -823,7 +823,7 @@ Creates a texture from an existing SDL_Surface.
 Texture::Texture(Texture &&other) noexcept
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Texture value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -847,7 +847,7 @@ texture.draw({{100, 100}, texture.get_size()});
 virtual IFont::~IFont()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Frees implementation-specific font resources.
 
@@ -859,7 +859,7 @@ Frees implementation-specific font resources.
 SDL_Font::~SDL_Font() override
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Header usage example value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -871,7 +871,7 @@ Constructs a Header usage example value from the parameters shown below. Default
 Tileset_Font::~Tileset_Font() override
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Destroys the instance and releases the engine resources it owns. Objects borrowed from other services are not implicitly transferred unless the owning type states otherwise.
 
@@ -883,7 +883,7 @@ Destroys the instance and releases the engine resources it owns. Objects borrowe
 virtual void IFont::draw(const IFont_Props &props) const =0
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws text using a full properties object.
 
@@ -897,7 +897,7 @@ Draws text using a full properties object.
 virtual void IFont::draw(SDL_Renderer *renderer, const std::string &text, const Vec &pos, const Color &color, float scale=1.0f) const =0
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws text using direct arguments.
 
@@ -915,7 +915,7 @@ Draws text using direct arguments.
 void SDL_Font::draw(const IFont_Props &props) const override
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws text using a full properties object.
 
@@ -929,7 +929,7 @@ Draws text using a full properties object.
 void SDL_Font::draw(SDL_Renderer *renderer, const std::string &text, const Vec &pos, const Color &color, float scale=1.0f) const override
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws text using direct arguments.
 
@@ -947,7 +947,7 @@ Draws text using direct arguments.
 void Tileset_Font::draw(const IFont_Props &props) const override
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws text using a full properties object.
 
@@ -961,7 +961,7 @@ Draws text using a full properties object.
 void Tileset_Font::draw(SDL_Renderer *renderer, const std::string &text, const Vec &pos, const Color &color, float scale=1.0f) const override
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws text using direct arguments.
 
@@ -979,7 +979,7 @@ Draws text using direct arguments.
 const std::string & Tileset_Font::get_char_map() const
 ~~~
 
-**Access:** public  **Returns:** ``const std::string &``
+**Access:** public  **Returns:** ``const std::string &``  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -991,7 +991,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 virtual IFont_Props * IFont::get_props() const
 ~~~
 
-**Access:** public  **Returns:** `IFont_Props *`
+**Access:** public  **Returns:** `IFont_Props *`  **Engine version:** Potato Engine 1.0.0
 
 Gets the retained draw properties pointer.
 
@@ -1003,7 +1003,7 @@ Gets the retained draw properties pointer.
 Vec SDL_Font::get_size(const std::string &text) const override
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Measures text using this font.
 
@@ -1017,7 +1017,7 @@ Measures text using this font.
 Vec Tileset_Font::get_size(const std::string &text) const override
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Measures text using this font.
 
@@ -1031,7 +1031,7 @@ Measures text using this font.
 virtual Vec IFont::get_size(const std::string &text) const =0
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Measures text using this font.
 
@@ -1045,7 +1045,7 @@ Measures text using this font.
 const Vec & Tileset_Font::get_tile_size() const
 ~~~
 
-**Access:** public  **Returns:** `const Vec &`
+**Access:** public  **Returns:** `const Vec &`  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -1057,7 +1057,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 bool SDL_Font::is_loaded() const override
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if the font has a loaded backing resource.
 
@@ -1069,7 +1069,7 @@ Checks if the font has a loaded backing resource.
 bool Tileset_Font::is_loaded() const override
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if the font has a loaded backing resource.
 
@@ -1081,7 +1081,7 @@ Checks if the font has a loaded backing resource.
 virtual bool IFont::is_loaded() const =0
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if the font has a loaded backing resource.
 
@@ -1093,7 +1093,7 @@ Checks if the font has a loaded backing resource.
 bool SDL_Font::load(const std::string &path, int size=16) override
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Loads a font from disk.
 
@@ -1108,7 +1108,7 @@ Loads a font from disk.
 bool Tileset_Font::load(const std::string &path, int size=16) override
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Loads a font from disk.
 
@@ -1123,7 +1123,7 @@ Loads a font from disk.
 virtual bool IFont::load(const std::string &path, int size=16)=0
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Loads a font from disk.
 
@@ -1138,7 +1138,7 @@ Loads a font from disk.
 bool Tileset_Font::load_tileset_font(const std::string &path, const Vec &tile_size, const std::string &char_map)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Loads a bitmap font atlas using Engine::renderer.
 
@@ -1154,7 +1154,7 @@ Loads a bitmap font atlas using Engine::renderer.
 bool Tileset_Font::load_tileset_font(SDL_Renderer *renderer, const std::string &path, const Vec &tile_size, const std::string &char_map)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Loads a bitmap font atlas using an explicit renderer.
 
@@ -1171,7 +1171,7 @@ Loads a bitmap font atlas using an explicit renderer.
 SDL_Font & SDL_Font::operator=(const SDL_Font &)=delete
 ~~~
 
-**Access:** public  **Returns:** `SDL_Font &`
+**Access:** public  **Returns:** `SDL_Font &`  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -1185,7 +1185,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 SDL_Font & SDL_Font::operator=(SDL_Font &&)=delete
 ~~~
 
-**Access:** public  **Returns:** `SDL_Font &`
+**Access:** public  **Returns:** `SDL_Font &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1199,7 +1199,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 Tileset_Font & Tileset_Font::operator=(const Tileset_Font &)=delete
 ~~~
 
-**Access:** public  **Returns:** `Tileset_Font &`
+**Access:** public  **Returns:** `Tileset_Font &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1213,7 +1213,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 Tileset_Font & Tileset_Font::operator=(Tileset_Font &&)=delete
 ~~~
 
-**Access:** public  **Returns:** `Tileset_Font &`
+**Access:** public  **Returns:** `Tileset_Font &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1227,7 +1227,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 bool SDL_Font::pixel_art() const override
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the pixel art operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -1239,7 +1239,7 @@ Performs the pixel art operation for the owning engine component. The exact inpu
 bool Tileset_Font::pixel_art() const override
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the pixel art operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -1251,7 +1251,7 @@ Performs the pixel art operation for the owning engine component. The exact inpu
 virtual bool IFont::pixel_art() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the pixel art operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -1263,7 +1263,7 @@ Performs the pixel art operation for the owning engine component. The exact inpu
 SDL_Font::SDL_Font()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a SDL_Font value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1275,7 +1275,7 @@ Constructs a SDL_Font value from the parameters shown below. Default arguments p
 SDL_Font::SDL_Font(const SDL_Font &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a SDL_Font value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1289,7 +1289,7 @@ Constructs a SDL_Font value from the parameters shown below. Default arguments p
 SDL_Font::SDL_Font(SDL_Font &&)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a SDL_Font value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1303,7 +1303,7 @@ Constructs a SDL_Font value from the parameters shown below. Default arguments p
 void Tileset_Font::set_char_map(const std::string &new_map)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -1317,7 +1317,7 @@ Updates the selected property using the supplied value. The change applies to su
 virtual void IFont::set_pixel_art(bool enabled)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -1331,7 +1331,7 @@ Updates the selected property using the supplied value. The change applies to su
 void SDL_Font::set_pixel_art(bool enabled) override
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -1345,7 +1345,7 @@ Updates the selected property using the supplied value. The change applies to su
 virtual void IFont::set_props(IFont_Props *new_props)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the retained draw properties pointer.
 
@@ -1359,7 +1359,7 @@ Sets the retained draw properties pointer.
 void Tileset_Font::set_tile_size(const Vec &tile_size)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -1373,7 +1373,7 @@ Updates the selected property using the supplied value. The change applies to su
 Tileset_Font::Tileset_Font()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Tileset_Font value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1385,7 +1385,7 @@ Constructs a Tileset_Font value from the parameters shown below. Default argumen
 Tileset_Font::Tileset_Font(const Tileset_Font &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Tileset_Font value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1399,7 +1399,7 @@ Constructs a Tileset_Font value from the parameters shown below. Default argumen
 Tileset_Font::Tileset_Font(Tileset_Font &&)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Tileset_Font value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1413,7 +1413,7 @@ Constructs a Tileset_Font value from the parameters shown below. Default argumen
 virtual void IFont::unload()=0
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Unloads all resources held by the font.
 
@@ -1425,7 +1425,7 @@ Unloads all resources held by the font.
 void SDL_Font::unload() override
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Unloads all resources held by the font.
 
@@ -1437,7 +1437,7 @@ Unloads all resources held by the font.
 void Tileset_Font::unload() override
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Unloads all resources held by the font.
 
@@ -1459,7 +1459,7 @@ font.draw(IFont_Props{});
 Camera_Pool::~Camera_Pool()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -1471,7 +1471,7 @@ Removes or releases the selected state from this engine component. References to
 Camera * Camera_Pool::active_camera()
 ~~~
 
-**Access:** public  **Returns:** `Camera *`
+**Access:** public  **Returns:** `Camera *`  **Engine version:** Potato Engine 1.0.0
 
 Returns the camera currently used by the render pipeline.
 
@@ -1483,7 +1483,7 @@ Returns the camera currently used by the render pipeline.
 const Camera * Camera_Pool::active_camera() const
 ~~~
 
-**Access:** public  **Returns:** `const Camera *`
+**Access:** public  **Returns:** `const Camera *`  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -1495,7 +1495,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 void Camera::apply_bounds()
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Applies the requested state change to the target object or service. Validate target pointers and preconditions before invoking the operation.
 
@@ -1507,7 +1507,7 @@ Applies the requested state change to the target object or service. Validate tar
 Camera::Camera()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Default constructor for the Camera class.
 
@@ -1519,7 +1519,7 @@ Default constructor for the Camera class.
 Camera_Pool::Camera_Pool()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Creates the pool and the default main_cam.
 
@@ -1531,7 +1531,7 @@ Creates the pool and the default main_cam.
 Camera_Pool::Camera_Pool(const Camera_Pool &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Camera value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1545,7 +1545,7 @@ Constructs a Camera value from the parameters shown below. Default arguments pro
 bool Camera::can_see(const Transform &world_transform) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Returns true when a world-space transform overlaps the camera view. This is used by the render pipeline to skip objects outside the visible area.
 
@@ -1559,7 +1559,7 @@ Returns true when a world-space transform overlaps the camera view. This is used
 void Camera_Pool::clear()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Deletes every non-main camera and makes main_cam active again.
 
@@ -1571,7 +1571,7 @@ Deletes every non-main camera and makes main_cam active again.
 void Camera::clear_bounds()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Clears any bounds set for the camera, allowing it to move freely.
 
@@ -1583,7 +1583,7 @@ Clears any bounds set for the camera, allowing it to move freely.
 Camera * Camera_Pool::create(const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** `Camera *`
+**Access:** public  **Returns:** `Camera *`  **Engine version:** Potato Engine 1.0.0
 
 Creates a camera with the given name.
 
@@ -1597,7 +1597,7 @@ Creates a camera with the given name.
 void Camera::follow(Object *target, float smoothing, float dt)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Makes the camera follow a target object with optional smoothing.
 
@@ -1613,7 +1613,7 @@ Makes the camera follow a target object with optional smoothing.
 Camera * Camera_Pool::get(const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** `Camera *`
+**Access:** public  **Returns:** `Camera *`  **Engine version:** Potato Engine 1.0.0
 
 Finds a camera by name.
 
@@ -1627,7 +1627,7 @@ Finds a camera by name.
 const Camera * Camera_Pool::get(const std::string &name) const
 ~~~
 
-**Access:** public  **Returns:** `const Camera *`
+**Access:** public  **Returns:** `const Camera *`  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -1641,7 +1641,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 Vec Camera::get_position() const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the current position of the camera in world coordinates.
 
@@ -1653,7 +1653,7 @@ Gets the current position of the camera in world coordinates.
 float Camera::get_rotation() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Gets the current rotation of the camera in radians.
 
@@ -1665,7 +1665,7 @@ Gets the current rotation of the camera in radians.
 Vec Camera::get_viewport() const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the viewport size in logical screen pixels.
 
@@ -1677,7 +1677,7 @@ Gets the viewport size in logical screen pixels.
 float Camera::get_zoom() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Gets the current zoom level of the camera.
 
@@ -1689,7 +1689,7 @@ Gets the current zoom level of the camera.
 Camera * Camera_Pool::main_camera()
 ~~~
 
-**Access:** public  **Returns:** `Camera *`
+**Access:** public  **Returns:** `Camera *`  **Engine version:** Potato Engine 1.0.0
 
 Returns the always-present default camera.
 
@@ -1701,7 +1701,7 @@ Returns the always-present default camera.
 const Camera * Camera_Pool::main_camera() const
 ~~~
 
-**Access:** public  **Returns:** `const Camera *`
+**Access:** public  **Returns:** `const Camera *`  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -1713,7 +1713,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 void Camera::move(Vec delta)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Moves the camera by a specified delta in world coordinates.
 
@@ -1727,7 +1727,7 @@ Moves the camera by a specified delta in world coordinates.
 Camera_Pool & Camera_Pool::operator=(const Camera_Pool &)=delete
 ~~~
 
-**Access:** public  **Returns:** `Camera_Pool &`
+**Access:** public  **Returns:** `Camera_Pool &`  **Engine version:** Potato Engine 1.0.0
 
 Performs the move operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -1741,7 +1741,7 @@ Performs the move operation for the owning engine component. The exact inputs, r
 bool Camera_Pool::remove(const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Removes a camera from the pool. main_cam is protected and will never be removed by this function.
 
@@ -1755,7 +1755,7 @@ Removes a camera from the pool. main_cam is protected and will never be removed 
 void Camera::reset()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Resets the camera to its default state: position at (0,0), zoom level of 1, and no rotation. This function is useful for resetting the camera after a scene change or when you want to return to a default view.
 
@@ -1767,7 +1767,7 @@ Resets the camera to its default state: position at (0,0), zoom level of 1, and 
 Vec Camera::screen_size_to_world(Vec screen_size) const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Converts a size from screen coordinates to world coordinates.
 
@@ -1781,7 +1781,7 @@ Converts a size from screen coordinates to world coordinates.
 Transform Camera::screen_to_world(const Transform &screen_transform) const
 ~~~
 
-**Access:** public  **Returns:** `Transform`
+**Access:** public  **Returns:** `Transform`  **Engine version:** Potato Engine 1.0.0
 
 Converts a full screen transform back into world-space. Useful when placing objects from mouse or UI coordinates.
 
@@ -1795,7 +1795,7 @@ Converts a full screen transform back into world-space. Useful when placing obje
 Vec Camera::screen_to_world(Vec screen_pos) const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Converts a position from screen coordinates to world coordinates.
 
@@ -1809,7 +1809,7 @@ Converts a position from screen coordinates to world coordinates.
 bool Camera_Pool::set_active(const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Makes an existing camera the active render camera.
 
@@ -1823,7 +1823,7 @@ Makes an existing camera the active render camera.
 void Camera::set_bounds(Vec min, Vec max)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the bounds for the camera's position.
 
@@ -1838,7 +1838,7 @@ Sets the bounds for the camera's position.
 void Camera::set_position(Vec position)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the position of the camera in world coordinates.
 
@@ -1852,7 +1852,7 @@ Sets the position of the camera in world coordinates.
 void Camera::set_rotation(float rotation)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the rotation of the camera in radians.
 
@@ -1866,7 +1866,7 @@ Sets the rotation of the camera in radians.
 void Camera::set_viewport(float width, float height)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the viewport dimensions for the camera.
 
@@ -1881,7 +1881,7 @@ Sets the viewport dimensions for the camera.
 void Camera::set_viewport(Vec size)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the viewport dimensions for the camera using a Vec.
 
@@ -1895,7 +1895,7 @@ Sets the viewport dimensions for the camera using a Vec.
 void Camera::set_zoom(float zoom)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the zoom level of the camera.
 
@@ -1909,7 +1909,7 @@ Sets the zoom level of the camera.
 void Camera::shake(float intensity, float duration)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Shakes the camera for a specified duration and intensity.
 
@@ -1924,7 +1924,7 @@ Shakes the camera for a specified duration and intensity.
 size_t Camera_Pool::size() const
 ~~~
 
-**Access:** public  **Returns:** ``size_t``
+**Access:** public  **Returns:** ``size_t``  **Engine version:** Potato Engine 1.0.0
 
 Returns how many cameras are owned by the pool.
 
@@ -1936,7 +1936,7 @@ Returns how many cameras are owned by the pool.
 Vec Camera::world_size_to_screen(Vec world_size) const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Converts a size from world coordinates to screen coordinates.
 
@@ -1950,7 +1950,7 @@ Converts a size from world coordinates to screen coordinates.
 Transform Camera::world_to_screen(const Transform &world_transform) const
 ~~~
 
-**Access:** public  **Returns:** `Transform`
+**Access:** public  **Returns:** `Transform`  **Engine version:** Potato Engine 1.0.0
 
 Converts a full world transform into screen-space. The position is offset by the camera and the size is scaled by zoom.
 
@@ -1964,7 +1964,7 @@ Converts a full world transform into screen-space. The position is offset by the
 Vec Camera::world_to_screen(Vec world_pos) const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Converts a position from world coordinates to screen coordinates.
 
@@ -1988,7 +1988,7 @@ camera->set_zoom(2.0f);
 light_source::~light_source()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -2000,7 +2000,7 @@ Removes or releases the selected state from this engine component. References to
 Light_System::~Light_System()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Destroys the instance and releases the engine resources it owns. Objects borrowed from other services are not implicitly transferred unless the owning type states otherwise.
 
@@ -2012,7 +2012,7 @@ Destroys the instance and releases the engine resources it owns. Objects borrowe
 bool Light_System::begin_world_pass(const Camera *camera)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the begin world pass operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2026,7 +2026,7 @@ Performs the begin world pass operation for the owning engine component. The exa
 void Light_System::end_world_pass()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the end world pass operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2038,7 +2038,7 @@ Performs the end world pass operation for the owning engine component. The exact
 Light_System::Float4::Float4()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Float4 value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2050,7 +2050,7 @@ Constructs a Float4 value from the parameters shown below. Default arguments pro
 Light_System::Float4::Float4(const Color &color, float w=1.0f)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Float4 value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2065,7 +2065,7 @@ Constructs a Float4 value from the parameters shown below. Default arguments pro
 Light_System::Float4::Float4(const Vec &vec, float z=0.0f, float w=0.0f)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Float4 value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2081,7 +2081,7 @@ Constructs a Float4 value from the parameters shown below. Default arguments pro
 Light_System::Float4::Float4(const Vec4 &vec)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Float4 value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2095,7 +2095,7 @@ Constructs a Float4 value from the parameters shown below. Default arguments pro
 Light_System::Float4::Float4(float x, float y, float z, float w)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Float4 value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2112,7 +2112,7 @@ Constructs a Float4 value from the parameters shown below. Default arguments pro
 float Light_System::get_night_amount() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -2124,7 +2124,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 float Light_System::get_time_of_day() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -2136,7 +2136,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 bool Light_System::init(SDL_Renderer *renderer, SDL_GPUDevice *device, Logger *logger=nullptr)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the init operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2152,7 +2152,7 @@ Performs the init operation for the owning engine component. The exact inputs, r
 bool Light_System::is_auto_advance_enabled() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -2164,7 +2164,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 bool Light_System::is_ready() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -2176,7 +2176,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 std::size_t Light_System::light_count() const
 ~~~
 
-**Access:** public  **Returns:** ``std::size_t``
+**Access:** public  **Returns:** ``std::size_t``  **Engine version:** Potato Engine 1.0.0
 
 Performs the light count operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2188,7 +2188,7 @@ Performs the light count operation for the owning engine component. The exact in
 light_source::light_source(const light_source &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Performs the light source operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2202,7 +2202,7 @@ Performs the light source operation for the owning engine component. The exact i
 light_source::light_source(Vec position={}, float radius=160.0f, Color color=Color::white(), float intensity=1.0f, float softness=0.35f)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Performs the light source operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2220,7 +2220,7 @@ Performs the light source operation for the owning engine component. The exact i
 Light_System::Light_System()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Light_System value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2232,7 +2232,7 @@ Constructs a Light_System value from the parameters shown below. Default argumen
 Light_System::Light_System(const Light_System &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Light_System value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2246,7 +2246,7 @@ Constructs a Light_System value from the parameters shown below. Default argumen
 light_source & light_source::operator=(const light_source &)=delete
 ~~~
 
-**Access:** public  **Returns:** `light_source &`
+**Access:** public  **Returns:** `light_source &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -2260,7 +2260,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 Light_System & Light_System::operator=(const Light_System &)=delete
 ~~~
 
-**Access:** public  **Returns:** `Light_System &`
+**Access:** public  **Returns:** `Light_System &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -2274,7 +2274,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 void Light_System::register_light(light_source *light)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Adds or registers data with the owning engine service. The caller must keep borrowed objects valid for as long as the receiving service uses them.
 
@@ -2288,7 +2288,7 @@ Adds or registers data with the owning engine service. The caller must keep borr
 void Light_System::set_active(bool active, SDL_ScaleMode scale_mode=SDL_SCALEMODE_LINEAR)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -2303,7 +2303,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Light_System::set_auto_advance(bool enabled)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -2317,7 +2317,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Light_System::set_day_length(float seconds)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -2331,7 +2331,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Light_System::set_night_ambient(Color color, float strength)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -2346,7 +2346,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Light_System::set_shadow_strength(float strength)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -2360,7 +2360,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Light_System::set_time_of_day(float hour)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -2374,7 +2374,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Light_System::shutdown()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component out of its active state or ends the current operation. Any retained resource ownership remains governed by the owning class.
 
@@ -2386,7 +2386,7 @@ Moves the component out of its active state or ends the current operation. Any r
 void Light_System::unregister_light(light_source *light)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -2400,7 +2400,7 @@ Removes or releases the selected state from this engine component. References to
 void Light_System::update(float delta_time)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Advances or processes the component for the current frame or time interval. Call it from the lifecycle phase expected by the owning service.
 
@@ -2423,7 +2423,7 @@ Engine::lighting->set_shadow_strength(0.75f);
 Asset_Pool::~Asset_Pool()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Header usage example value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2435,7 +2435,7 @@ Constructs a Header usage example value from the parameters shown below. Default
 bool Asset_Pool::activate_localized_texture(const std::string &name)
 ~~~
 
-**Access:** private  **Returns:** ``bool``
+**Access:** private  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component into its active state and makes it eligible for subsequent updates or playback. Repeated calls follow the state rules of the owning type.
 
@@ -2449,7 +2449,7 @@ Moves the component into its active state and makes it eligible for subsequent u
 void Asset_Pool::add_audio_to_group(const std::string &audio_name, const std::string &tag)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Adds an already loaded audio file to a group tag.
 
@@ -2464,7 +2464,7 @@ Adds an already loaded audio file to a group tag.
 Asset_Pool::Asset_Pool()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Adds or registers data with the owning engine service. The caller must keep borrowed objects valid for as long as the receiving service uses them.
 
@@ -2476,7 +2476,7 @@ Adds or registers data with the owning engine service. The caller must keep borr
 Asset_Pool::Asset_Pool(SDL_Renderer *renderer, Logger *logger=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs an Asset_Pool with a given SDL_Renderer and optional Logger.
 
@@ -2491,7 +2491,7 @@ Constructs an Asset_Pool with a given SDL_Renderer and optional Logger.
 void Asset_Pool::clear()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Clears all cached assets from the pool.
 
@@ -2503,7 +2503,7 @@ Clears all cached assets from the pool.
 std::string Asset_Pool::format_text(const std::string &key, const std::unordered_map< std::string, std::string > &values) const
 ~~~
 
-**Access:** public  **Returns:** ``std::string``
+**Access:** public  **Returns:** ``std::string``  **Engine version:** Potato Engine 1.0.0
 
 Retrieves a localized string by key and formats it with provided values.
 
@@ -2518,7 +2518,7 @@ Retrieves a localized string by key and formats it with provided values.
 Audio * Asset_Pool::get_audio(const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** `Audio *`
+**Access:** public  **Returns:** `Audio *`  **Engine version:** Potato Engine 1.0.0
 
 Retrieves an audio file by name.
 
@@ -2532,7 +2532,7 @@ Retrieves an audio file by name.
 std::vector< Audio * > Asset_Pool::get_audio_group(const std::string &tag)
 ~~~
 
-**Access:** public  **Returns:** `std::vector< Audio * >`
+**Access:** public  **Returns:** `std::vector< Audio * >`  **Engine version:** Potato Engine 1.0.0
 
 Gets every loaded audio file attached to a group tag.
 
@@ -2546,7 +2546,7 @@ Gets every loaded audio file attached to a group tag.
 IFont * Asset_Pool::get_font(const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** `IFont *`
+**Access:** public  **Returns:** `IFont *`  **Engine version:** Potato Engine 1.0.0
 
 Retrieves a font by name.
 
@@ -2560,7 +2560,7 @@ Retrieves a font by name.
 const std::string & Asset_Pool::get_locale() const
 ~~~
 
-**Access:** public  **Returns:** ``const std::string &``
+**Access:** public  **Returns:** ``const std::string &``  **Engine version:** Potato Engine 1.0.0
 
 Gets the current locale tag.
 
@@ -2572,7 +2572,7 @@ Gets the current locale tag.
 std::string Asset_Pool::get_text(const std::string &key) const
 ~~~
 
-**Access:** public  **Returns:** ``std::string``
+**Access:** public  **Returns:** ``std::string``  **Engine version:** Potato Engine 1.0.0
 
 Retrieves a localized string by key using the current locale.
 
@@ -2586,7 +2586,7 @@ Retrieves a localized string by key using the current locale.
 Texture * Asset_Pool::get_texture(const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** `Texture *`
+**Access:** public  **Returns:** `Texture *`  **Engine version:** Potato Engine 1.0.0
 
 Retrieves a texture by name.
 
@@ -2600,7 +2600,7 @@ Retrieves a texture by name.
 bool Asset_Pool::has_audio(const std::string &name) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if an audio file with the given name exists in the pool.
 
@@ -2614,7 +2614,7 @@ Checks if an audio file with the given name exists in the pool.
 bool Asset_Pool::has_audio_group(const std::string &tag) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if an audio group tag exists.
 
@@ -2628,7 +2628,7 @@ Checks if an audio group tag exists.
 bool Asset_Pool::has_font(const std::string &name) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if a font with the given name exists in the pool.
 
@@ -2642,7 +2642,7 @@ Checks if a font with the given name exists in the pool.
 bool Asset_Pool::has_texture(const std::string &name) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if a texture with the given name exists in the pool.
 
@@ -2656,7 +2656,7 @@ Checks if a texture with the given name exists in the pool.
 void Asset_Pool::load_audio(const std::string &name, const std::string &path, bool predecode=true)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Loads an audio file from disk and adds it to the pool.
 
@@ -2672,7 +2672,7 @@ Loads an audio file from disk and adds it to the pool.
 void Asset_Pool::load_audio(const std::string &name, const std::string &path, const std::string &tag, bool predecode=true)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Loads an audio file from disk and adds it to an audio group tag.
 
@@ -2689,7 +2689,7 @@ Loads an audio file from disk and adds it to an audio group tag.
 void Asset_Pool::load_audio(const std::string &name, const std::string &path, const std::vector< std::string > &tags, bool predecode=true)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Loads an audio file from disk and adds it to multiple audio group tags.
 
@@ -2706,7 +2706,7 @@ Loads an audio file from disk and adds it to multiple audio group tags.
 bool Asset_Pool::load_locale(const std::string &locale_tag, const std::string &path)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Loads a texture from a file and adds it to the pool, with an option to specify a custom SDL_Renderer.
 
@@ -2721,7 +2721,7 @@ Loads a texture from a file and adds it to the pool, with an option to specify a
 std::size_t Asset_Pool::load_locales_from_directory(const std::string &directory)
 ~~~
 
-**Access:** public  **Returns:** ``std::size_t``
+**Access:** public  **Returns:** ``std::size_t``  **Engine version:** Potato Engine 1.0.0
 
 Loads all locale JSON files from a directory and adds them to the pool.
 
@@ -2735,7 +2735,7 @@ Loads all locale JSON files from a directory and adds them to the pool.
 void Asset_Pool::load_sdl_font(const std::string &name, const std::string &path, int size=16, bool pixel_art=false)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Loads an SDL_ttf font from disk and adds it to the pool.
 
@@ -2752,7 +2752,7 @@ Loads an SDL_ttf font from disk and adds it to the pool.
 void Asset_Pool::load_texture(const std::string &name, const std::string &path, bool use_default_path=true)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Loads a texture from a file and adds it to the pool.
 
@@ -2768,7 +2768,7 @@ Loads a texture from a file and adds it to the pool.
 void Asset_Pool::load_texture(const std::string &name, const std::string &path, const std::string &locale_tag, bool use_default_path=true)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Registers a locale-specific texture variant under a shared logical name. Inactive variants stay unloaded. Locale changes invalidate previously returned pointers for localized textures, so callers should resolve them again by name.
 
@@ -2785,7 +2785,7 @@ Registers a locale-specific texture variant under a shared logical name. Inactiv
 void Asset_Pool::load_tileset_font(const std::string &name, const std::string &path, const Vec &tile_size, const std::string &char_map)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Loads a tileset font atlas from disk and adds it to the pool.
 
@@ -2802,7 +2802,7 @@ Loads a tileset font atlas from disk and adds it to the pool.
 const Localization & Asset_Pool::localization() const
 ~~~
 
-**Access:** public  **Returns:** `const Localization &`
+**Access:** public  **Returns:** `const Localization &`  **Engine version:** Potato Engine 1.0.0
 
 Retrieves the Localization object for managing localized text (const version).
 
@@ -2814,7 +2814,7 @@ Retrieves the Localization object for managing localized text (const version).
 Localization & Asset_Pool::localization()
 ~~~
 
-**Access:** public  **Returns:** `Localization &`
+**Access:** public  **Returns:** `Localization &`  **Engine version:** Potato Engine 1.0.0
 
 Retrieves the Localization object for managing localized text.
 
@@ -2826,7 +2826,7 @@ Retrieves the Localization object for managing localized text.
 void Asset_Pool::pause_audio_group(const std::string &tag)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Pauses every audio file in a group.
 
@@ -2840,7 +2840,7 @@ Pauses every audio file in a group.
 void Asset_Pool::play_audio_group(const std::string &tag)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Plays every audio file in a group.
 
@@ -2854,7 +2854,7 @@ Plays every audio file in a group.
 void Asset_Pool::play_audio_group_shuffled(const std::string &tag)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Plays every audio file in a group in a shuffled order.
 
@@ -2868,7 +2868,7 @@ Plays every audio file in a group in a shuffled order.
 void Asset_Pool::remove_audio_from_all_groups(const std::string &audio_name)
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Asset_Pool value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2882,7 +2882,7 @@ Constructs a Asset_Pool value from the parameters shown below. Default arguments
 void Asset_Pool::remove_audio_from_group(const std::string &audio_name, const std::string &tag)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes an audio file from a group tag.
 
@@ -2897,7 +2897,7 @@ Removes an audio file from a group tag.
 void Asset_Pool::resume_audio_group(const std::string &tag)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Resumes every audio file in a group.
 
@@ -2911,7 +2911,7 @@ Resumes every audio file in a group.
 void Asset_Pool::set_audio_group_gain(const std::string &tag, float gain)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the gain for every audio file in a group.
 
@@ -2926,7 +2926,7 @@ Sets the gain for every audio file in a group.
 void Asset_Pool::set_audio_group_loop_count(const std::string &tag, int loop_count)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the loop count for every audio file in a group.
 
@@ -2941,7 +2941,7 @@ Sets the loop count for every audio file in a group.
 void Asset_Pool::set_audio_group_pitch(const std::string &tag, float pitch)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the pitch for every audio file in a group.
 
@@ -2956,7 +2956,7 @@ Sets the pitch for every audio file in a group.
 void Asset_Pool::set_audio_group_props(const std::string &tag, const Audio_Props &props)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Applies a full Audio_Props value to every audio file in a group.
 
@@ -2971,7 +2971,7 @@ Applies a full Audio_Props value to every audio file in a group.
 bool Asset_Pool::set_locale(const std::string &locale_tag)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Sets the current locale for localized assets.
 
@@ -2985,7 +2985,7 @@ Sets the current locale for localized assets.
 void Asset_Pool::set_logger(Logger *logger)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the Logger to be used for logging messages.
 
@@ -2999,7 +2999,7 @@ Sets the Logger to be used for logging messages.
 void Asset_Pool::set_renderer(SDL_Renderer *renderer)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the SDL_Renderer to be used for texture loading.
 
@@ -3013,7 +3013,7 @@ Sets the SDL_Renderer to be used for texture loading.
 void Asset_Pool::stop_audio_group(const std::string &tag)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Stops every audio file in a group.
 
@@ -3027,7 +3027,7 @@ Stops every audio file in a group.
 void Asset_Pool::unload_audio(const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Unloads an audio file from the pool by name.
 
@@ -3041,7 +3041,7 @@ Unloads an audio file from the pool by name.
 void Asset_Pool::unload_font(const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Unloads a font from the pool by name.
 
@@ -3055,7 +3055,7 @@ Unloads a font from the pool by name.
 void Asset_Pool::unload_texture(const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Unloads a texture from the pool by name.
 
@@ -3078,7 +3078,7 @@ Texture* player = Engine::asset_pool->get_texture("player");
 Loading_Screen::~Loading_Screen()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -3090,7 +3090,7 @@ Removes or releases the selected state from this engine component. References to
 Simple_Tileset::~Simple_Tileset()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Destroys the instance and releases the engine resources it owns. Objects borrowed from other services are not implicitly transferred unless the owning type states otherwise.
 
@@ -3102,7 +3102,7 @@ Destroys the instance and releases the engine resources it owns. Objects borrowe
 bool Loading_Screen::active() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -3114,7 +3114,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 void Simple_Tileset::advance_frame()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Advances or processes the component for the current frame or time interval. Call it from the lifecycle phase expected by the owning service.
 
@@ -3126,7 +3126,7 @@ Advances or processes the component for the current frame or time interval. Call
 void Simple_Tileset::advance_frame_index(std::size_t &frame_index) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Advances or processes the component for the current frame or time interval. Call it from the lifecycle phase expected by the owning service.
 
@@ -3140,7 +3140,7 @@ Advances or processes the component for the current frame or time interval. Call
 void Loading_Screen::begin(const std::string &title="Loading", Action on_complete={})
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the begin operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -3155,7 +3155,7 @@ Performs the begin operation for the owning engine component. The exact inputs, 
 void Loading_Screen::cancel()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -3167,7 +3167,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 std::size_t Simple_Tileset::columns() const
 ~~~
 
-**Access:** public  **Returns:** ``std::size_t``
+**Access:** public  **Returns:** ``std::size_t``  **Engine version:** Potato Engine 1.0.0
 
 Performs the columns operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -3179,7 +3179,7 @@ Performs the columns operation for the owning engine component. The exact inputs
 const std::string & Loading_Screen::current_task() const
 ~~~
 
-**Access:** public  **Returns:** ``const std::string &``
+**Access:** public  **Returns:** ``const std::string &``  **Engine version:** Potato Engine 1.0.0
 
 Performs the current task operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -3191,7 +3191,7 @@ Performs the current task operation for the owning engine component. The exact i
 void Simple_Tileset::draw_current_frame(SDL_Renderer *renderer, const Vec &pos, const Vec &size) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -3207,7 +3207,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 void Simple_Tileset::draw_current_frame(SDL_Renderer *renderer, const Vec &pos) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -3222,7 +3222,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 void Loading_Screen::draw_fallback_background()
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -3234,7 +3234,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 void Simple_Tileset::draw_frame(SDL_Renderer *renderer, const Vec &pos, std::size_t frame_index, const Vec &size) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -3251,7 +3251,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 void Simple_Tileset::draw_frame(SDL_Renderer *renderer, const Vec &pos, std::size_t frame_index) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -3267,7 +3267,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 void Loading_Screen::draw_progress_bar(float value)
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -3281,7 +3281,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 void Loading_Screen::draw_spinner(float elapsed_seconds)
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -3295,7 +3295,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 void Loading_Screen::enqueue(const std::string &label, Action action, float weight=1.0f)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Adds or registers data with the owning engine service. The caller must keep borrowed objects valid for as long as the receiving service uses them.
 
@@ -3311,7 +3311,7 @@ Adds or registers data with the owning engine service. The caller must keep borr
 void Loading_Screen::enqueue_step(const std::string &label, Step step, float weight=1.0f)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Adds or registers data with the owning engine service. The caller must keep borrowed objects valid for as long as the receiving service uses them.
 
@@ -3327,7 +3327,7 @@ Adds or registers data with the owning engine service. The caller must keep borr
 const std::string & Loading_Screen::error() const
 ~~~
 
-**Access:** public  **Returns:** ``const std::string &``
+**Access:** public  **Returns:** ``const std::string &``  **Engine version:** Potato Engine 1.0.0
 
 Performs the error operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -3339,7 +3339,7 @@ Performs the error operation for the owning engine component. The exact inputs, 
 void Loading_Screen::fail(const std::string &message)
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the fail operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -3353,7 +3353,7 @@ Performs the fail operation for the owning engine component. The exact inputs, r
 bool Loading_Screen::failed() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -3365,7 +3365,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 void Loading_Screen::finish()
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component out of its active state or ends the current operation. Any retained resource ownership remains governed by the owning class.
 
@@ -3377,7 +3377,7 @@ Moves the component out of its active state or ends the current operation. Any r
 float Loading_Screen::frame_budget_ms() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Performs the frame budget ms operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -3389,7 +3389,7 @@ Performs the frame budget ms operation for the owning engine component. The exac
 std::size_t Simple_Tileset::frame_count() const
 ~~~
 
-**Access:** public  **Returns:** ``std::size_t``
+**Access:** public  **Returns:** ``std::size_t``  **Engine version:** Potato Engine 1.0.0
 
 Performs the frame count operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -3401,7 +3401,7 @@ Performs the frame count operation for the owning engine component. The exact in
 void Simple_Tileset::free()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -3413,7 +3413,7 @@ Removes or releases the selected state from this engine component. References to
 bool Simple_Tileset::is_loaded() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -3425,7 +3425,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 bool Loading_Screen::load_artwork(const std::string &background_path, const std::string &icon_path, Vec icon_frame_size={})
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Reads, validates, or prepares the requested resource from the supplied input. Use the return value or error output to detect a failed operation before using the result.
 
@@ -3441,7 +3441,7 @@ Reads, validates, or prepares the requested resource from the supplied input. Us
 Loading_Screen::Loading_Screen(const Loading_Screen &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Loading_Screen value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -3455,7 +3455,7 @@ Constructs a Loading_Screen value from the parameters shown below. Default argum
 Loading_Screen::Loading_Screen(SDL_Renderer *renderer, Logger *logger=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Loading_Screen value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -3470,7 +3470,7 @@ Constructs a Loading_Screen value from the parameters shown below. Default argum
 bool Simple_Tileset::make_tileset(const std::string &path, SDL_Renderer *renderer, Logger *logger=nullptr, Vec frame_size={0, 0})
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Creates or emits a new engine value using the supplied configuration. Determine ownership from the return type and the owning pool or service.
 
@@ -3487,7 +3487,7 @@ Creates or emits a new engine value using the supplied configuration. Determine 
 Loading_Screen & Loading_Screen::operator=(const Loading_Screen &)=delete
 ~~~
 
-**Access:** public  **Returns:** `Loading_Screen &`
+**Access:** public  **Returns:** `Loading_Screen &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -3501,7 +3501,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 Simple_Tileset & Simple_Tileset::operator=(const Simple_Tileset &)=delete
 ~~~
 
-**Access:** public  **Returns:** `Simple_Tileset &`
+**Access:** public  **Returns:** `Simple_Tileset &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -3515,7 +3515,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 Simple_Tileset & Simple_Tileset::operator=(Simple_Tileset &&other) noexcept
 ~~~
 
-**Access:** public  **Returns:** `Simple_Tileset &`
+**Access:** public  **Returns:** `Simple_Tileset &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -3529,7 +3529,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 std::size_t Loading_Screen::pending_task_count() const
 ~~~
 
-**Access:** public  **Returns:** ``std::size_t``
+**Access:** public  **Returns:** ``std::size_t``  **Engine version:** Potato Engine 1.0.0
 
 Performs the pending task count operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -3541,7 +3541,7 @@ Performs the pending task count operation for the owning engine component. The e
 float Loading_Screen::progress() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Performs the progress operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -3553,7 +3553,7 @@ Performs the progress operation for the owning engine component. The exact input
 void Loading_Screen::render(float delta_seconds)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -3567,7 +3567,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 void Simple_Tileset::reset_frame()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Restores the component to its initial reusable state. Previously accumulated transient state is discarded.
 
@@ -3579,7 +3579,7 @@ Restores the component to its initial reusable state. Previously accumulated tra
 std::size_t Simple_Tileset::rows() const
 ~~~
 
-**Access:** public  **Returns:** ``std::size_t``
+**Access:** public  **Returns:** ``std::size_t``  **Engine version:** Potato Engine 1.0.0
 
 Performs the rows operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -3591,7 +3591,7 @@ Performs the rows operation for the owning engine component. The exact inputs, r
 void Loading_Screen::set_artwork(Texture *background, Texture *icon)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -3606,7 +3606,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Loading_Screen::set_frame_budget_ms(float milliseconds)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -3620,7 +3620,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Simple_Tileset::set_frame_size(const Vec &new_frame_size)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -3634,7 +3634,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Simple_Tileset::set_whole_size(const Vec &new_whole_size)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -3648,7 +3648,7 @@ Updates the selected property using the supplied value. The change applies to su
 Simple_Tileset::Simple_Tileset()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Simple_Tileset value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -3660,7 +3660,7 @@ Constructs a Simple_Tileset value from the parameters shown below. Default argum
 Simple_Tileset::Simple_Tileset(const Simple_Tileset &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Simple_Tileset value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -3674,7 +3674,7 @@ Constructs a Simple_Tileset value from the parameters shown below. Default argum
 Simple_Tileset::Simple_Tileset(const std::string &path, SDL_Renderer *renderer, Logger *logger=nullptr, Vec frame_size={0, 0})
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Simple_Tileset value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -3691,7 +3691,7 @@ Constructs a Simple_Tileset value from the parameters shown below. Default argum
 Simple_Tileset::Simple_Tileset(Simple_Tileset &&other) noexcept
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Simple_Tileset value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -3705,7 +3705,7 @@ Constructs a Simple_Tileset value from the parameters shown below. Default argum
 const std::string & Loading_Screen::title() const
 ~~~
 
-**Access:** public  **Returns:** ``const std::string &``
+**Access:** public  **Returns:** ``const std::string &``  **Engine version:** Potato Engine 1.0.0
 
 Performs the title operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -3717,7 +3717,7 @@ Performs the title operation for the owning engine component. The exact inputs, 
 void Loading_Screen::update(float delta_seconds)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Advances or processes the component for the current frame or time interval. Call it from the lifecycle phase expected by the owning service.
 
@@ -3731,6 +3731,7 @@ Advances or processes the component for the current frame or time interval. Call
 Engine::loading_screen->enqueue_step("Load level", [] { load_level(); });
 Engine::loading_screen->update();
 ~~~
+
 
 
 

@@ -34,7 +34,7 @@ auto nearby = Engine::physics_engine->query_overlaps(player_body, Physics::MASK_
 virtual Physics::Collision_Body::~Collision_Body()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Unregisters the body from its physics world.
 
@@ -46,7 +46,7 @@ Unregisters the body from its physics world.
 Physics::Physics_Engine::~Physics_Engine()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Detaches every registered body and clears simulation state.
 
@@ -58,7 +58,7 @@ Detaches every registered body and clears simulation state.
 void Physics::Physics_Engine::add_body(Collision_Body *body)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Registers a body with this world.
 
@@ -72,7 +72,7 @@ Registers a body with this world.
 std::uint8_t Physics::Collision_Body::alpha_threshold() const
 ~~~
 
-**Access:** public  **Returns:** ``std::uint8_t``
+**Access:** public  **Returns:** ``std::uint8_t``  **Engine version:** Potato Engine 1.0.0
 
 Destroys the instance and releases the engine resources it owns. Objects borrowed from other services are not implicitly transferred unless the owning type states otherwise.
 
@@ -84,7 +84,7 @@ Destroys the instance and releases the engine resources it owns. Objects borrowe
 void Physics::Collision_Body::apply_force(const Vec &force)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Accumulates a continuous force for the next simulation step.
 
@@ -98,7 +98,7 @@ Accumulates a continuous force for the next simulation step.
 void Physics::Collision_Body::apply_impulse(const Vec &impulse)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Immediately changes dynamic body velocity using an impulse.
 
@@ -112,7 +112,7 @@ Immediately changes dynamic body velocity using an impulse.
 bool Physics::Physics_Engine::auto_sleep() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Applies the requested state change to the target object or service. Validate target pointers and preconditions before invoking the operation.
 
@@ -124,7 +124,7 @@ Applies the requested state change to the target object or service. Validate tar
 const std::vector< Collision_Body * > & Physics::Physics_Engine::bodies() const
 ~~~
 
-**Access:** public  **Returns:** `const std::vector< Collision_Body * > &`
+**Access:** public  **Returns:** `const std::vector< Collision_Body * > &`  **Engine version:** Potato Engine 1.0.0
 
 Performs the bodies operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -136,7 +136,7 @@ Performs the bodies operation for the owning engine component. The exact inputs,
 Body_Type Physics::Collision_Body::body_type() const
 ~~~
 
-**Access:** public  **Returns:** `Body_Type`
+**Access:** public  **Returns:** `Body_Type`  **Engine version:** Potato Engine 1.0.0
 
 Performs the body type operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -148,7 +148,7 @@ Performs the body type operation for the owning engine component. The exact inpu
 void Physics::Physics_Engine::clear()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Detaches every body and clears collisions and timestep state.
 
@@ -160,7 +160,7 @@ Detaches every body and clears collisions and timestep state.
 void Physics::Collision_Body::clear_forces()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes all forces waiting for the next simulation step.
 
@@ -172,7 +172,7 @@ Removes all forces waiting for the next simulation step.
 void Physics::Collision_Body::clear_local_bounds()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -184,7 +184,7 @@ Removes or releases the selected state from this engine component. References to
 Physics::Collision_Body::Collision_Body(const Collision_Body &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Collision_Body value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -198,7 +198,7 @@ Constructs a Collision_Body value from the parameters shown below. Default argum
 Physics::Collision_Body::Collision_Body(const Transform &transform, Collision_Shape shape=Collision_Shape::RECTANGLE, Body_Type type=Body_Type::STATIC)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a standalone collision body with its own Transform.
 
@@ -214,7 +214,7 @@ Constructs a standalone collision body with its own Transform.
 Physics::Collision_Body::Collision_Body(Object *owner, Collision_Shape shape=Collision_Shape::RECTANGLE, Body_Type type=Body_Type::STATIC)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a collision body attached to an Object.
 
@@ -230,7 +230,7 @@ Constructs a collision body attached to an Object.
 Transform Physics::Collision_Body::collision_transform() const
 ~~~
 
-**Access:** public  **Returns:** `Transform`
+**Access:** public  **Returns:** `Transform`  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Collision_Body value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -242,7 +242,7 @@ Constructs a Collision_Body value from the parameters shown below. Default argum
 const std::vector< Collision > & Physics::Physics_Engine::collisions() const
 ~~~
 
-**Access:** public  **Returns:** `const std::vector< Collision > &`
+**Access:** public  **Returns:** `const std::vector< Collision > &`  **Engine version:** Potato Engine 1.0.0
 
 Performs the collisions operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -254,7 +254,7 @@ Performs the collisions operation for the owning engine component. The exact inp
 float Physics::Physics_Engine::fixed_timestep() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Performs the fixed timestep operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -266,7 +266,7 @@ Performs the fixed timestep operation for the owning engine component. The exact
 Physics::Gravitational_Object::Gravitational_Object(const Transform &transform, Collision_Shape shape=Collision_Shape::RECTANGLE, float mass=1.0f)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a standalone gravitational body.
 
@@ -282,7 +282,7 @@ Constructs a standalone gravitational body.
 Physics::Gravitational_Object::Gravitational_Object(Object *owner, Collision_Shape shape=Collision_Shape::RECTANGLE, float mass=1.0f)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a gravitational body attached to an Object.
 
@@ -298,7 +298,7 @@ Constructs a gravitational body attached to an Object.
 const Vec & Physics::Physics_Engine::gravity() const
 ~~~
 
-**Access:** public  **Returns:** `const Vec &`
+**Access:** public  **Returns:** `const Vec &`  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Gravitational_Object value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -310,7 +310,7 @@ Constructs a Gravitational_Object value from the parameters shown below. Default
 bool Physics::Collision_Body::has_local_bounds() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -322,7 +322,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 float Physics::Collision_Body::inverse_mass() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Performs the inverse mass operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -334,7 +334,7 @@ Performs the inverse mass operation for the owning engine component. The exact i
 bool Physics::Collision_Body::is_awake() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -346,7 +346,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 Vec Physics::Collision_Body::local_offset() const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Performs the local offset operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -358,7 +358,7 @@ Performs the local offset operation for the owning engine component. The exact i
 Vec Physics::Collision_Body::local_size() const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Performs the local size operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -370,7 +370,7 @@ Performs the local size operation for the owning engine component. The exact inp
 const Transform & Physics::Collision_Body::local_transform() const
 ~~~
 
-**Access:** public  **Returns:** `const Transform &`
+**Access:** public  **Returns:** `const Transform &`  **Engine version:** Potato Engine 1.0.0
 
 Performs the local transform operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -382,7 +382,7 @@ Performs the local transform operation for the owning engine component. The exac
 constexpr Mask_Tag Physics::make_mask_tag(std::uint8_t bit_index)
 ~~~
 
-**Access:** public  **Returns:** `constexpr Mask_Tag`
+**Access:** public  **Returns:** `constexpr Mask_Tag`  **Engine version:** Potato Engine 1.0.0
 
 Creates a single collision category bit.
 
@@ -396,7 +396,7 @@ Creates a single collision category bit.
 static bool Physics::Physics_Engine::masks_allow(const Collision_Body &a, const Collision_Body &b)
 ~~~
 
-**Access:** private  **Storage:** static  **Returns:** ``bool``
+**Access:** private  **Storage:** static  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Creates or emits a new engine value using the supplied configuration. Determine ownership from the return type and the owning pool or service.
 
@@ -411,7 +411,7 @@ Creates or emits a new engine value using the supplied configuration. Determine 
 float Physics::Collision_Body::mass() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Performs the mass operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -423,7 +423,7 @@ Performs the mass operation for the owning engine component. The exact inputs, r
 Physics::Raycast_Hit::operator bool() const
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator bool operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -435,7 +435,7 @@ Implements the operator bool operation for this engine type. The exact operand a
 Collision_Body & Physics::Collision_Body::operator=(const Collision_Body &)=delete
 ~~~
 
-**Access:** public  **Returns:** `Collision_Body &`
+**Access:** public  **Returns:** `Collision_Body &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -449,7 +449,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 Object * Physics::Collision_Body::owner() const
 ~~~
 
-**Access:** public  **Returns:** `Object *`
+**Access:** public  **Returns:** `Object *`  **Engine version:** Potato Engine 1.0.0
 
 Performs the owner operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -461,7 +461,7 @@ Performs the owner operation for the owning engine component. The exact inputs, 
 Physics::Physics_Engine::Physics_Engine(Logger *logger=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs an empty physics world.
 
@@ -475,7 +475,7 @@ Constructs an empty physics world.
 Transform Physics::Collision_Body::previous_transform() const
 ~~~
 
-**Access:** public  **Returns:** `Transform`
+**Access:** public  **Returns:** `Transform`  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Physics_Engine value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -487,7 +487,7 @@ Constructs a Physics_Engine value from the parameters shown below. Default argum
 std::vector< Collision_Body * > Physics::Physics_Engine::query_overlaps(const Collision_Body &body, Mask_Tag mask=MASK_ALL) const
 ~~~
 
-**Access:** public  **Returns:** `std::vector< Collision_Body * >`
+**Access:** public  **Returns:** `std::vector< Collision_Body * >`  **Engine version:** Potato Engine 1.0.0
 
 Finds registered bodies overlapping the supplied body.
 
@@ -502,7 +502,7 @@ Finds registered bodies overlapping the supplied body.
 Raycast_Hit Physics::Physics_Engine::raycast(const Vec &origin, const Vec &direction, float max_distance, Mask_Tag mask=MASK_ALL, const Collision_Body *ignored_body=nullptr) const
 ~~~
 
-**Access:** public  **Returns:** `Raycast_Hit`
+**Access:** public  **Returns:** `Raycast_Hit`  **Engine version:** Potato Engine 1.0.0
 
 Casts a ray through the physics world and returns the nearest hit.
 
@@ -520,7 +520,7 @@ Casts a ray through the physics world and returns the nearest hit.
 void Physics::Physics_Engine::rebuild_static_grid()
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the query overlaps operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -532,7 +532,7 @@ Performs the query overlaps operation for the owning engine component. The exact
 void Physics::Physics_Engine::remove_body(Collision_Body *body)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes a body without destroying it.
 
@@ -546,7 +546,7 @@ Removes a body without destroying it.
 void Physics::Physics_Engine::resolve(Collision &collision)
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Applies positional correction, normal impulse and friction.
 
@@ -560,7 +560,7 @@ Applies positional correction, normal impulse and friction.
 void Physics::Collision_Body::set_alpha_threshold(std::uint8_t threshold)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the minimum alpha value considered solid.
 
@@ -574,7 +574,7 @@ Sets the minimum alpha value considered solid.
 void Physics::Physics_Engine::set_auto_sleep(bool enabled)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -588,7 +588,7 @@ Removes or releases the selected state from this engine component. References to
 void Physics::Collision_Body::set_body_type(Body_Type type)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Changes how the body participates in simulation.
 
@@ -602,7 +602,7 @@ Changes how the body participates in simulation.
 void Physics::Collision_Body::set_collision_callback(Collision_Callback callback)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the callback invoked for collision and trigger events.
 
@@ -616,7 +616,7 @@ Sets the callback invoked for collision and trigger events.
 void Physics::Physics_Engine::set_fixed_timestep(float seconds)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the fixed simulation step in seconds. Invalid values are ignored.
 
@@ -630,7 +630,7 @@ Sets the fixed simulation step in seconds. Invalid values are ignored.
 void Physics::Physics_Engine::set_gravity(const Vec &gravity)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets world gravity in logical units per second squared.
 
@@ -644,7 +644,7 @@ Sets world gravity in logical units per second squared.
 void Physics::Collision_Body::set_local_bounds(Vec offset, Vec size)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -659,7 +659,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Physics::Collision_Body::set_local_transform(const Transform &transform)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -673,7 +673,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Physics::Collision_Body::set_mass(float mass)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets body mass. Values at or below zero are clamped to a safe minimum.
 
@@ -687,7 +687,7 @@ Sets body mass. Values at or below zero are clamped to a safe minimum.
 void Physics::Physics_Engine::set_max_substeps(int count)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the maximum physics steps processed during one frame.
 
@@ -701,7 +701,7 @@ Sets the maximum physics steps processed during one frame.
 void Physics::Collision_Body::set_pixel_texture(Texture *texture)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Overrides the texture used for pixel-perfect collision.
 
@@ -715,7 +715,7 @@ Overrides the texture used for pixel-perfect collision.
 void Physics::Collision_Body::set_shape(Collision_Shape shape)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Changes the collision shape used by future checks.
 
@@ -729,7 +729,7 @@ Changes the collision shape used by future checks.
 void Physics::Physics_Engine::set_sleep_settings(float velocity_threshold, int stationary_steps)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -744,7 +744,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Physics::Physics_Engine::set_spatial_cell_size(float size)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the uniform-grid cell size used by broad-phase collision detection.
 
@@ -758,7 +758,7 @@ Sets the uniform-grid cell size used by broad-phase collision detection.
 Collision_Shape Physics::Collision_Body::shape() const
 ~~~
 
-**Access:** public  **Returns:** `Collision_Shape`
+**Access:** public  **Returns:** `Collision_Shape`  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -770,7 +770,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Physics::Collision_Body::sleep()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component out of its active state or ends the current operation. Any retained resource ownership remains governed by the owning class.
 
@@ -782,7 +782,7 @@ Moves the component out of its active state or ends the current operation. Any r
 float Physics::Physics_Engine::spatial_cell_size() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Performs the spatial cell size operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -794,7 +794,7 @@ Performs the spatial cell size operation for the owning engine component. The ex
 void Physics::Physics_Engine::step(float delta_seconds)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs exactly one simulation step.
 
@@ -808,7 +808,7 @@ Performs exactly one simulation step.
 bool Physics::Physics_Engine::test_collision(Collision_Body &a, Collision_Body &b, Collision *result=nullptr) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Tests two bodies without advancing or resolving them.
 
@@ -824,7 +824,7 @@ Tests two bodies without advancing or resolving them.
 Texture * Physics::Collision_Body::texture() const
 ~~~
 
-**Access:** public  **Returns:** `Texture *`
+**Access:** public  **Returns:** `Texture *`  **Engine version:** Potato Engine 1.0.0
 
 Gets the texture used for pixel-perfect checks.
 
@@ -836,7 +836,7 @@ Gets the texture used for pixel-perfect checks.
 const Transform & Physics::Collision_Body::transform() const
 ~~~
 
-**Access:** public  **Returns:** `const Transform &`
+**Access:** public  **Returns:** `const Transform &`  **Engine version:** Potato Engine 1.0.0
 
 Advances or processes the component for the current frame or time interval. Call it from the lifecycle phase expected by the owning service.
 
@@ -848,7 +848,7 @@ Advances or processes the component for the current frame or time interval. Call
 Transform & Physics::Collision_Body::transform()
 ~~~
 
-**Access:** public  **Returns:** `Transform &`
+**Access:** public  **Returns:** `Transform &`  **Engine version:** Potato Engine 1.0.0
 
 Performs the transform operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -860,7 +860,7 @@ Performs the transform operation for the owning engine component. The exact inpu
 void Physics::Physics_Engine::update(float delta_seconds)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Advances the world using an accumulator and fixed timestep.
 
@@ -874,7 +874,7 @@ Advances the world using an accumulator and fixed timestep.
 void Physics::Collision_Body::wake()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Advances or processes the component for the current frame or time interval. Call it from the lifecycle phase expected by the owning service.
 
@@ -896,7 +896,7 @@ Engine::physics_engine->add_body(&body);
 void Tilemap_Registry::add(const std::string &name, Tilemap *tilemap)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Header usage example value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -911,7 +911,7 @@ Constructs a Header usage example value from the parameters shown below. Default
 void Tileset_Group::add_index(int index)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Adds one tile id to the group.
 
@@ -925,7 +925,7 @@ Adds one tile id to the group.
 std::size_t Tilemap::cell_index(int column, int row) const
 ~~~
 
-**Access:** private  **Returns:** ``std::size_t``
+**Access:** private  **Returns:** ``std::size_t``  **Engine version:** Potato Engine 1.0.0
 
 Adds or registers data with the owning engine service. The caller must keep borrowed objects valid for as long as the receiving service uses them.
 
@@ -940,7 +940,7 @@ Adds or registers data with the owning engine service. The caller must keep borr
 Vec Tilemap::cell_to_world(int column, int row) const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Converts a cell's column and row indices to world coordinates.
 
@@ -955,7 +955,7 @@ Converts a cell's column and row indices to world coordinates.
 void Tilemap::clear()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Transforms the supplied value into the requested representation. The source value is preserved unless a non-const reference appears in the signature.
 
@@ -967,7 +967,7 @@ Transforms the supplied value into the requested representation. The source valu
 void Tileset_Group::clear_indexes()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Clears all tile ids from the group.
 
@@ -979,7 +979,7 @@ Clears all tile ids from the group.
 bool Tilemap::create(int width, int height, int empty_tile_id=-1, Vec origin={0.f, 0.f})
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Creates a new tilemap with the given dimensions and origin.
 
@@ -996,7 +996,7 @@ Creates a new tilemap with the given dimensions and origin.
 Tile Tileset::create_tile(int id, const Vec &position, bool collidable=false) const
 ~~~
 
-**Access:** public  **Returns:** `Tile`
+**Access:** public  **Returns:** `Tile`  **Engine version:** Potato Engine 1.0.0
 
 Creates a lightweight Tile using this tileset's texture.
 
@@ -1012,7 +1012,7 @@ Creates a lightweight Tile using this tileset's texture.
 void Tile::draw(SDL_Renderer *renderer, const Vec &size) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws the tile using its full texture.
 
@@ -1027,7 +1027,7 @@ Draws the tile using its full texture.
 void Tilemap::draw(SDL_Renderer *renderer, const class Camera *camera=nullptr) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -1042,7 +1042,7 @@ Removes or releases the selected state from this engine component. References to
 void Tileset::draw(SDL_Renderer *renderer, int index, const Vec &position, const Vec &size, bool skip_when_transparent=true) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws a tile id at a position using a custom draw size.
 
@@ -1060,7 +1060,7 @@ Draws a tile id at a position using a custom draw size.
 void Tileset::draw(SDL_Renderer *renderer, int index, const Vec &position) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws a tile id at a position using the default tile size.
 
@@ -1076,7 +1076,7 @@ Draws a tile id at a position using the default tile size.
 void Tileset_Group::draw_group(SDL_Renderer *renderer, const Vec &position, int columns) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws the group wrapped into rows.
 
@@ -1092,7 +1092,7 @@ Draws the group wrapped into rows.
 void Tileset_Group::draw_group(SDL_Renderer *renderer, const Vec &position) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws the group in one horizontal row.
 
@@ -1107,7 +1107,7 @@ Draws the group in one horizontal row.
 void Tileset::draw_tile(SDL_Renderer *renderer, const Tile &tile, const Vec &size) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws a Tile using the Tile id and position with a custom draw size.
 
@@ -1123,7 +1123,7 @@ Draws a Tile using the Tile id and position with a custom draw size.
 void Tileset::draw_tile(SDL_Renderer *renderer, const Tile &tile) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Draws a Tile using the Tile id and position.
 
@@ -1138,7 +1138,7 @@ Draws a Tile using the Tile id and position.
 bool Tilemap::erase_tile(int column, int row)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Erases a tile at the specified column and row, setting it to the empty tile id.
 
@@ -1153,7 +1153,7 @@ Erases a tile at the specified column and row, setting it to the empty tile id.
 Tilemap * Tilemap_Registry::get(const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** `Tilemap *`
+**Access:** public  **Returns:** `Tilemap *`  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -1167,7 +1167,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 Vec Tilemap::get_cell_size() const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -1179,7 +1179,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 Texture * Tilemap::get_cell_texture(int column, int row) const
 ~~~
 
-**Access:** public  **Returns:** `Texture *`
+**Access:** public  **Returns:** `Texture *`  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -1194,7 +1194,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 int Tilemap::get_height() const
 ~~~
 
-**Access:** public  **Returns:** ``int``
+**Access:** public  **Returns:** ``int``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -1206,7 +1206,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 int Tile::get_id() const
 ~~~
 
-**Access:** public  **Returns:** ``int``
+**Access:** public  **Returns:** ``int``  **Engine version:** Potato Engine 1.0.0
 
 Gets the numeric id of the tile.
 
@@ -1218,7 +1218,7 @@ Gets the numeric id of the tile.
 std::vector< int > Tileset_Group::get_indexes() const
 ~~~
 
-**Access:** public  **Returns:** ``std::vector< int >``
+**Access:** public  **Returns:** ``std::vector< int >``  **Engine version:** Potato Engine 1.0.0
 
 Gets all tile ids in the group.
 
@@ -1230,7 +1230,7 @@ Gets all tile ids in the group.
 const std::string & Tilemap::get_last_error() const
 ~~~
 
-**Access:** public  **Returns:** ``const std::string &``
+**Access:** public  **Returns:** ``const std::string &``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -1242,7 +1242,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 Vec Tilemap::get_origin() const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -1254,7 +1254,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 Vec Tile::get_position() const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the top-left position of the tile.
 
@@ -1266,7 +1266,7 @@ Gets the top-left position of the tile.
 std::uint64_t Tilemap::get_revision() const
 ~~~
 
-**Access:** public  **Returns:** ``std::uint64_t``
+**Access:** public  **Returns:** ``std::uint64_t``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -1278,7 +1278,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 const std::string & Tilemap::get_source_path() const
 ~~~
 
-**Access:** public  **Returns:** ``const std::string &``
+**Access:** public  **Returns:** ``const std::string &``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -1290,7 +1290,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 Texture * Tile::get_texture() const
 ~~~
 
-**Access:** public  **Returns:** `Texture *`
+**Access:** public  **Returns:** `Texture *`  **Engine version:** Potato Engine 1.0.0
 
 Gets the texture assigned to the tile.
 
@@ -1302,7 +1302,7 @@ Gets the texture assigned to the tile.
 Texture * Tileset::get_texture() const
 ~~~
 
-**Access:** public  **Returns:** `Texture *`
+**Access:** public  **Returns:** `Texture *`  **Engine version:** Potato Engine 1.0.0
 
 Gets the texture atlas used by the tileset.
 
@@ -1314,7 +1314,7 @@ Gets the texture atlas used by the tileset.
 int Tilemap::get_tile(int column, int row) const
 ~~~
 
-**Access:** public  **Returns:** ``int``
+**Access:** public  **Returns:** ``int``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -1329,7 +1329,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 std::size_t Tileset::get_tile_count() const
 ~~~
 
-**Access:** public  **Returns:** ``std::size_t``
+**Access:** public  **Returns:** ``std::size_t``  **Engine version:** Potato Engine 1.0.0
 
 Gets the number of indexed tiles in the tileset.
 
@@ -1341,7 +1341,7 @@ Gets the number of indexed tiles in the tileset.
 const SDL_FRect * Tileset::get_tile_rect(int index) const
 ~~~
 
-**Access:** public  **Returns:** ``const SDL_FRect *``
+**Access:** public  **Returns:** ``const SDL_FRect *``  **Engine version:** Potato Engine 1.0.0
 
 Gets the source rectangle for a tile id.
 
@@ -1355,7 +1355,7 @@ Gets the source rectangle for a tile id.
 Vec Tileset::get_tile_size() const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the size of a single tile.
 
@@ -1367,7 +1367,7 @@ Gets the size of a single tile.
 Texture * Tileset::get_tile_texture(int index) const
 ~~~
 
-**Access:** public  **Returns:** `Texture *`
+**Access:** public  **Returns:** `Texture *`  **Engine version:** Potato Engine 1.0.0
 
 Gets the texture used for a specific tile id.
 
@@ -1381,7 +1381,7 @@ Gets the texture used for a specific tile id.
 const Tileset * Tilemap::get_tileset() const
 ~~~
 
-**Access:** public  **Returns:** `const Tileset *`
+**Access:** public  **Returns:** `const Tileset *`  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -1393,7 +1393,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 const Tileset * Tileset_Group::get_tileset() const
 ~~~
 
-**Access:** public  **Returns:** `const Tileset *`
+**Access:** public  **Returns:** `const Tileset *`  **Engine version:** Potato Engine 1.0.0
 
 Gets the tileset used by the group.
 
@@ -1405,7 +1405,7 @@ Gets the tileset used by the group.
 Tileset * Tileset::get_tileset()
 ~~~
 
-**Access:** public  **Returns:** `Tileset *`
+**Access:** public  **Returns:** `Tileset *`  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -1417,7 +1417,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 Vec Tileset::get_tileset_size() const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the grid size of the tileset.
 
@@ -1429,7 +1429,7 @@ Gets the grid size of the tileset.
 int Tilemap::get_width() const
 ~~~
 
-**Access:** public  **Returns:** ``int``
+**Access:** public  **Returns:** ``int``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -1441,7 +1441,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 void Tileset::init(Texture *whole_texture, const Vec &tile_size, const Vec &tileset_size)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Initializes or reinitializes the tileset.
 
@@ -1457,7 +1457,7 @@ Initializes or reinitializes the tileset.
 bool Tile::is_collidable() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether this tile is collidable.
 
@@ -1469,7 +1469,7 @@ Checks whether this tile is collidable.
 bool Tilemap::is_valid_cell(int column, int row) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if the specified column and row are valid cell coordinates in the tilemap.
 
@@ -1484,7 +1484,7 @@ Checks if the specified column and row are valid cell coordinates in the tilemap
 bool Tileset::is_valid_index(int index) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if a tile id exists in the tileset.
 
@@ -1498,7 +1498,7 @@ Checks if a tile id exists in the tileset.
 bool Tilemap::load_json(const std::string &path)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Loads a tilemap from a JSON file.
 
@@ -1512,7 +1512,7 @@ Loads a tilemap from a JSON file.
 Tileset * Tileset::load_tileset(const std::string &path, Logger *logger=nullptr, SDL_ScaleMode scale_mode=SDL_SCALEMODE_PIXELART)
 ~~~
 
-**Access:** public  **Returns:** `Tileset *`
+**Access:** public  **Returns:** `Tileset *`  **Engine version:** Potato Engine 1.0.0
 
 Performs the init operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -1528,7 +1528,7 @@ Performs the init operation for the owning engine component. The exact inputs, r
 std::vector< std::string > Tilemap_Registry::names()
 ~~~
 
-**Access:** public  **Returns:** ``std::vector< std::string >``
+**Access:** public  **Returns:** ``std::vector< std::string >``  **Engine version:** Potato Engine 1.0.0
 
 Performs the names operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -1540,7 +1540,7 @@ Performs the names operation for the owning engine component. The exact inputs, 
 void Tileset::rebuild_tile_rects()
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Rebuilds the cached source rectangles from tile size and grid size.
 
@@ -1552,7 +1552,7 @@ Rebuilds the cached source rectangles from tile size and grid size.
 void Tilemap_Registry::remove(const std::string &name, Tilemap *tilemap=nullptr)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the rebuild tile rects operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -1567,7 +1567,7 @@ Performs the rebuild tile rects operation for the owning engine component. The e
 bool Tilemap::resize(int new_width, int new_height, int empty_tile_id=-1)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Resizes the tilemap to new dimensions, preserving existing tiles where possible.
 
@@ -1583,7 +1583,7 @@ Resizes the tilemap to new dimensions, preserving existing tiles where possible.
 bool Tilemap::save_json(const std::string &path)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Saves the tilemap to a JSON file.
 
@@ -1597,7 +1597,7 @@ Saves the tilemap to a JSON file.
 void Tilemap::set_cell_size(Vec cell_size)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the resize operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -1611,7 +1611,7 @@ Performs the resize operation for the owning engine component. The exact inputs,
 bool Tilemap::set_cell_texture(int column, int row, Texture *texture)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -1627,7 +1627,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Tile::set_collidable(bool collidable)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets whether this tile is collidable.
 
@@ -1641,7 +1641,7 @@ Sets whether this tile is collidable.
 void Tile::set_id(int id)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the numeric id of the tile.
 
@@ -1655,7 +1655,7 @@ Sets the numeric id of the tile.
 void Tileset_Group::set_indexes(const std::vector< int > &indexes)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets all tile ids in the group.
 
@@ -1669,7 +1669,7 @@ Sets all tile ids in the group.
 void Tilemap::set_origin(Vec origin)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -1683,7 +1683,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Tile::set_position(const Vec &position)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the top-left position of the tile.
 
@@ -1697,7 +1697,7 @@ Sets the top-left position of the tile.
 void Tile::set_texture(Texture *texture)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the texture assigned to the tile.
 
@@ -1711,7 +1711,7 @@ Sets the texture assigned to the tile.
 void Tileset::set_texture(Texture *texture)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the texture atlas used by the tileset.
 
@@ -1725,7 +1725,7 @@ Sets the texture atlas used by the tileset.
 bool Tilemap::set_tile(int column, int row, int tile_id)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -1741,7 +1741,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Tileset::set_tile_size(const Vec &tile_size)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the size of a single tile and rebuilds the source rectangles.
 
@@ -1755,7 +1755,7 @@ Sets the size of a single tile and rebuilds the source rectangles.
 void Tilemap::set_tileset(const Tileset *tileset)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -1769,7 +1769,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Tileset_Group::set_tileset(const Tileset *tileset)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the tileset used by the group.
 
@@ -1783,7 +1783,7 @@ Sets the tileset used by the group.
 void Tileset::set_tileset_size(const Vec &tileset_size)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the grid size of the tileset and rebuilds the source rectangles.
 
@@ -1797,7 +1797,7 @@ Sets the grid size of the tileset and rebuilds the source rectangles.
 void Tilemap::submit(class Render_Pool &render_pool, uint8_t z_index=128, const class Camera *camera=nullptr, const Color &tint=Color::white(), bool camera_space=true, bool y_sort=true) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -1816,7 +1816,7 @@ Updates the selected property using the supplied value. The change applies to su
 Tile::Tile()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs an empty tile.
 
@@ -1828,7 +1828,7 @@ Constructs an empty tile.
 Tile::Tile(int id, const Vec &position, Texture *texture=nullptr, bool collidable=false)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a tile with an id, position, texture and collision flag.
 
@@ -1845,7 +1845,7 @@ Constructs a tile with an id, position, texture and collision flag.
 Tilemap::Tilemap()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Tile value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1857,7 +1857,7 @@ Constructs a Tile value from the parameters shown below. Default arguments provi
 Tilemap::Tilemap(const Tileset *tileset)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Tilemap value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1871,7 +1871,7 @@ Constructs a Tilemap value from the parameters shown below. Default arguments pr
 Tileset::Tileset()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs an empty tileset.
 
@@ -1883,7 +1883,7 @@ Constructs an empty tileset.
 Tileset::Tileset(Texture *whole_texture, const Vec &tile_size, const Vec &tileset_size)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a tileset from a texture atlas and grid information.
 
@@ -1899,7 +1899,7 @@ Constructs a tileset from a texture atlas and grid information.
 Tileset_Group::Tileset_Group()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs an empty group.
 
@@ -1911,7 +1911,7 @@ Constructs an empty group.
 Tileset_Group::Tileset_Group(const Tileset *tileset, const std::vector< int > &indexes)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a group for a tileset with explicit tile indexes.
 
@@ -1926,7 +1926,7 @@ Constructs a group for a tileset with explicit tile indexes.
 Tileset_Group::Tileset_Group(const Tileset *tileset)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a group for a tileset with no explicit indexes.
 
@@ -1940,7 +1940,7 @@ Constructs a group for a tileset with no explicit indexes.
 bool Tilemap::valid_cell(int column, int row) const
 ~~~
 
-**Access:** private  **Returns:** ``bool``
+**Access:** private  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Tileset value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1955,7 +1955,7 @@ Constructs a Tileset value from the parameters shown below. Default arguments pr
 bool Tilemap::world_to_cell(const Vec &world_position, int &out_column, int &out_row) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Converts world coordinates to cell indices in the tilemap.
 
@@ -1972,6 +1972,7 @@ Tilemap map;
 map.load_json("assets/maps/level1.json");
 map.set_tile({4, 3}, 7);
 ~~~
+
 
 
 

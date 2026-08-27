@@ -35,7 +35,7 @@ hud_label.set_text(text.format("hud.score", {std::to_string(score)}));
 bool Input::acquire_block(const void *owner)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the acquire block operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -49,7 +49,7 @@ Performs the acquire block operation for the owning engine component. The exact 
 bool Input::action_down(const std::string &action_name)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether an action is currently held.
 
@@ -63,7 +63,7 @@ Checks whether an action is currently held.
 bool Input::action_pressed(const std::string &action_name)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether an action was pressed this frame.
 
@@ -77,7 +77,7 @@ Checks whether an action was pressed this frame.
 bool Input::action_released(const std::string &action_name)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether an action was released this frame.
 
@@ -91,7 +91,7 @@ Checks whether an action was released this frame.
 float Input::axis(const std::string &axis_name)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Gets the current value of a named axis.
 
@@ -105,7 +105,7 @@ Gets the current value of a named axis.
 float Input::axis_delta(const std::string &axis_name)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Gets how much a named axis changed since the previous frame.
 
@@ -119,7 +119,7 @@ Gets how much a named axis changed since the previous frame.
 void Input::begin_frame()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Starts a new input frame.
 
@@ -131,7 +131,7 @@ Starts a new input frame.
 void Input::bind_axis_gamepad_axis(const std::string &axis_name, SDL_GamepadAxis axis, float scale=1.0f, float deadzone=0.15f, int gamepad_index=0)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Binds a gamepad analog axis to a named axis.
 
@@ -149,7 +149,7 @@ Binds a gamepad analog axis to a named axis.
 void Input::bind_axis_key(const std::string &axis_name, SDL_Scancode key, float scale)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Binds a keyboard key to a named analog axis.
 
@@ -165,7 +165,7 @@ Binds a keyboard key to a named analog axis.
 void Input::bind_gamepad_button(const std::string &action_name, SDL_GamepadButton button, int gamepad_index=0)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Binds a gamepad button to a named digital action.
 
@@ -181,7 +181,7 @@ Binds a gamepad button to a named digital action.
 void Input::bind_key(const std::string &action_name, SDL_Scancode key)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Binds a keyboard key to a named digital action.
 
@@ -196,7 +196,7 @@ Binds a keyboard key to a named digital action.
 void Input::bind_mouse_button(const std::string &action_name, Uint8 button)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Binds an SDL mouse button to a named digital action.
 
@@ -211,7 +211,7 @@ Binds an SDL mouse button to a named digital action.
 void Input::clear_mouse_viewport()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the action down operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -223,7 +223,7 @@ Performs the action down operation for the owning engine component. The exact in
 Controller_State * Input::detail::controller_at(int index)
 ~~~
 
-**Access:** public  **Returns:** `Controller_State *`
+**Access:** public  **Returns:** `Controller_State *`  **Engine version:** Potato Engine 1.0.0
 
 Performs the controller at operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -237,7 +237,7 @@ Performs the controller at operation for the owning engine component. The exact 
 float Input::controller_axis(SDL_GamepadAxis axis, int gamepad_index=0, float deadzone=0.15f)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Reads a gamepad axis.
 
@@ -253,7 +253,7 @@ Reads a gamepad axis.
 bool Input::controller_button_down(SDL_GamepadButton button, int gamepad_index)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether a gamepad button is held on a selected gamepad.
 
@@ -268,7 +268,7 @@ Checks whether a gamepad button is held on a selected gamepad.
 bool Input::controller_button_down(SDL_GamepadButton button)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether a gamepad button is held on gamepad 0.
 
@@ -282,7 +282,7 @@ Checks whether a gamepad button is held on gamepad 0.
 bool Input::controller_button_pressed(SDL_GamepadButton button, int gamepad_index=0)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether a gamepad button was pressed this frame.
 
@@ -297,7 +297,7 @@ Checks whether a gamepad button was pressed this frame.
 bool Input::controller_button_released(SDL_GamepadButton button, int gamepad_index=0)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether a gamepad button was released this frame.
 
@@ -312,7 +312,7 @@ Checks whether a gamepad button was released this frame.
 const Action * Input::detail::find_action(const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** `const Action *`
+**Access:** public  **Returns:** `const Action *`  **Engine version:** Potato Engine 1.0.0
 
 Performs the controller axis operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -326,7 +326,7 @@ Performs the controller axis operation for the owning engine component. The exac
 const Axis_Action * Input::detail::find_axis(const std::string &name)
 ~~~
 
-**Access:** public  **Returns:** `const Axis_Action *`
+**Access:** public  **Returns:** `const Axis_Action *`  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -340,7 +340,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 void Input::handle_event(const SDL_Event &event)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Feeds an SDL event into the input system.
 
@@ -354,7 +354,7 @@ Feeds an SDL event into the input system.
 void Input::init()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Initializes the input system and opens available gamepads.
 
@@ -366,7 +366,7 @@ Initializes the input system and opens available gamepads.
 bool Input::is_blocked()
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Handles an engine lifecycle callback or input event. Override or call it only at the event-processing phase described by the owning type.
 
@@ -378,7 +378,7 @@ Handles an engine lifecycle callback or input event. Override or call it only at
 bool Input::key_down(SDL_Scancode key)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether a keyboard key is currently held.
 
@@ -392,7 +392,7 @@ Checks whether a keyboard key is currently held.
 bool Input::key_pressed(SDL_Scancode key)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether a keyboard key was pressed this frame.
 
@@ -406,7 +406,7 @@ Checks whether a keyboard key was pressed this frame.
 bool Input::key_released(SDL_Scancode key)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether a keyboard key was released this frame.
 
@@ -420,7 +420,7 @@ Checks whether a keyboard key was released this frame.
 bool Input::mouse_button_down(Uint8 button)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether a mouse button is currently held.
 
@@ -434,7 +434,7 @@ Checks whether a mouse button is currently held.
 bool Input::mouse_button_pressed(Uint8 button)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether a mouse button was pressed this frame.
 
@@ -448,7 +448,7 @@ Checks whether a mouse button was pressed this frame.
 bool Input::mouse_button_released(Uint8 button)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether a mouse button was released this frame.
 
@@ -462,7 +462,7 @@ Checks whether a mouse button was released this frame.
 Vec Input::mouse_delta()
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets relative mouse movement for the current frame.
 
@@ -474,7 +474,7 @@ Gets relative mouse movement for the current frame.
 Vec Input::mouse_position()
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the current mouse position.
 
@@ -486,7 +486,7 @@ Gets the current mouse position.
 Vec Input::mouse_scroll_delta()
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets mouse wheel movement for the current frame.
 
@@ -498,7 +498,7 @@ Gets mouse wheel movement for the current frame.
 bool Input::quit_requested()
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether an SDL quit event was seen this frame.
 
@@ -510,7 +510,7 @@ Checks whether an SDL quit event was seen this frame.
 void Input::release_block(const void *owner)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the key down operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -524,7 +524,7 @@ Performs the key down operation for the owning engine component. The exact input
 void Input::set_mouse_viewport(const Vec &origin, const Vec &size, const Vec &logical_size)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -540,7 +540,7 @@ Updates the selected property using the supplied value. The change applies to su
 void Input::shutdown()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Releases gamepads and clears registered actions and axes.
 
@@ -552,7 +552,7 @@ Releases gamepads and clears registered actions and axes.
 void Input::update()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Refreshes keyboard, mouse, gamepad, action, and axis states.
 
@@ -564,7 +564,7 @@ Refreshes keyboard, mouse, gamepad, action, and axis states.
 bool Input::detail::valid_gamepad_axis(SDL_GamepadAxis axis)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component out of its active state or ends the current operation. Any retained resource ownership remains governed by the owning class.
 
@@ -578,7 +578,7 @@ Moves the component out of its active state or ends the current operation. Any r
 bool Input::detail::valid_gamepad_button(SDL_GamepadButton button)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -592,7 +592,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 bool Input::detail::valid_mouse_button(Uint8 button)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -606,7 +606,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 bool Input::detail::valid_scancode(SDL_Scancode key)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -629,7 +629,7 @@ if (Input::action_pressed("jump")) player_jump();
 Audio::~Audio()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Header usage example value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -641,7 +641,7 @@ Constructs a Header usage example value from the parameters shown below. Default
 ITrack::~ITrack()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Destroys the instance and releases the engine resources it owns. Objects borrowed from other services are not implicitly transferred unless the owning type states otherwise.
 
@@ -653,7 +653,7 @@ Destroys the instance and releases the engine resources it owns. Objects borrowe
 Track_Pool::~Track_Pool()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Destroys the instance and releases the engine resources it owns. Objects borrowed from other services are not implicitly transferred unless the owning type states otherwise.
 
@@ -665,7 +665,7 @@ Destroys the instance and releases the engine resources it owns. Objects borrowe
 Audio::Audio()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Audio value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -677,7 +677,7 @@ Constructs a Audio value from the parameters shown below. Default arguments prov
 Audio::Audio(Audio &&)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Audio value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -691,7 +691,7 @@ Constructs a Audio value from the parameters shown below. Default arguments prov
 Audio::Audio(const Audio &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Audio value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -705,7 +705,7 @@ Constructs a Audio value from the parameters shown below. Default arguments prov
 Audio::Audio(const std::string &file_path, MIX_Mixer *mixer=nullptr, bool predecode=true)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs an Audio object and loads the specified audio file.
 
@@ -721,7 +721,7 @@ Constructs an Audio object and loads the specified audio file.
 Audio::Audio(const std::string &file_path, Track_Pool *track_pool, bool predecode=true)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs an Audio object and loads the specified audio file, using a track pool for playback.
 
@@ -737,7 +737,7 @@ Constructs an Audio object and loads the specified audio file, using a track poo
 void Track_Pool::create_new_default_track()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Creates a new default track and adds it to the pool.
 
@@ -749,7 +749,7 @@ Creates a new default track and adds it to the pool.
 ITrack * Track_Pool::create_new_dynamic_track(uint32_t lifetime=5000)
 ~~~
 
-**Access:** public  **Returns:** `ITrack *`
+**Access:** public  **Returns:** `ITrack *`  **Engine version:** Potato Engine 1.0.0
 
 Creates a new dynamic track and adds it to the pool.
 
@@ -763,7 +763,7 @@ Creates a new dynamic track and adds it to the pool.
 void Audio::detach_track(ITrack *track)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Detaches the currently attached track from the audio instance.
 
@@ -777,7 +777,7 @@ Detaches the currently attached track from the audio instance.
 void Track_Pool::flush_tracks(float dt)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates all tracks in the pool, applying their properties and managing their lifetimes.
 
@@ -791,7 +791,7 @@ Updates all tracks in the pool, applying their properties and managing their lif
 void Audio::force_pause()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Forces the audio to pause, regardless of its current state. This function forcefully pauses the audio playback. Unlike the regular pause() function, which only sets the state to PAUSED, and then waits for the flush_tracks() to actually pause the audio, this function will immediately stop the audio playback and set the state to PAUSED. Use this function when you need to ensure that the audio is paused, regardless of its current state.
 
@@ -803,7 +803,7 @@ Forces the audio to pause, regardless of its current state. This function forcef
 void Audio::force_play()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Forces the audio to play, regardless of its current state. This function forcefully starts the audio playback from the beginning, even if it is already playing or paused. Unlike the regular play() function, which only sets the state to PLAYING, and then waits for the flush_tracks() to actually start the audio, this function will immediately start the audio playback and set the state to PLAYING. Use this function when you need to ensure that the audio is playing, regardless of its current state.
 
@@ -815,7 +815,7 @@ Forces the audio to play, regardless of its current state. This function forcefu
 void Audio::force_resume()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Forces the audio to resume, regardless of its current state. This function forcefully resumes the audio playback, even if it is already playing or stopped. Unlike the regular resume() function, which only sets the state to RESUMED, and then waits for the flush_tracks() to actually resume the audio, this function will immediately resume the audio playback and set the state to RESUMED. Use this function when you need to ensure that the audio is resumed, regardless of its current state.
 
@@ -827,7 +827,7 @@ Forces the audio to resume, regardless of its current state. This function force
 void Audio::force_stop()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Forces the audio to stop, regardless of its current state. This function forcefully stops the audio playback. Unlike the regular stop() function, which only sets the state to STOPPED, and then waits for the flush_tracks() to actually stop the audio, this function will immediately stop the audio playback and set the state to STOPPED. Use this function when you need to ensure that the audio is stopped, regardless of its current state.
 
@@ -839,7 +839,7 @@ Forces the audio to stop, regardless of its current state. This function forcefu
 uint8_t Track_Pool::get_default_track_count() const
 ~~~
 
-**Access:** public  **Returns:** ``uint8_t``
+**Access:** public  **Returns:** ``uint8_t``  **Engine version:** Potato Engine 1.0.0
 
 Gets the number of default tracks currently in the pool.
 
@@ -851,7 +851,7 @@ Gets the number of default tracks currently in the pool.
 Sint64 Audio::get_duration() const
 ~~~
 
-**Access:** public  **Returns:** ``Sint64``
+**Access:** public  **Returns:** ``Sint64``  **Engine version:** Potato Engine 1.0.0
 
 Gets the duration of the loaded audio file in milliseconds.
 
@@ -863,7 +863,7 @@ Gets the duration of the loaded audio file in milliseconds.
 uint32_t Track_Pool::get_dynamic_track_lifetime(size_t index) const
 ~~~
 
-**Access:** public  **Returns:** ``uint32_t``
+**Access:** public  **Returns:** ``uint32_t``  **Engine version:** Potato Engine 1.0.0
 
 Gets the lifetime of a dynamic track in frames.
 
@@ -877,7 +877,7 @@ Gets the lifetime of a dynamic track in frames.
 ITrack * Track_Pool::get_free_track()
 ~~~
 
-**Access:** public  **Returns:** `ITrack *`
+**Access:** public  **Returns:** `ITrack *`  **Engine version:** Potato Engine 1.0.0
 
 Gets a free track from the pool. If no free tracks are available, a new dynamic track is created.
 
@@ -889,7 +889,7 @@ Gets a free track from the pool. If no free tracks are available, a new dynamic 
 MIX_Mixer * Audio::get_mixer()
 ~~~
 
-**Access:** public  **Returns:** ``MIX_Mixer *``
+**Access:** public  **Returns:** ``MIX_Mixer *``  **Engine version:** Potato Engine 1.0.0
 
 Gets the SDL_Mixer instance used for audio playback.
 
@@ -901,7 +901,7 @@ Gets the SDL_Mixer instance used for audio playback.
 MIX_Mixer * Track_Pool::get_mixer() const
 ~~~
 
-**Access:** public  **Returns:** ``MIX_Mixer *``
+**Access:** public  **Returns:** ``MIX_Mixer *``  **Engine version:** Potato Engine 1.0.0
 
 Gets the SDL_Mixer instance used by this pool.
 
@@ -913,7 +913,7 @@ Gets the SDL_Mixer instance used by this pool.
 Audio_Props Audio::get_props() const
 ~~~
 
-**Access:** public  **Returns:** `Audio_Props`
+**Access:** public  **Returns:** `Audio_Props`  **Engine version:** Potato Engine 1.0.0
 
 Gets the properties of the audio file.
 
@@ -925,7 +925,7 @@ Gets the properties of the audio file.
 uint8_t Track_Pool::get_total_track_count() const
 ~~~
 
-**Access:** public  **Returns:** ``uint8_t``
+**Access:** public  **Returns:** ``uint8_t``  **Engine version:** Potato Engine 1.0.0
 
 Gets the total number of tracks currently in the pool, including both default and dynamic tracks.
 
@@ -937,7 +937,7 @@ Gets the total number of tracks currently in the pool, including both default an
 ITrack * Track_Pool::get_track(size_t index) const
 ~~~
 
-**Access:** public  **Returns:** `ITrack *`
+**Access:** public  **Returns:** `ITrack *`  **Engine version:** Potato Engine 1.0.0
 
 Gets the track at the specified index in the pool.
 
@@ -951,7 +951,7 @@ Gets the track at the specified index in the pool.
 bool Track_Pool::init(MIX_Mixer *mixer, uint8_t default_track_count=8, Logger *logger=nullptr)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Audio value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -967,7 +967,7 @@ Constructs a Audio value from the parameters shown below. Default arguments prov
 bool Audio::is_loaded() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if an audio file is currently loaded.
 
@@ -979,7 +979,7 @@ Checks if an audio file is currently loaded.
 bool Audio::is_playing() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if this audio instance is currently playing on a managed track.
 
@@ -991,7 +991,7 @@ Checks if this audio instance is currently playing on a managed track.
 ITrack::ITrack()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs an ITrack object with the specified track, audio, and lifetime.
 
@@ -1003,7 +1003,7 @@ Constructs an ITrack object with the specified track, audio, and lifetime.
 ITrack::ITrack(const ITrack &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -1017,7 +1017,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 ITrack::ITrack(ITrack &&)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a ITrack value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1031,7 +1031,7 @@ Constructs a ITrack value from the parameters shown below. Default arguments pro
 ITrack::ITrack(MIX_Track *t, Audio *a, uint32_t l)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs an ITrack object with the specified track, audio, and lifetime.
 
@@ -1047,7 +1047,7 @@ Constructs an ITrack object with the specified track, audio, and lifetime.
 void Audio::load(const std::string &file_path, bool predecode=true)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Loads an audio file into memory.
 
@@ -1062,7 +1062,7 @@ Loads an audio file into memory.
 Audio & Audio::operator=(Audio &&)=delete
 ~~~
 
-**Access:** public  **Returns:** `Audio &`
+**Access:** public  **Returns:** `Audio &`  **Engine version:** Potato Engine 1.0.0
 
 Constructs a ITrack value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1076,7 +1076,7 @@ Constructs a ITrack value from the parameters shown below. Default arguments pro
 Audio & Audio::operator=(const Audio &)=delete
 ~~~
 
-**Access:** public  **Returns:** `Audio &`
+**Access:** public  **Returns:** `Audio &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1090,7 +1090,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 ITrack & ITrack::operator=(const ITrack &)=delete
 ~~~
 
-**Access:** public  **Returns:** `ITrack &`
+**Access:** public  **Returns:** `ITrack &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1104,7 +1104,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 ITrack & ITrack::operator=(ITrack &&)=delete
 ~~~
 
-**Access:** public  **Returns:** `ITrack &`
+**Access:** public  **Returns:** `ITrack &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1118,7 +1118,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 Track_Pool & Track_Pool::operator=(const Track_Pool &)=delete
 ~~~
 
-**Access:** public  **Returns:** `Track_Pool &`
+**Access:** public  **Returns:** `Track_Pool &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1132,7 +1132,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 Track_Pool & Track_Pool::operator=(Track_Pool &&)=delete
 ~~~
 
-**Access:** public  **Returns:** `Track_Pool &`
+**Access:** public  **Returns:** `Track_Pool &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1146,7 +1146,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 void Audio::pause()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Pauses playback of the audio file if it is playing.
 
@@ -1158,7 +1158,7 @@ Pauses playback of the audio file if it is playing.
 void Audio::play()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Plays the loaded audio file from the beginning, stopping any currently playing audio.
 
@@ -1170,7 +1170,7 @@ Plays the loaded audio file from the beginning, stopping any currently playing a
 void Audio::play_fnf()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Plays the loaded audio file from the beginning, stopping any currently playing audio.
 
@@ -1182,7 +1182,7 @@ Plays the loaded audio file from the beginning, stopping any currently playing a
 void Track_Pool::release_track(ITrack *track)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Releases a track back to the pool, making it available for reuse.
 
@@ -1196,7 +1196,7 @@ Releases a track back to the pool, making it available for reuse.
 void Audio::resolve_engine_defaults()
 ~~~
 
-**Access:** private  **Returns:** ``void``
+**Access:** private  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component out of its active state or ends the current operation. Any retained resource ownership remains governed by the owning class.
 
@@ -1208,7 +1208,7 @@ Moves the component out of its active state or ends the current operation. Any r
 void Audio::resume()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Resumes playback of the audio file if it is paused.
 
@@ -1220,7 +1220,7 @@ Resumes playback of the audio file if it is paused.
 void Track_Pool::set_default_track_count(uint8_t count)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the number of default tracks to maintain in the pool.
 
@@ -1234,7 +1234,7 @@ Sets the number of default tracks to maintain in the pool.
 void Track_Pool::set_dynamic_track_lifetime(size_t index, uint32_t lifetime)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the lifetime of a dynamic track in frames.
 
@@ -1249,7 +1249,7 @@ Sets the lifetime of a dynamic track in frames.
 void Track_Pool::set_fps(float fps)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the frames per second (FPS) value used for lifetime calculations of dynamic tracks.
 
@@ -1263,7 +1263,7 @@ Sets the frames per second (FPS) value used for lifetime calculations of dynamic
 void Audio::set_gain(float gain)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the gain (volume) of the audio file.
 
@@ -1277,7 +1277,7 @@ Sets the gain (volume) of the audio file.
 void Audio::set_logger(Logger *logger)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the logger to be used for logging messages from the Audio class.
 
@@ -1291,7 +1291,7 @@ Sets the logger to be used for logging messages from the Audio class.
 void Track_Pool::set_logger(Logger *logger)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the logger to be used for logging messages from the track pool.
 
@@ -1305,7 +1305,7 @@ Sets the logger to be used for logging messages from the track pool.
 void Audio::set_loop_count(int loop_count)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the the loop count of the audio file.
 
@@ -1319,7 +1319,7 @@ Sets the the loop count of the audio file.
 void Track_Pool::set_master_gain(float gain)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the master gain (volume) for all tracks in the pool.
 
@@ -1333,7 +1333,7 @@ Sets the master gain (volume) for all tracks in the pool.
 void Audio::set_mixer(MIX_Mixer *new_mixer)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the SDL_Mixer instance to be used for audio playback.
 
@@ -1347,7 +1347,7 @@ Sets the SDL_Mixer instance to be used for audio playback.
 void Track_Pool::set_mixer(MIX_Mixer *mixer)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the SDL_Mixer instance to be used for audio playback.
 
@@ -1361,7 +1361,7 @@ Sets the SDL_Mixer instance to be used for audio playback.
 void Audio::set_panning(float panning)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the panning of the audio file.
 
@@ -1375,7 +1375,7 @@ Sets the panning of the audio file.
 void Audio::set_pitch(float pitch)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the pitch of the audio file.
 
@@ -1389,7 +1389,7 @@ Sets the pitch of the audio file.
 void Audio::set_position(const Vec3 &position)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the 3D position of the audio file.
 
@@ -1403,7 +1403,7 @@ Sets the 3D position of the audio file.
 void Audio::set_props(const Audio_Props &props)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the properties of the audio file.
 
@@ -1417,7 +1417,7 @@ Sets the properties of the audio file.
 void Audio::set_track_pool(Track_Pool *track_pool)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the track pool to be used for audio playback.
 
@@ -1431,7 +1431,7 @@ Sets the track pool to be used for audio playback.
 void Track_Pool::shutdown()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component into its active state and makes it eligible for subsequent updates or playback. Repeated calls follow the state rules of the owning type.
 
@@ -1443,7 +1443,7 @@ Moves the component into its active state and makes it eligible for subsequent u
 void Audio::stop()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Stops playback of the audio file.
 
@@ -1455,7 +1455,7 @@ Stops playback of the audio file.
 Track_Pool::Track_Pool()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Moves the component out of its active state or ends the current operation. Any retained resource ownership remains governed by the owning class.
 
@@ -1467,7 +1467,7 @@ Moves the component out of its active state or ends the current operation. Any r
 Track_Pool::Track_Pool(const Track_Pool &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Track_Pool value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1481,7 +1481,7 @@ Constructs a Track_Pool value from the parameters shown below. Default arguments
 Track_Pool::Track_Pool(MIX_Mixer *mixer, uint8_t default_track_count=8, Logger *logger=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Track_Pool value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1497,7 +1497,7 @@ Constructs a Track_Pool value from the parameters shown below. Default arguments
 Track_Pool::Track_Pool(Track_Pool &&)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Track_Pool value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1511,7 +1511,7 @@ Constructs a Track_Pool value from the parameters shown below. Default arguments
 void Audio::unload()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Unloads the currently loaded audio file from memory.
 
@@ -1523,7 +1523,7 @@ Unloads the currently loaded audio file from memory.
 void Track_Pool::update_track(ITrack *track, const Audio_Props &props)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the properties of a track.
 
@@ -1549,7 +1549,7 @@ music.play();
 Localization::~Localization()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -1561,7 +1561,7 @@ Removes or releases the selected state from this engine component. References to
 void Localization::clear()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Clears all loaded localization tables.
 
@@ -1573,7 +1573,7 @@ Clears all loaded localization tables.
 std::string Localization::format(const std::string &key, const std::unordered_map< std::string, std::string > &values) const
 ~~~
 
-**Access:** public  **Returns:** ``std::string``
+**Access:** public  **Returns:** ``std::string``  **Engine version:** Potato Engine 1.0.0
 
 Retrieves a localized string and replaces placeholders.
 
@@ -1588,7 +1588,7 @@ Retrieves a localized string and replaces placeholders.
 std::string Localization::get(const std::string &key) const
 ~~~
 
-**Access:** public  **Returns:** ``std::string``
+**Access:** public  **Returns:** ``std::string``  **Engine version:** Potato Engine 1.0.0
 
 Retrieves a localized string by key.
 
@@ -1602,7 +1602,7 @@ Retrieves a localized string by key.
 const std::string & Localization::get_current_tag() const
 ~~~
 
-**Access:** public  **Returns:** ``const std::string &``
+**Access:** public  **Returns:** ``const std::string &``  **Engine version:** Potato Engine 1.0.0
 
 Gets the currently active localization tag.
 
@@ -1614,7 +1614,7 @@ Gets the currently active localization tag.
 const std::string & Localization::get_fallback_tag() const
 ~~~
 
-**Access:** public  **Returns:** ``const std::string &``
+**Access:** public  **Returns:** ``const std::string &``  **Engine version:** Potato Engine 1.0.0
 
 Gets the fallback localization tag.
 
@@ -1626,7 +1626,7 @@ Gets the fallback localization tag.
 bool Localization::has_key(const std::string &key) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether a key exists in the current or fallback tag.
 
@@ -1640,7 +1640,7 @@ Checks whether a key exists in the current or fallback tag.
 bool Localization::has_tag(const std::string &tag) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks whether a tag exists.
 
@@ -1654,7 +1654,7 @@ Checks whether a tag exists.
 bool Localization::load(const std::string &tag, const std::string &path)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Loads a localization JSON file and stores it under a tag.
 
@@ -1669,7 +1669,7 @@ Loads a localization JSON file and stores it under a tag.
 Localization::Localization()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -1681,7 +1681,7 @@ Removes or releases the selected state from this engine component. References to
 Localization::Localization(const Localization &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Localization value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1695,7 +1695,7 @@ Constructs a Localization value from the parameters shown below. Default argumen
 Localization::Localization(const std::string &default_tag, const std::string &fallback_tag, Logger *logger=nullptr)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Localization instance with default and fallback tags.
 
@@ -1711,7 +1711,7 @@ Constructs a Localization instance with default and fallback tags.
 Localization & Localization::operator=(const Localization &)=delete
 ~~~
 
-**Access:** public  **Returns:** `Localization &`
+**Access:** public  **Returns:** `Localization &`  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Localization value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1725,7 +1725,7 @@ Constructs a Localization value from the parameters shown below. Default argumen
 bool Localization::set_current_tag(const std::string &tag)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Sets the currently active localization tag.
 
@@ -1739,7 +1739,7 @@ Sets the currently active localization tag.
 void Localization::set_fallback_tag(const std::string &tag)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the fallback tag used when a key is missing in the current tag.
 
@@ -1753,7 +1753,7 @@ Sets the fallback tag used when a key is missing in the current tag.
 void Localization::set_logger(Logger *logger)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the logger instance for logging missing keys and other messages.
 
@@ -1768,6 +1768,7 @@ Localization strings;
 strings.load("en-US", "assets/locales/en-US.json");
 std::string title = strings.get("menu.title");
 ~~~
+
 
 
 

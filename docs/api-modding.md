@@ -38,7 +38,7 @@ if (!started) logger.log(Log_Level::ERROR, "Mods", error);
 static bool potato::modding::mod_manager::applies_to(mod_side declared_side, mod_side runtime_side)
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** ``bool``
+**Access:** public  **Storage:** static  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the applies to operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -53,7 +53,7 @@ Performs the applies to operation for the owning engine component. The exact inp
 static std::string potato::modding::mod_manager::canonical_name(const std::string &value)
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** ``std::string``
+**Access:** public  **Storage:** static  **Returns:** ``std::string``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -67,7 +67,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 std::vector< std::filesystem::path > potato::modding::mod_manager::content_paths(const std::string &group, mod_side runtime_side) const
 ~~~
 
-**Access:** public  **Returns:** ``std::vector< std::filesystem::path >``
+**Access:** public  **Returns:** ``std::vector< std::filesystem::path >``  **Engine version:** Potato Engine 1.0.0
 
 Performs the content paths operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -82,7 +82,7 @@ Performs the content paths operation for the owning engine component. The exact 
 bool potato::modding::mod_manager::discover(const std::filesystem::path &mods_path, const std::string &expected_game_api_version, std::string *error=nullptr)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Reads, validates, or prepares the requested resource from the supplied input. Use the return value or error output to detect a failed operation before using the result.
 
@@ -98,7 +98,7 @@ Reads, validates, or prepares the requested resource from the supplied input. Us
 bool potato::modding::mod_manager::empty() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -110,7 +110,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 const std::vector< mod_export > * potato::modding::mod_manager::exports(const mod_manifest &manifest, const std::string &group) const
 ~~~
 
-**Access:** public  **Returns:** `const std::vector< mod_export > *`
+**Access:** public  **Returns:** `const std::vector< mod_export > *`  **Engine version:** Potato Engine 1.0.0
 
 Performs the exports operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -125,7 +125,7 @@ Performs the exports operation for the owning engine component. The exact inputs
 static bool potato::modding::mod_manager::is_snake_case(const std::string &value)
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** ``bool``
+**Access:** public  **Storage:** static  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -139,7 +139,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 const std::vector< mod_manifest > & potato::modding::mod_manager::mods() const
 ~~~
 
-**Access:** public  **Returns:** `const std::vector< mod_manifest > &`
+**Access:** public  **Returns:** `const std::vector< mod_manifest > &`  **Engine version:** Potato Engine 1.0.0
 
 Performs the mods operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -151,7 +151,7 @@ Performs the mods operation for the owning engine component. The exact inputs, r
 static std::string potato::modding::mod_manager::qualified_id(const std::string &mod_id, const std::string &local_id)
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** ``std::string``
+**Access:** public  **Storage:** static  **Returns:** ``std::string``  **Engine version:** Potato Engine 1.0.0
 
 Performs the qualified id operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -166,7 +166,7 @@ Performs the qualified id operation for the owning engine component. The exact i
 const std::filesystem::path & potato::modding::mod_manager::root_path() const
 ~~~
 
-**Access:** public  **Returns:** ``const std::filesystem::path &``
+**Access:** public  **Returns:** ``const std::filesystem::path &``  **Engine version:** Potato Engine 1.0.0
 
 Performs the root path operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -178,7 +178,7 @@ Performs the root path operation for the owning engine component. The exact inpu
 std::vector< std::filesystem::path > potato::modding::mod_manager::script_paths(const mod_manifest &manifest, mod_side runtime_side) const
 ~~~
 
-**Access:** public  **Returns:** ``std::vector< std::filesystem::path >``
+**Access:** public  **Returns:** ``std::vector< std::filesystem::path >``  **Engine version:** Potato Engine 1.0.0
 
 Performs the script paths operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -193,7 +193,7 @@ Performs the script paths operation for the owning engine component. The exact i
 std::string potato::modding::mod_manager::shared_mod_hash() const
 ~~~
 
-**Access:** public  **Returns:** ``std::string``
+**Access:** public  **Returns:** ``std::string``  **Engine version:** Potato Engine 1.0.0
 
 Performs the shared mod hash operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -214,7 +214,7 @@ mods.discover("mods", "1.0.0");
 potato::modding::angel_script_runtime::~angel_script_runtime()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Header usage example value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -226,7 +226,7 @@ Constructs a Header usage example value from the parameters shown below. Default
 potato::modding::angel_script_runtime::angel_script_runtime()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Performs the angel script runtime operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -238,7 +238,7 @@ Performs the angel script runtime operation for the owning engine component. The
 potato::modding::angel_script_runtime::angel_script_runtime(const angel_script_runtime &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Performs the angel script runtime operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -252,7 +252,7 @@ Performs the angel script runtime operation for the owning engine component. The
 bool potato::modding::angel_script_runtime::build_mod(const mod_manifest &manifest, const std::vector< std::filesystem::path > &script_paths, mod_side runtime_side, std::string *error=nullptr)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Reads, validates, or prepares the requested resource from the supplied input. Use the return value or error output to detect a failed operation before using the result.
 
@@ -269,7 +269,7 @@ Reads, validates, or prepares the requested resource from the supplied input. Us
 asIScriptEngine * potato::modding::angel_script_runtime::engine() const
 ~~~
 
-**Access:** public  **Returns:** ``asIScriptEngine *``
+**Access:** public  **Returns:** ``asIScriptEngine *``  **Engine version:** Potato Engine 1.0.0
 
 Performs the engine operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -281,7 +281,7 @@ Performs the engine operation for the owning engine component. The exact inputs,
 bool potato::modding::angel_script_runtime::execute(asIScriptFunction *function, const std::vector< void * > &object_arguments={}, std::string *error=nullptr)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the execute operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -297,7 +297,7 @@ Performs the execute operation for the owning engine component. The exact inputs
 asIScriptFunction * potato::modding::angel_script_runtime::find_function(const std::string &mod_id, mod_side runtime_side, const std::string &declaration) const
 ~~~
 
-**Access:** public  **Returns:** ``asIScriptFunction *``
+**Access:** public  **Returns:** ``asIScriptFunction *``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -313,7 +313,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 bool potato::modding::angel_script_runtime::initialize(script_log_sink log_sink, std::string *error=nullptr)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the initialize operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -328,7 +328,7 @@ Performs the initialize operation for the owning engine component. The exact inp
 bool potato::modding::angel_script_runtime::initialized() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -340,7 +340,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 std::size_t potato::modding::angel_script_runtime::line_budget() const
 ~~~
 
-**Access:** public  **Returns:** ``std::size_t``
+**Access:** public  **Returns:** ``std::size_t``  **Engine version:** Potato Engine 1.0.0
 
 Performs the line budget operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -352,7 +352,7 @@ Performs the line budget operation for the owning engine component. The exact in
 static std::string potato::modding::angel_script_runtime::module_key(const std::string &mod_id, mod_side side)
 ~~~
 
-**Access:** private  **Storage:** static  **Returns:** ``std::string``
+**Access:** private  **Storage:** static  **Returns:** ``std::string``  **Engine version:** Potato Engine 1.0.0
 
 Performs the module key operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -367,7 +367,7 @@ Performs the module key operation for the owning engine component. The exact inp
 angel_script_runtime & potato::modding::angel_script_runtime::operator=(const angel_script_runtime &)=delete
 ~~~
 
-**Access:** public  **Returns:** `angel_script_runtime &`
+**Access:** public  **Returns:** `angel_script_runtime &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -381,7 +381,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 void potato::modding::angel_script_runtime::set_line_budget(std::size_t value)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -395,7 +395,7 @@ Updates the selected property using the supplied value. The change applies to su
 void potato::modding::angel_script_runtime::shutdown()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component out of its active state or ends the current operation. Any retained resource ownership remains governed by the owning class.
 
@@ -407,7 +407,7 @@ Moves the component out of its active state or ends the current operation. Any r
 void potato::modding::angel_script_runtime::write_log(script_log_level level, const std::string &category, const std::string &message) const
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the write log operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -433,7 +433,7 @@ runtime.set_line_budget(10000);
 const mod_service_config & potato::modding::mod_service::config() const
 ~~~
 
-**Access:** public  **Returns:** `const mod_service_config &`
+**Access:** public  **Returns:** `const mod_service_config &`  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Header usage example value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -445,7 +445,7 @@ Constructs a Header usage example value from the parameters shown below. Default
 bool potato::modding::mod_service::discover(const mod_service_config &config, std::string *error=nullptr)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Reads, validates, or prepares the requested resource from the supplied input. Use the return value or error output to detect a failed operation before using the result.
 
@@ -460,7 +460,7 @@ Reads, validates, or prepares the requested resource from the supplied input. Us
 bool potato::modding::mod_service::discovered() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -472,7 +472,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 bool potato::modding::mod_service::failed() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -484,7 +484,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 const mod_manager & potato::modding::mod_service::manager() const
 ~~~
 
-**Access:** public  **Returns:** `const mod_manager &`
+**Access:** public  **Returns:** `const mod_manager &`  **Engine version:** Potato Engine 1.0.0
 
 Performs the manager operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -496,7 +496,7 @@ Performs the manager operation for the owning engine component. The exact inputs
 mod_side potato::modding::mod_service::runtime_side() const
 ~~~
 
-**Access:** public  **Returns:** `mod_side`
+**Access:** public  **Returns:** `mod_side`  **Engine version:** Potato Engine 1.0.0
 
 Performs the runtime side operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -508,7 +508,7 @@ Performs the runtime side operation for the owning engine component. The exact i
 angel_script_runtime & potato::modding::mod_service::script_runtime()
 ~~~
 
-**Access:** public  **Returns:** `angel_script_runtime &`
+**Access:** public  **Returns:** `angel_script_runtime &`  **Engine version:** Potato Engine 1.0.0
 
 Performs the script runtime operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -520,7 +520,7 @@ Performs the script runtime operation for the owning engine component. The exact
 const angel_script_runtime & potato::modding::mod_service::script_runtime() const
 ~~~
 
-**Access:** public  **Returns:** `const angel_script_runtime &`
+**Access:** public  **Returns:** `const angel_script_runtime &`  **Engine version:** Potato Engine 1.0.0
 
 Performs the script runtime operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -532,7 +532,7 @@ Performs the script runtime operation for the owning engine component. The exact
 bool potato::modding::mod_service::scripts_started() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the scripts started operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -544,7 +544,7 @@ Performs the scripts started operation for the owning engine component. The exac
 void potato::modding::mod_service::shutdown_scripts()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component out of its active state or ends the current operation. Any retained resource ownership remains governed by the owning class.
 
@@ -556,7 +556,7 @@ Moves the component out of its active state or ends the current operation. Any r
 bool potato::modding::mod_service::start_scripts(mod_side runtime_side, script_log_sink log_sink, script_api_registrar register_script_api, mod_export_registrar register_mod_exports, std::string *error=nullptr)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component into its active state and makes it eligible for subsequent updates or playback. Repeated calls follow the state rules of the owning type.
 
@@ -574,6 +574,7 @@ Moves the component into its active state and makes it eligible for subsequent u
 potato::modding::mod_service service;
 service.discover(config);
 ~~~
+
 
 
 

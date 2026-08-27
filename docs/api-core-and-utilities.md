@@ -38,7 +38,7 @@ return application.run();
 Engine::Application::~Application()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Destroys the instance and releases the engine resources it owns. Objects borrowed from other services are not implicitly transferred unless the owning type states otherwise.
 
@@ -50,7 +50,7 @@ Destroys the instance and releases the engine resources it owns. Objects borrowe
 SDLstate::~SDLstate()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Destroys the instance and releases the engine resources it owns. Objects borrowed from other services are not implicitly transferred unless the owning type states otherwise.
 
@@ -62,7 +62,7 @@ Destroys the instance and releases the engine resources it owns. Objects borrowe
 Engine::Application::Application(config::game_config config={})
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Application value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -76,7 +76,7 @@ Constructs a Application value from the parameters shown below. Default argument
 Engine::Application::Application(const Application &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Application value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -90,7 +90,7 @@ Constructs a Application value from the parameters shown below. Default argument
 bool SDLstate::begin_frame()
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -102,7 +102,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 void SDLstate::clearup()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -114,7 +114,7 @@ Removes or releases the selected state from this engine component. References to
 RendererBackend SDLstate::get_renderer_backend() const
 ~~~
 
-**Access:** public  **Returns:** `RendererBackend`
+**Access:** public  **Returns:** `RendererBackend`  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -126,7 +126,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 std::uint16_t SDLstate::getlogicalheight() const
 ~~~
 
-**Access:** public  **Returns:** ``std::uint16_t``
+**Access:** public  **Returns:** ``std::uint16_t``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -138,7 +138,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 std::uint16_t SDLstate::getlogicalwidth() const
 ~~~
 
-**Access:** public  **Returns:** ``std::uint16_t``
+**Access:** public  **Returns:** ``std::uint16_t``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -150,7 +150,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 std::uint16_t SDLstate::getwindowheight() const
 ~~~
 
-**Access:** public  **Returns:** ``std::uint16_t``
+**Access:** public  **Returns:** ``std::uint16_t``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -162,7 +162,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 std::uint16_t SDLstate::getwindowwidth() const
 ~~~
 
-**Access:** public  **Returns:** ``std::uint16_t``
+**Access:** public  **Returns:** ``std::uint16_t``  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -174,7 +174,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 bool Engine::Application::initialize()
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the initialize operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -186,7 +186,7 @@ Performs the initialize operation for the owning engine component. The exact inp
 bool SDLstate::initiate(RendererBackend backend=RendererBackend::CPU)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the initiate operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -200,7 +200,7 @@ Performs the initiate operation for the owning engine component. The exact input
 bool SDLstate::is_gpu_renderer() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -212,7 +212,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 bool Engine::Application::is_initialized() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -224,7 +224,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 static bool config::load_config(const std::string &path, project_config &pconf, game_config &gconf, settings &settings)
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** ``bool``
+**Access:** public  **Storage:** static  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Reads, validates, or prepares the requested resource from the supplied input. Use the return value or error output to detect a failed operation before using the result.
 
@@ -241,7 +241,7 @@ Reads, validates, or prepares the requested resource from the supplied input. Us
 Application & Engine::Application::operator=(const Application &)=delete
 ~~~
 
-**Access:** public  **Returns:** `Application &`
+**Access:** public  **Returns:** `Application &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -255,7 +255,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 SDLstate & SDLstate::operator=(const SDLstate &)=delete
 ~~~
 
-**Access:** public  **Returns:** `SDLstate &`
+**Access:** public  **Returns:** `SDLstate &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -269,7 +269,7 @@ Implements the operator= operation for this engine type. The exact operand and r
 void SDLstate::present()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs a rendering-stage operation using the current engine state. Invoke it only while the relevant renderer and frame context are initialized.
 
@@ -281,7 +281,7 @@ Performs a rendering-stage operation using the current engine state. Invoke it o
 void Engine::quit()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the quit operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -293,7 +293,7 @@ Performs the quit operation for the owning engine component. The exact inputs, r
 int Engine::Application::run()
 ~~~
 
-**Access:** public  **Returns:** ``int``
+**Access:** public  **Returns:** ``int``  **Engine version:** Potato Engine 1.0.0
 
 Performs the run operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -305,7 +305,7 @@ Performs the run operation for the owning engine component. The exact inputs, re
 SDLstate::SDLstate(const SDLstate &)=delete
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a SDLstate value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -319,7 +319,7 @@ Constructs a SDLstate value from the parameters shown below. Default arguments p
 SDLstate::SDLstate(std::string title="Potato Engine", std::uint16_t window_width=1280, std::uint16_t window_height=720, std::uint16_t logical_width=1280, std::uint16_t logical_height=720)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a SDLstate value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -337,7 +337,7 @@ Constructs a SDLstate value from the parameters shown below. Default arguments p
 void Engine::Application::shutdown()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component out of its active state or ends the current operation. Any retained resource ownership remains governed by the owning class.
 
@@ -349,7 +349,7 @@ Moves the component out of its active state or ends the current operation. Any r
 bool Engine::using_gpu_renderer()
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the using gpu renderer operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -373,7 +373,7 @@ return app.run();
 Transform Transform::operator-(const Transform &other) const
 ~~~
 
-**Access:** public  **Returns:** `Transform`
+**Access:** public  **Returns:** `Transform`  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Header usage example value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -387,7 +387,7 @@ Constructs a Header usage example value from the parameters shown below. Default
 Vec Vec::operator-(const Vec &a) const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator- operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -401,7 +401,7 @@ Implements the operator- operation for this engine type. The exact operand and r
 Transform & Transform::operator-=(const Transform &other)
 ~~~
 
-**Access:** public  **Returns:** `Transform &`
+**Access:** public  **Returns:** `Transform &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator-= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -415,7 +415,7 @@ Implements the operator-= operation for this engine type. The exact operand and 
 Vec & Vec::operator-=(const Vec &b)
 ~~~
 
-**Access:** public  **Returns:** `Vec &`
+**Access:** public  **Returns:** `Vec &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator-= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -429,7 +429,7 @@ Implements the operator-= operation for this engine type. The exact operand and 
 bool Vec::operator!=(const Vec &a) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator!= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -443,7 +443,7 @@ Implements the operator!= operation for this engine type. The exact operand and 
 Transform Transform::operator*(float scalar) const
 ~~~
 
-**Access:** public  **Returns:** `Transform`
+**Access:** public  **Returns:** `Transform`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator* operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -457,7 +457,7 @@ Implements the operator* operation for this engine type. The exact operand and r
 Vec Vec::operator*(const Vec &a) const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Component-wise multiplication.
 
@@ -471,7 +471,7 @@ Component-wise multiplication.
 Vec Vec::operator*(float b) const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Scalar multiplication.
 
@@ -485,7 +485,7 @@ Scalar multiplication.
 Transform & Transform::operator*=(float scalar)
 ~~~
 
-**Access:** public  **Returns:** `Transform &`
+**Access:** public  **Returns:** `Transform &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator* operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -499,7 +499,7 @@ Implements the operator* operation for this engine type. The exact operand and r
 Vec & Vec::operator*=(const Vec &b)
 ~~~
 
-**Access:** public  **Returns:** `Vec &`
+**Access:** public  **Returns:** `Vec &`  **Engine version:** Potato Engine 1.0.0
 
 Component-wise multiply-assign.
 
@@ -513,7 +513,7 @@ Component-wise multiply-assign.
 Vec & Vec::operator*=(float b)
 ~~~
 
-**Access:** public  **Returns:** `Vec &`
+**Access:** public  **Returns:** `Vec &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator*= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -527,7 +527,7 @@ Implements the operator*= operation for this engine type. The exact operand and 
 Transform Transform::operator/(float scalar) const
 ~~~
 
-**Access:** public  **Returns:** `Transform`
+**Access:** public  **Returns:** `Transform`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator/ operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -541,7 +541,7 @@ Implements the operator/ operation for this engine type. The exact operand and r
 Vec Vec::operator/(float b) const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Scalar division. Behaviour is undefined if b is zero.
 
@@ -555,7 +555,7 @@ Scalar division. Behaviour is undefined if b is zero.
 Transform & Transform::operator/=(float scalar)
 ~~~
 
-**Access:** public  **Returns:** `Transform &`
+**Access:** public  **Returns:** `Transform &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator/ operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -569,7 +569,7 @@ Implements the operator/ operation for this engine type. The exact operand and r
 Vec & Vec::operator/=(float b)
 ~~~
 
-**Access:** public  **Returns:** `Vec &`
+**Access:** public  **Returns:** `Vec &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator/= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -583,7 +583,7 @@ Implements the operator/= operation for this engine type. The exact operand and 
 Transform Transform::operator+(const Transform &other) const
 ~~~
 
-**Access:** public  **Returns:** `Transform`
+**Access:** public  **Returns:** `Transform`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator+ operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -597,7 +597,7 @@ Implements the operator+ operation for this engine type. The exact operand and r
 Vec Vec::operator+(const Vec &a) const
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator+ operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -611,7 +611,7 @@ Implements the operator+ operation for this engine type. The exact operand and r
 Transform & Transform::operator+=(const Transform &other)
 ~~~
 
-**Access:** public  **Returns:** `Transform &`
+**Access:** public  **Returns:** `Transform &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator+= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -625,7 +625,7 @@ Implements the operator+= operation for this engine type. The exact operand and 
 Vec & Vec::operator+=(const Vec &a)
 ~~~
 
-**Access:** public  **Returns:** `Vec &`
+**Access:** public  **Returns:** `Vec &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator+= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -639,7 +639,7 @@ Implements the operator+= operation for this engine type. The exact operand and 
 bool Vec::operator<(const Vec &a) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 True only if both x and y are strictly less.
 
@@ -653,7 +653,7 @@ True only if both x and y are strictly less.
 bool Vec::operator<=(const Vec &a) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator< operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -667,7 +667,7 @@ Implements the operator< operation for this engine type. The exact operand and r
 bool Vec::operator==(const Vec &a) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator== operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -681,7 +681,7 @@ Implements the operator== operation for this engine type. The exact operand and 
 bool Vec::operator>(const Vec &a) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 True only if both x and y are strictly greater.
 
@@ -695,7 +695,7 @@ True only if both x and y are strictly greater.
 bool Vec::operator>=(const Vec &a) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator> operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -709,7 +709,7 @@ Implements the operator> operation for this engine type. The exact operand and r
 Transform::Transform()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Transform value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -721,7 +721,7 @@ Constructs a Transform value from the parameters shown below. Default arguments 
 Transform::Transform(const Vec &pos, const Vec &size, const Vec &rotation)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Transform with given position, size, and rotation.
 
@@ -737,7 +737,7 @@ Constructs a Transform with given position, size, and rotation.
 Transform::Transform(const Vec &pos, const Vec &size)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Transform with given position and size.
 
@@ -752,7 +752,7 @@ Constructs a Transform with given position and size.
 Transform::Transform(const Vec &pos)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Transform with given position.
 
@@ -766,7 +766,7 @@ Constructs a Transform with given position.
 Vec::Vec()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Transform value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -778,7 +778,7 @@ Constructs a Transform value from the parameters shown below. Default arguments 
 Vec::Vec(float x, float y)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Vec with given x and y values.
 
@@ -803,7 +803,7 @@ player.pos += velocity * delta_seconds;
 static const Color Color::black()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined black color (0, 0, 0, 255).
 
@@ -815,7 +815,7 @@ Predefined black color (0, 0, 0, 255).
 static const Color Color::blue()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined blue color (0, 0, 255, 255).
 
@@ -827,7 +827,7 @@ Predefined blue color (0, 0, 255, 255).
 static const Color Color::brown()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined brown color (165, 42, 42, 255).
 
@@ -839,7 +839,7 @@ Predefined brown color (165, 42, 42, 255).
 Color::Color()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Color with specified red, green, blue, and alpha values.
 
@@ -851,7 +851,7 @@ Constructs a Color with specified red, green, blue, and alpha values.
 Color::Color(const SDL_Color &color)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Color from an SDL_Color.
 
@@ -865,7 +865,7 @@ Constructs a Color from an SDL_Color.
 Color::Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a=255)
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Color with specified red, green, blue, and alpha values.
 
@@ -882,7 +882,7 @@ Constructs a Color with specified red, green, blue, and alpha values.
 static const Color Color::cyan()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined cyan color (0, 255, 255, 255).
 
@@ -894,7 +894,7 @@ Predefined cyan color (0, 255, 255, 255).
 static const Color Color::dark_blue()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined dark blue color (0, 0, 139, 255).
 
@@ -906,7 +906,7 @@ Predefined dark blue color (0, 0, 139, 255).
 static const Color Color::dark_cyan()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined dark cyan color (0, 139, 139, 255).
 
@@ -918,7 +918,7 @@ Predefined dark cyan color (0, 139, 139, 255).
 static const Color Color::dark_gray()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined dark gray color (169, 169, 169, 255).
 
@@ -930,7 +930,7 @@ Predefined dark gray color (169, 169, 169, 255).
 static const Color Color::dark_green()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined dark green color (0, 100, 0, 255).
 
@@ -942,7 +942,7 @@ Predefined dark green color (0, 100, 0, 255).
 static const Color Color::dark_magenta()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined dark magenta color (139, 0, 139, 255).
 
@@ -954,7 +954,7 @@ Predefined dark magenta color (139, 0, 139, 255).
 static const Color Color::dark_red()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined dark red color (139, 0, 0, 255).
 
@@ -966,7 +966,7 @@ Predefined dark red color (139, 0, 0, 255).
 static const Color Color::dark_yellow()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined dark yellow color (204, 204, 0, 255).
 
@@ -978,7 +978,7 @@ Predefined dark yellow color (204, 204, 0, 255).
 static Color Color::from_hex(uint32_t hex)
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `Color`
+**Access:** public  **Storage:** static  **Returns:** `Color`  **Engine version:** Potato Engine 1.0.0
 
 Creates a Color from a hexadecimal value.
 
@@ -992,7 +992,7 @@ Creates a Color from a hexadecimal value.
 static Color Color::from_hex_string(std::string hex_string)
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `Color`
+**Access:** public  **Storage:** static  **Returns:** `Color`  **Engine version:** Potato Engine 1.0.0
 
 Creates a Color from a hexadecimal string.
 
@@ -1006,7 +1006,7 @@ Creates a Color from a hexadecimal string.
 static Color Color::from_sdl_color(const SDL_Color &color)
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `Color`
+**Access:** public  **Storage:** static  **Returns:** `Color`  **Engine version:** Potato Engine 1.0.0
 
 Creates a Color from an SDL_Color.
 
@@ -1020,7 +1020,7 @@ Creates a Color from an SDL_Color.
 static const Color Color::gray()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined gray color (128, 128, 128, 255).
 
@@ -1032,7 +1032,7 @@ Predefined gray color (128, 128, 128, 255).
 static const Color Color::green()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined green color (0, 255, 0, 255).
 
@@ -1044,7 +1044,7 @@ Predefined green color (0, 255, 0, 255).
 static const Color Color::light_blue()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined light blue color (173, 216, 230, 255).
 
@@ -1056,7 +1056,7 @@ Predefined light blue color (173, 216, 230, 255).
 static const Color Color::light_cyan()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined light cyan color (224, 255, 255, 255).
 
@@ -1068,7 +1068,7 @@ Predefined light cyan color (224, 255, 255, 255).
 static const Color Color::light_gray()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined light gray color (211, 211, 211, 255).
 
@@ -1080,7 +1080,7 @@ Predefined light gray color (211, 211, 211, 255).
 static const Color Color::light_green()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined light green color (144, 238, 144, 255).
 
@@ -1092,7 +1092,7 @@ Predefined light green color (144, 238, 144, 255).
 static const Color Color::light_magenta()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined light magenta color (255, 182, 255, 255).
 
@@ -1104,7 +1104,7 @@ Predefined light magenta color (255, 182, 255, 255).
 static const Color Color::light_red()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined light red color (255, 182, 193, 255).
 
@@ -1116,7 +1116,7 @@ Predefined light red color (255, 182, 193, 255).
 static const Color Color::light_yellow()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined light yellow color (255, 255, 224, 255).
 
@@ -1128,7 +1128,7 @@ Predefined light yellow color (255, 255, 224, 255).
 static const Color Color::magenta()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined magenta color (255, 0, 255, 255).
 
@@ -1140,7 +1140,7 @@ Predefined magenta color (255, 0, 255, 255).
 Color Color::operator-(const Color &other) const
 ~~~
 
-**Access:** public  **Returns:** `Color`
+**Access:** public  **Returns:** `Color`  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Vec value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -1154,7 +1154,7 @@ Constructs a Vec value from the parameters shown below. Default arguments provid
 Color & Color::operator-=(const Color &other)
 ~~~
 
-**Access:** public  **Returns:** `Color &`
+**Access:** public  **Returns:** `Color &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator-= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1168,7 +1168,7 @@ Implements the operator-= operation for this engine type. The exact operand and 
 bool Color::operator!=(const Color &other) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator!= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1182,7 +1182,7 @@ Implements the operator!= operation for this engine type. The exact operand and 
 Color Color::operator*(float scalar) const
 ~~~
 
-**Access:** public  **Returns:** `Color`
+**Access:** public  **Returns:** `Color`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator* operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1196,7 +1196,7 @@ Implements the operator* operation for this engine type. The exact operand and r
 Color & Color::operator*=(float scalar)
 ~~~
 
-**Access:** public  **Returns:** `Color &`
+**Access:** public  **Returns:** `Color &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator*= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1210,7 +1210,7 @@ Implements the operator*= operation for this engine type. The exact operand and 
 Color Color::operator/(float scalar) const
 ~~~
 
-**Access:** public  **Returns:** `Color`
+**Access:** public  **Returns:** `Color`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator/ operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1224,7 +1224,7 @@ Implements the operator/ operation for this engine type. The exact operand and r
 Color & Color::operator/=(float scalar)
 ~~~
 
-**Access:** public  **Returns:** `Color &`
+**Access:** public  **Returns:** `Color &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator/= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1238,7 +1238,7 @@ Implements the operator/= operation for this engine type. The exact operand and 
 Color Color::operator+(const Color &other) const
 ~~~
 
-**Access:** public  **Returns:** `Color`
+**Access:** public  **Returns:** `Color`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator+ operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1252,7 +1252,7 @@ Implements the operator+ operation for this engine type. The exact operand and r
 Color & Color::operator+=(const Color &other)
 ~~~
 
-**Access:** public  **Returns:** `Color &`
+**Access:** public  **Returns:** `Color &`  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator+= operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1266,7 +1266,7 @@ Implements the operator+= operation for this engine type. The exact operand and 
 bool Color::operator==(const Color &other) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Implements the operator== operation for this engine type. The exact operand and result types are shown in the signature, including disabled copy or assignment overloads.
 
@@ -1280,7 +1280,7 @@ Implements the operator== operation for this engine type. The exact operand and 
 static const Color Color::orange()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined orange color (255, 165, 0, 255).
 
@@ -1292,7 +1292,7 @@ Predefined orange color (255, 165, 0, 255).
 static const Color Color::pink()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined pink color (255, 192, 203, 255).
 
@@ -1304,7 +1304,7 @@ Predefined pink color (255, 192, 203, 255).
 static const Color Color::purple()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined purple color (128, 0, 128, 255).
 
@@ -1316,7 +1316,7 @@ Predefined purple color (128, 0, 128, 255).
 static const Color Color::red()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined red color (255, 0, 0, 255).
 
@@ -1328,7 +1328,7 @@ Predefined red color (255, 0, 0, 255).
 SDL_Color Color::to_sdl_color() const
 ~~~
 
-**Access:** public  **Returns:** ``SDL_Color``
+**Access:** public  **Returns:** ``SDL_Color``  **Engine version:** Potato Engine 1.0.0
 
 Converts the Color to an SDL_Color.
 
@@ -1340,7 +1340,7 @@ Converts the Color to an SDL_Color.
 static const Color Color::transparent()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined transparent color (0, 0, 0, 0).
 
@@ -1352,7 +1352,7 @@ Predefined transparent color (0, 0, 0, 0).
 static const Color Color::white()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined white color (255, 255, 255, 255).
 
@@ -1364,7 +1364,7 @@ Predefined white color (255, 255, 255, 255).
 Color Color::with_alpha(uint8_t alpha) const
 ~~~
 
-**Access:** public  **Returns:** `Color`
+**Access:** public  **Returns:** `Color`  **Engine version:** Potato Engine 1.0.0
 
 Creates a Color with specified alpha value.
 
@@ -1378,7 +1378,7 @@ Creates a Color with specified alpha value.
 static const Color Color::yellow()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `const Color`
+**Access:** public  **Storage:** static  **Returns:** `const Color`  **Engine version:** Potato Engine 1.0.0
 
 Predefined yellow color (255, 255, 0, 255).
 
@@ -1399,7 +1399,7 @@ tint = tint.with_alpha(192);
 Vec abs(const Vec &a)
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Returns a vector with each component replaced by its absolute value.
 
@@ -1413,7 +1413,7 @@ Returns a vector with each component replaced by its absolute value.
 float angle(const Vec &a, const Vec &b)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Angle (radians) from point a to point b, measured from the positive X axis.
 
@@ -1428,7 +1428,7 @@ Angle (radians) from point a to point b, measured from the positive X axis.
 float angle_between(const Vec &a, const Vec &b)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Unsigned angle between two direction vectors (radians).
 
@@ -1443,7 +1443,7 @@ Unsigned angle between two direction vectors (radians).
 float angle_between_degrees(const Vec &a, const Vec &b)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Unsigned angle between two vectors in degrees. See angle_between().
 
@@ -1458,7 +1458,7 @@ Unsigned angle between two vectors in degrees. See angle_between().
 float angle_between_radians(const Vec &a, const Vec &b)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Alias for angle_between() — returns the unsigned angle in radians.
 
@@ -1473,7 +1473,7 @@ Alias for angle_between() — returns the unsigned angle in radians.
 float angle_between_signed(const Vec &a, const Vec &b)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Signed angle from a to b (radians). Positive = counter-clockwise.
 
@@ -1488,7 +1488,7 @@ Signed angle from a to b (radians). Positive = counter-clockwise.
 float angle_between_signed_degrees(const Vec &a, const Vec &b)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Signed angle from a to b in degrees. See angle_between_signed().
 
@@ -1503,7 +1503,7 @@ Signed angle from a to b in degrees. See angle_between_signed().
 float angle_between_signed_radians(const Vec &a, const Vec &b)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Alias for angle_between_signed() — returns the signed angle in radians.
 
@@ -1518,7 +1518,7 @@ Alias for angle_between_signed() — returns the signed angle in radians.
 Vec ceil(const Vec &a)
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Returns a vector with each component rounded up to the nearest integer.
 
@@ -1532,7 +1532,7 @@ Returns a vector with each component rounded up to the nearest integer.
 float clamp(float value, float min, float max)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Clamps a float value between a minimum and maximum.
 
@@ -1548,7 +1548,7 @@ Clamps a float value between a minimum and maximum.
 int clamp(int value, int min, int max)
 ~~~
 
-**Access:** public  **Returns:** ``int``
+**Access:** public  **Returns:** ``int``  **Engine version:** Potato Engine 1.0.0
 
 Clamps an integer value between a minimum and maximum.
 
@@ -1564,7 +1564,7 @@ Clamps an integer value between a minimum and maximum.
 Vec clamp(const Vec &a, const Vec &min, const Vec &max)
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Clamps each component of a between the corresponding components of min and max.
 
@@ -1580,7 +1580,7 @@ Clamps each component of a between the corresponding components of min and max.
 Vec convert_FRect_to_Vec(const SDL_FRect &rect)
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Extracts the top-left position {x, y} from an SDL_FRect as a Vec.
 
@@ -1594,7 +1594,7 @@ Extracts the top-left position {x, y} from an SDL_FRect as a Vec.
 SDL_FRect convert_Vec_to_FRect(const Vec &a, const Vec &size)
 ~~~
 
-**Access:** public  **Returns:** ``SDL_FRect``
+**Access:** public  **Returns:** ``SDL_FRect``  **Engine version:** Potato Engine 1.0.0
 
 Converts a position Vec and a size Vec into an SDL_FRect.
 
@@ -1609,7 +1609,7 @@ Converts a position Vec and a size Vec into an SDL_FRect.
 float cross(const Vec &a, const Vec &b)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 2D cross product (scalar). Positive if b is counter-clockwise from a.
 
@@ -1624,7 +1624,7 @@ float cross(const Vec &a, const Vec &b)
 float distance(const Vec &a, const Vec &b)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Calculates the distance between two Vec points.
 
@@ -1639,7 +1639,7 @@ Calculates the distance between two Vec points.
 float distance_squared(const Vec &a, const Vec &b)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Calculates the squared distance between two Vec points.
 
@@ -1654,7 +1654,7 @@ Calculates the squared distance between two Vec points.
 float dot(const Vec &a, const Vec &b)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Dot product of two vectors. Positive = same direction, 0 = perpendicular, negative = opposite.
 
@@ -1669,7 +1669,7 @@ Dot product of two vectors. Positive = same direction, 0 = perpendicular, negati
 Vec floor(const Vec &a)
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Returns a vector with each component rounded down to the nearest integer.
 
@@ -1683,7 +1683,7 @@ Returns a vector with each component rounded down to the nearest integer.
 void fullscreen_window(SDL_Window *window)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the SDL window to fullscreen mode if it is valid.
 
@@ -1697,7 +1697,7 @@ Sets the SDL window to fullscreen mode if it is valid.
 static Vec get_mouse_position()
 ~~~
 
-**Access:** public  **Storage:** static  **Returns:** `Vec`
+**Access:** public  **Storage:** static  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the current mouse position in logical coordinates. This function retrieves the current mouse position in window coordinates and converts it to logical coordinates based on the current SDL renderer.
 
@@ -1709,7 +1709,7 @@ Gets the current mouse position in logical coordinates. This function retrieves 
 Vec get_window_bottom_center()
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the bottom-center point of the window in logical coordinates as a Vec. This function calculates the bottom-center point of the SDL window based on its current size and returns it as a Vec.
 
@@ -1721,7 +1721,7 @@ Gets the bottom-center point of the window in logical coordinates as a Vec. This
 Vec get_window_bottom_left()
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the top-right corner of the window in logical coordinates as a Vec. This function calculates the top-right corner of the SDL window based on its current size and returns it as a Vec.
 
@@ -1733,7 +1733,7 @@ Gets the top-right corner of the window in logical coordinates as a Vec. This fu
 Vec get_window_bottom_right()
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the bottom-right corner of the window in logical coordinates as a Vec. This function calculates the bottom-right corner of the SDL window based on its current size and returns it as a Vec.
 
@@ -1745,7 +1745,7 @@ Gets the bottom-right corner of the window in logical coordinates as a Vec. This
 Vec get_window_center()
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the center of the window in logical coordinates as a Vec. This function calculates the center point of the SDL window based on its current size and returns it as a Vec.
 
@@ -1757,7 +1757,7 @@ Gets the center of the window in logical coordinates as a Vec. This function cal
 Vec get_window_left_center()
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the left-center point of the window in logical coordinates as a Vec. This function calculates the left-center point of the SDL window based on its current size and returns it as a Vec.
 
@@ -1769,7 +1769,7 @@ Gets the left-center point of the window in logical coordinates as a Vec. This f
 Vec get_window_right_center()
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the right-center point of the window in logical coordinates as a Vec. This function calculates the right-center point of the SDL window based on its current size and returns it as a Vec.
 
@@ -1781,7 +1781,7 @@ Gets the right-center point of the window in logical coordinates as a Vec. This 
 Vec get_window_size()
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the window size in logical coordinates as a Vec. This function retrieves the current size of the SDL window and returns it as a Vec, where x is the width and y is the height.
 
@@ -1793,7 +1793,7 @@ Gets the window size in logical coordinates as a Vec. This function retrieves th
 Vec get_window_top_center()
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the top-center point of the window in logical coordinates as a Vec. This function calculates the top-center point of the SDL window based on its current size and returns it as a Vec.
 
@@ -1805,7 +1805,7 @@ Gets the top-center point of the window in logical coordinates as a Vec. This fu
 Vec get_window_top_left()
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the top-left corner of the window in logical coordinates as a Vec. This function returns the top-left corner of the SDL window, which is always at (0, 0) in logical coordinates.
 
@@ -1817,7 +1817,7 @@ Gets the top-left corner of the window in logical coordinates as a Vec. This fun
 Vec get_window_top_right()
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Gets the bottom-left corner of the window in logical coordinates as a Vec. This function calculates the bottom-left corner of the SDL window based on its current size and returns it as a Vec.
 
@@ -1829,7 +1829,7 @@ Gets the bottom-left corner of the window in logical coordinates as a Vec. This 
 Vec invert(const Vec &a)
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Returns a vector pointing in the opposite direction (-x, -y).
 
@@ -1843,7 +1843,7 @@ Returns a vector pointing in the opposite direction (-x, -y).
 bool is_point_in_circle(const Vec &point, const Vec &circle_center, float radius)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Tests whether a point lies inside or on the boundary of a circle.
 
@@ -1859,7 +1859,7 @@ Tests whether a point lies inside or on the boundary of a circle.
 bool is_point_in_rect(const Vec &point, const Vec &rect_Vec, const SDL_FRect &rect)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Tests whether a point is inside an SDL_FRect offset by rect_Vec.
 
@@ -1875,7 +1875,7 @@ Tests whether a point is inside an SDL_FRect offset by rect_Vec.
 float length(const Vec &a)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Calculates the length (magnitude) of a Vec.
 
@@ -1889,7 +1889,7 @@ Calculates the length (magnitude) of a Vec.
 float length_squared(const Vec &a)
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Calculates the squared length (magnitude) of a Vec.
 
@@ -1903,7 +1903,7 @@ Calculates the squared length (magnitude) of a Vec.
 Vec lerp(const Vec &a, const Vec &b, float t)
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Linearly interpolates between two vectors.
 
@@ -1919,7 +1919,7 @@ Linearly interpolates between two vectors.
 void lerp_color(Color &color, const Color &target, float t)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Linearly interpolates between two colors.
 
@@ -1935,7 +1935,7 @@ Linearly interpolates between two colors.
 void maximize_window(SDL_Window *window)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Maximizes the SDL window if it is valid.
 
@@ -1949,7 +1949,7 @@ Maximizes the SDL window if it is valid.
 bool nearly_equal(const Vec &a, const Vec &b, float epsilon=0.01f)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Checks if two Vec points are nearly equal within a given epsilon.
 
@@ -1965,7 +1965,7 @@ Checks if two Vec points are nearly equal within a given epsilon.
 Vec normalize(const Vec &a)
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Returns a unit vector in the same direction as a. Returns {0,0} if a is zero.
 
@@ -1979,7 +1979,7 @@ Returns a unit vector in the same direction as a. Returns {0,0} if a is zero.
 void os_cursor_visibility(bool visible, Logger *logger=nullptr)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Changes the visibility of the OS cursor.
 
@@ -1994,7 +1994,7 @@ Changes the visibility of the OS cursor.
 Vec perpendicular(const Vec &a)
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Returns a vector perpendicular to a, rotated 90° counter-clockwise.
 
@@ -2008,7 +2008,7 @@ Returns a vector perpendicular to a, rotated 90° counter-clockwise.
 Vec reflect(const Vec &a, const Vec &normal)
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Reflects vector a off a surface with the given unit normal.
 
@@ -2023,7 +2023,7 @@ Reflects vector a off a surface with the given unit normal.
 Vec rotate(const Vec &a, float angle)
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Rotates vector a by angle degrees counter-clockwise.
 
@@ -2038,7 +2038,7 @@ Rotates vector a by angle degrees counter-clockwise.
 Vec round(const Vec &a)
 ~~~
 
-**Access:** public  **Returns:** `Vec`
+**Access:** public  **Returns:** `Vec`  **Engine version:** Potato Engine 1.0.0
 
 Returns a vector with each component rounded to the nearest integer.
 
@@ -2052,7 +2052,7 @@ Returns a vector with each component rounded to the nearest integer.
 void windowed_window(SDL_Window *window)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the SDL window to windowed mode if it is valid.
 
@@ -2075,7 +2075,7 @@ float separation = distance(origin, target);
 void Logger::close()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Flushes and closes the log file.
 
@@ -2087,7 +2087,7 @@ Flushes and closes the log file.
 void Logger::finalize_log()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Flushes and renames the log file to a timestamped filename. Call this on clean shutdown so the log is not overwritten next run.
 
@@ -2099,7 +2099,7 @@ Flushes and renames the log file to a timestamped filename. Call this on clean s
 void Logger::flood_logging(bool state)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Enables or disables flood logging (DEBUG messages every frame). Disable this in release builds to avoid log spam.
 
@@ -2113,7 +2113,7 @@ Enables or disables flood logging (DEBUG messages every frame). Disable this in 
 std::string Logger::format_line(Log_Level level, const std::string &category, const std::string &message)
 ~~~
 
-**Access:** private  **Returns:** ``std::string``
+**Access:** private  **Returns:** ``std::string``  **Engine version:** Potato Engine 1.0.0
 
 Performs the orange operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2129,7 +2129,7 @@ Performs the orange operation for the owning engine component. The exact inputs,
 void Logger::frame_indexing(bool state)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Enables or disables per-frame index prefixes in log lines.
 
@@ -2143,7 +2143,7 @@ Enables or disables per-frame index prefixes in log lines.
 std::string Logger::get_elapsed_time_string()
 ~~~
 
-**Access:** private  **Returns:** ``std::string``
+**Access:** private  **Returns:** ``std::string``  **Engine version:** Potato Engine 1.0.0
 
 Performs the frame indexing operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2155,7 +2155,7 @@ Performs the frame indexing operation for the owning engine component. The exact
 std::string Logger::get_logged_message()
 ~~~
 
-**Access:** public  **Returns:** ``std::string``
+**Access:** public  **Returns:** ``std::string``  **Engine version:** Potato Engine 1.0.0
 
 Retrieves the entire contents of the log file as a string.
 
@@ -2167,7 +2167,7 @@ Retrieves the entire contents of the log file as a string.
 Log_Level Logger::get_min_level() const
 ~~~
 
-**Access:** public  **Returns:** `Log_Level`
+**Access:** public  **Returns:** `Log_Level`  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -2179,7 +2179,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 void Logger::increment_frame_index()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Increments the internal frame counter by 1.
 
@@ -2191,7 +2191,7 @@ Increments the internal frame counter by 1.
 void Logger::init(const std::string &filepath="logs/latest.log")
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Opens the log file and starts the timer.
 
@@ -2205,7 +2205,7 @@ Opens the log file and starts the timer.
 bool Logger::is_flood_logging() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the increment frame index operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2217,7 +2217,7 @@ Performs the increment frame index operation for the owning engine component. Th
 bool Logger::is_initialized() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -2229,7 +2229,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 static const char * Logger::level_to_string(Log_Level level)
 ~~~
 
-**Access:** private  **Storage:** static  **Returns:** ``const char *``
+**Access:** private  **Storage:** static  **Returns:** ``const char *``  **Engine version:** Potato Engine 1.0.0
 
 Performs the level to string operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2243,7 +2243,7 @@ Performs the level to string operation for the owning engine component. The exac
 void Logger::log(Log_Level level, const std::string &category, const std::string &message)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Writes a message to the log (file + stdout).
 
@@ -2259,7 +2259,7 @@ Writes a message to the log (file + stdout).
 Logger::Logger()
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Performs the log operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2271,7 +2271,7 @@ Performs the log operation for the owning engine component. The exact inputs, re
 void Logger::set_frame_index(long index)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Manually sets the frame counter.
 
@@ -2285,7 +2285,7 @@ Manually sets the frame counter.
 void Logger::set_min_level(Log_Level level)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Sets the minimum level to log. Messages below this are ignored.
 
@@ -2309,7 +2309,7 @@ logger.log(Log_Level::INFO, "Game", "Started");
 float Timer::elapsed() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Updates the selected property using the supplied value. The change applies to subsequent engine processing and rendering unless the type documents deferred behavior.
 
@@ -2321,7 +2321,7 @@ Updates the selected property using the supplied value. The change applies to su
 bool Timer::is_just_done() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -2333,7 +2333,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 bool Timer::is_running() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -2345,7 +2345,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 float Timer::progress() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Performs the progress operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2357,7 +2357,7 @@ Performs the progress operation for the owning engine component. The exact input
 float Timer::remaining() const
 ~~~
 
-**Access:** public  **Returns:** ``float``
+**Access:** public  **Returns:** ``float``  **Engine version:** Potato Engine 1.0.0
 
 Performs the remaining operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2369,7 +2369,7 @@ Performs the remaining operation for the owning engine component. The exact inpu
 void Timer::start(float duration, std::function< void()> callback=nullptr)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Starts (or restarts) the timer.
 
@@ -2384,7 +2384,7 @@ Starts (or restarts) the timer.
 void Timer::stop()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Stops and resets the timer without invoking the callback.
 
@@ -2396,7 +2396,7 @@ Stops and resets the timer without invoking the callback.
 void Timer::tick(float delta_time)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Advances the timer. Call every frame from on_update(delta_time).
 
@@ -2410,7 +2410,7 @@ Advances the timer. Call every frame from on_update(delta_time).
 Timer::Timer()=default
 ~~~
 
-**Access:** public
+**Access:** public  **Engine version:** Potato Engine 1.0.0
 
 Moves the component into its active state and makes it eligible for subsequent updates or playback. Repeated calls follow the state rules of the owning type.
 
@@ -2432,7 +2432,7 @@ cooldown.tick(delta_seconds);
 rd & prandom::device()
 ~~~
 
-**Access:** public  **Returns:** `rd &`
+**Access:** public  **Returns:** `rd &`  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Header usage example value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2444,7 +2444,7 @@ Constructs a Header usage example value from the parameters shown below. Default
 mt & prandom::engine()
 ~~~
 
-**Access:** public  **Returns:** `mt &`
+**Access:** public  **Returns:** `mt &`  **Engine version:** Potato Engine 1.0.0
 
 Performs the engine operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2456,7 +2456,7 @@ Performs the engine operation for the owning engine component. The exact inputs,
 T prandom::random_choice(const std::vector< T > &choices)
 ~~~
 
-**Access:** public  **Returns:** ``T``
+**Access:** public  **Returns:** ``T``  **Engine version:** Potato Engine 1.0.0
 
 Produces a pseudo-random result constrained by the supplied range, collection, or weights. Ensure any referenced collection remains valid for the duration of the call.
 
@@ -2470,7 +2470,7 @@ Produces a pseudo-random result constrained by the supplied range, collection, o
 T prandom::random_choice_weighted(const std::vector< T > &choices, const std::vector< float > &weight)
 ~~~
 
-**Access:** public  **Returns:** ``T``
+**Access:** public  **Returns:** ``T``  **Engine version:** Potato Engine 1.0.0
 
 Produces a pseudo-random result constrained by the supplied range, collection, or weights. Ensure any referenced collection remains valid for the duration of the call.
 
@@ -2485,7 +2485,7 @@ Produces a pseudo-random result constrained by the supplied range, collection, o
 T prandom::random_choice_weighted(std::initializer_list< T > choices, std::initializer_list< float > weights)
 ~~~
 
-**Access:** public  **Returns:** ``T``
+**Access:** public  **Returns:** ``T``  **Engine version:** Potato Engine 1.0.0
 
 Produces a pseudo-random result constrained by the supplied range, collection, or weights. Ensure any referenced collection remains valid for the duration of the call.
 
@@ -2500,7 +2500,7 @@ Produces a pseudo-random result constrained by the supplied range, collection, o
 T prandom::random_range(T min, T max)
 ~~~
 
-**Access:** public  **Returns:** ``T``
+**Access:** public  **Returns:** ``T``  **Engine version:** Potato Engine 1.0.0
 
 Produces a pseudo-random result constrained by the supplied range, collection, or weights. Ensure any referenced collection remains valid for the duration of the call.
 
@@ -2515,7 +2515,7 @@ Produces a pseudo-random result constrained by the supplied range, collection, o
 T prandom::random_range_weighted(T min, T max, const std::vector< float > &weight)
 ~~~
 
-**Access:** public  **Returns:** ``T``
+**Access:** public  **Returns:** ``T``  **Engine version:** Potato Engine 1.0.0
 
 Produces a pseudo-random result constrained by the supplied range, collection, or weights. Ensure any referenced collection remains valid for the duration of the call.
 
@@ -2531,7 +2531,7 @@ Produces a pseudo-random result constrained by the supplied range, collection, o
 std::size_t prandom::random_weighted_index(const std::vector< float > &weights, Logger *logger=nullptr)
 ~~~
 
-**Access:** public  **Returns:** ``std::size_t``
+**Access:** public  **Returns:** ``std::size_t``  **Engine version:** Potato Engine 1.0.0
 
 Produces a pseudo-random result constrained by the supplied range, collection, or weights. Ensure any referenced collection remains valid for the duration of the call.
 
@@ -2554,7 +2554,7 @@ int damage = random_range(8, 12);
 void functionality_trigger::clear()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Header usage example value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2566,7 +2566,7 @@ Constructs a Header usage example value from the parameters shown below. Default
 bool functionality_trigger::evaluate(const std::string &trigger_id, const trigger_context &context={})
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the evaluate operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2581,7 +2581,7 @@ Performs the evaluate operation for the owning engine component. The exact input
 bool functionality_trigger::register_source(const std::string &trigger_id, const void *owner, trigger_source source)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Adds or registers data with the owning engine service. The caller must keep borrowed objects valid for as long as the receiving service uses them.
 
@@ -2597,7 +2597,7 @@ Adds or registers data with the owning engine service. The caller must keep borr
 void functionality_trigger::unregister_sources(const void *owner)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -2620,7 +2620,7 @@ Functionality_Trigger::unregister_sources(owner);
 bool game_console::handle_event(const SDL_Event &event)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Header usage example value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2634,7 +2634,7 @@ Constructs a Header usage example value from the parameters shown below. Default
 void game_console::hide_console()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component out of its active state or ends the current operation. Any retained resource ownership remains governed by the owning class.
 
@@ -2646,7 +2646,7 @@ Moves the component out of its active state or ends the current operation. Any r
 bool game_console::is_console_visible()
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -2658,7 +2658,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 bool game_console::is_supported()
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -2670,7 +2670,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 bool game_console::show_console()
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Moves the component into its active state and makes it eligible for subsequent updates or playback. Repeated calls follow the state rules of the owning type.
 
@@ -2682,7 +2682,7 @@ Moves the component into its active state and makes it eligible for subsequent u
 void game_console::toggle_console()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Performs the toggle console operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2702,7 +2702,7 @@ if (Game_Console::is_supported()) Game_Console::toggle_console();
 void Save_Pool::add(Object *object)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Constructs a Header usage example value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
 
@@ -2716,7 +2716,7 @@ Constructs a Header usage example value from the parameters shown below. Default
 bool Save_Game::apply_snapshot(const Snapshot &snapshot)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Applies the requested state change to the target object or service. Validate target pointers and preconditions before invoking the operation.
 
@@ -2730,7 +2730,7 @@ Applies the requested state change to the target object or service. Validate tar
 Snapshot Save_Game::capture_current()
 ~~~
 
-**Access:** public  **Returns:** `Snapshot`
+**Access:** public  **Returns:** `Snapshot`  **Engine version:** Potato Engine 1.0.0
 
 Serializes or captures the requested engine state. The destination and success reporting behavior follow the parameters and return type shown below.
 
@@ -2742,7 +2742,7 @@ Serializes or captures the requested engine state. The destination and success r
 Object_State Save_Game::capture_object(const Object &object)
 ~~~
 
-**Access:** public  **Returns:** `Object_State`
+**Access:** public  **Returns:** `Object_State`  **Engine version:** Potato Engine 1.0.0
 
 Serializes or captures the requested engine state. The destination and success reporting behavior follow the parameters and return type shown below.
 
@@ -2756,7 +2756,7 @@ Serializes or captures the requested engine state. The destination and success r
 Save_Game::Snapshot Save_Pool::capture_snapshot() const
 ~~~
 
-**Access:** public  **Returns:** `Save_Game::Snapshot`
+**Access:** public  **Returns:** `Save_Game::Snapshot`  **Engine version:** Potato Engine 1.0.0
 
 Serializes or captures the requested engine state. The destination and success reporting behavior follow the parameters and return type shown below.
 
@@ -2768,7 +2768,7 @@ Serializes or captures the requested engine state. The destination and success r
 void Save_Pool::clear()
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -2780,7 +2780,7 @@ Removes or releases the selected state from this engine component. References to
 bool Save_Pool::contains(const Object *object) const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Performs the contains operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
 
@@ -2794,7 +2794,7 @@ Performs the contains operation for the owning engine component. The exact input
 bool Save_Pool::empty() const
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Queries the current state and returns a Boolean-style result. It does not intentionally mutate the resource beyond implementation-level bookkeeping.
 
@@ -2806,7 +2806,7 @@ Queries the current state and returns a Boolean-style result. It does not intent
 std::vector< Object * > Save_Pool::get_all() const
 ~~~
 
-**Access:** public  **Returns:** `std::vector< Object * >`
+**Access:** public  **Returns:** `std::vector< Object * >`  **Engine version:** Potato Engine 1.0.0
 
 Returns or locates the requested engine value without changing the caller-visible state. Check the return type for pointer ownership and whether failure is represented by a null or empty value.
 
@@ -2818,7 +2818,7 @@ Returns or locates the requested engine value without changing the caller-visibl
 bool Save_Game::load_and_apply(const std::string &path)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Reads, validates, or prepares the requested resource from the supplied input. Use the return value or error output to detect a failed operation before using the result.
 
@@ -2832,7 +2832,7 @@ Reads, validates, or prepares the requested resource from the supplied input. Us
 bool Save_Game::load_snapshot(const std::string &path, Snapshot &out_snapshot)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Reads, validates, or prepares the requested resource from the supplied input. Use the return value or error output to detect a failed operation before using the result.
 
@@ -2847,7 +2847,7 @@ Reads, validates, or prepares the requested resource from the supplied input. Us
 void Save_Pool::remove(Object *object)
 ~~~
 
-**Access:** public  **Returns:** ``void``
+**Access:** public  **Returns:** ``void``  **Engine version:** Potato Engine 1.0.0
 
 Removes or releases the selected state from this engine component. References to removed resources must not be reused unless another owner keeps them alive.
 
@@ -2861,7 +2861,7 @@ Removes or releases the selected state from this engine component. References to
 bool Save_Game::save_current(const std::string &path)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Serializes or captures the requested engine state. The destination and success reporting behavior follow the parameters and return type shown below.
 
@@ -2875,7 +2875,7 @@ Serializes or captures the requested engine state. The destination and success r
 bool Save_Game::save_snapshot(const Snapshot &snapshot, const std::string &path)
 ~~~
 
-**Access:** public  **Returns:** ``bool``
+**Access:** public  **Returns:** ``bool``  **Engine version:** Potato Engine 1.0.0
 
 Serializes or captures the requested engine state. The destination and success reporting behavior follow the parameters and return type shown below.
 
@@ -2890,6 +2890,7 @@ Serializes or captures the requested engine state. The destination and success r
 Save_Game::save_current("saves/slot1.bin");
 Save_Game::load_and_apply("saves/slot1.bin");
 ~~~
+
 
 
 
