@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "base_mod",
+  "display_name": "Base mod",
+  "version": "1.0.0",
+  "game_api_version": "core_test_1",
+  "enabled": true,
+  "side": "both",
+  "dependencies": [],
+  "load_after": [],
+  "angel_script": {
+    "shared": [],
+    "client": [],
+    "server": ["scripts/server.as"]
+  },
+  "content": {},
+  "exports": {}
+}

@@ -1,0 +1,24 @@
+# CMake and compiler output
+/build*/
+CMakeCache.txt
+CMakeFiles/
+compile_commands.json
+cmake_install.cmake
+CTestTestfile.cmake
+Testing/
+Makefile
+*.a
+*.o
+*.obj
+*.exe
+
+# Runtime output
+/logs/
+/saves/games/
+/saves/settings.ini
+*.sav
+
+# Local tooling
+.vscode/*.log
+CMakeUserPresets.json
+*-prefix/

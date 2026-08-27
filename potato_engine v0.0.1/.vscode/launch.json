@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Potato Engine sandbox",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/potato.exe",
+      "args": ["--console"],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb"
+    }
+  ]
+}

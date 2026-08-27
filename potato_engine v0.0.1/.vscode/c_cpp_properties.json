@@ -1,0 +1,35 @@
+{
+  "configurations": [
+    {
+      "name": "windows-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}",
+        "${workspaceFolder}/src",
+        "${workspaceFolder}/build/generated",
+        "${workspaceFolder}/src/include/SDL3-3.4.8/x86_64-w64-mingw32/include",
+        "${workspaceFolder}/src/include/SDL3_image-3.4.4/x86_64-w64-mingw32/include",
+        "${workspaceFolder}/src/include/SDL3_ttf-3.1.0/x86_64-w64-mingw32/include",
+        "${workspaceFolder}/src/include/SDL3_mixer-3.2.4/x86_64-w64-mingw32/include",
+        "${workspaceFolder}/flatbuffers/include"
+      ],
+      "browse": {
+        "path": [
+          "${workspaceFolder}",
+          "${workspaceFolder}/src",
+          "${workspaceFolder}/build/generated",
+          "${workspaceFolder}/src/include/SDL3-3.4.8/x86_64-w64-mingw32/include",
+          "${workspaceFolder}/src/include/SDL3_image-3.4.4/x86_64-w64-mingw32/include",
+          "${workspaceFolder}/src/include/SDL3_ttf-3.1.0/x86_64-w64-mingw32/include",
+          "${workspaceFolder}/src/include/SDL3_mixer-3.2.4/x86_64-w64-mingw32/include",
+          "${workspaceFolder}/flatbuffers/include"
+        ]
+      },
+      "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+      "compilerPath": "C:/Strawberry/c/bin/g++.exe",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "windows-gcc-x64"
+    }
+  ],
+  "version": 4
+}

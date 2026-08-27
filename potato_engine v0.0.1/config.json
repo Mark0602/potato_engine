@@ -1,0 +1,35 @@
+{
+    "_comment": "such comments are ignored by the code",
+
+    "project": {
+        "name": "My Game made with Potato Engine",
+        "version": "0.0.1",
+        "company": "Random Studio"
+    },
+    "game": {
+        "title": "My Game made with Potato Engine",
+        "version": "0.0.1",
+        "default log path": "logs/latest.log",
+        "dimensions": {
+            "window": {
+                "width": 1280,
+                "height": 720
+            },
+            "logical": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        "renderer backend": "GPU",
+        "default audio tracks": 8,
+        "_comment": "default audio track number max is 255",
+        "enable shaders": true,
+        "show console on start": true
+    },
+    "settings": {
+        "target fps": 60,
+        "background fps": 20,
+        "fullscreen": false,
+        "vsync": false
+    }
+}

@@ -1,0 +1,63 @@
+#include <metal_stdlib>
+using namespace metal;
+
+#define MAX_LIGHTS 16
+
+struct FragmentInput
+{
+    float4 color [[user(locn0)]];
+    float2 uv [[user(locn1)]];
+    float4 position [[position]];
+};
+
+struct LightingUniforms
+{
+    float4 viewport;
+    float4 ambient;
+    float4 cycle;
+    float4 light_position_radius[MAX_LIGHTS];
+    float4 light_color_softness[MAX_LIGHTS];
+};
+
+fragment float4 main0(
+    FragmentInput input [[stage_in]],
+    texture2d<float> base_texture [[texture(0)]],
+    sampler base_sampler [[sampler(0)]],
+    constant LightingUniforms& uniforms [[buffer(0)]])
+{
+    float2 sample_uv = input.uv;
+    if (uniforms.cycle.w > 0.5f)
+    {
+        float2 texture_size = float2(base_texture.get_width(), base_texture.get_height());
+        float2 texel_size = 1.0f / max(texture_size, float2(1.0f));
+        float2 box_size = clamp(fwidth(input.uv) * texture_size,
+                                float2(1e-5f), float2(1.0f));
+        float2 texel = input.uv * texture_size - 0.5f * box_size;
+        float2 offset = smoothstep(float2(1.0f) - box_size,
+                                   float2(1.0f), fract(texel));
+        sample_uv = (floor(texel) + 0.5f + offset) * texel_size;
+    }
+    float4 base = input.color * base_texture.sample(base_sampler, sample_uv);
+    float2 logical_position = input.position.xy * uniforms.cycle.yz /
+                              max(uniforms.viewport.xy, float2(1.0f));
+
+    float darkness = saturate(uniforms.cycle.x) * saturate(uniforms.viewport.w);
+    float3 night_light = uniforms.ambient.rgb * saturate(uniforms.ambient.a);
+    float3 illumination = mix(float3(1.0f), night_light, darkness);
+
+    uint count = min((uint)(uniforms.viewport.z + 0.5f), (uint)MAX_LIGHTS);
+    for (uint i = 0; i < count; ++i)
+    {
+        float4 light_data = uniforms.light_position_radius[i];
+        float4 light_color = uniforms.light_color_softness[i];
+        float radius = max(light_data.z, 0.001f);
+        float inner_radius = radius * (1.0f - saturate(light_color.w));
+        float falloff = 1.0f - smoothstep(inner_radius, radius,
+                                          distance(logical_position, light_data.xy));
+        float visibility = mix(0.12f, 1.0f, saturate(uniforms.cycle.x));
+        illumination += light_color.rgb * light_data.w * falloff * visibility * darkness;
+    }
+
+    base.rgb *= saturate(illumination);
+    return base;
+}

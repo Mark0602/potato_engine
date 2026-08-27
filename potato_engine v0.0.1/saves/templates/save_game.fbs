@@ -1,0 +1,41 @@
+namespace Potato.Save;
+
+file_identifier "CCSV";
+
+struct Vec2 {
+  x:float;
+  y:float;
+}
+
+struct ColorRgba {
+  r:ubyte;
+  g:ubyte;
+  b:ubyte;
+  a:ubyte;
+}
+
+table TransformData {
+  pos:Vec2;
+  size:Vec2;
+  rotation:Vec2;
+}
+
+table ObjectData {
+  transform:TransformData;
+  texture_path:string;
+  visible:bool = true;
+  input_transparent:bool = false;
+  auto_submit:bool = true;
+  z_index:ubyte = 128;
+  tint:ColorRgba;
+  name:string;
+}
+
+table SaveGame {
+  version:uint = 2;
+  scene_id:int = 0;
+  scene_name:string;
+  objects:[ObjectData];
+}
+
+root_type SaveGame;
