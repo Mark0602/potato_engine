@@ -4,6 +4,8 @@ This manual documents the reusable engine as it exists in the current source tre
 
 ## Manual
 
+The complete callable catalog for **Potato Engine 1.0.0** starts at [API reference](docs/api-reference.md).
+
 | Area | Document | Covered features |
 | --- | --- | --- |
 | Setup | [Getting started](docs/getting-started.md) | Requirements, build, run, CMake targets, application creation, configuration, tests |
@@ -25,4 +27,3 @@ This manual documents the reusable engine as it exists in the current source tre
 `engine.h` contains the application entry point, renderer selection, configuration structures, and process-wide service handles. Feature types live in focused headers under `src/`; include the header for each feature you use. `engine.h` is not an umbrella header for all helpers.
 
 The engine deliberately has no game-domain API. A game supplies its own entities, rules, assets, scene content, save extensions, and mod adapter on top of these primitives.
-
