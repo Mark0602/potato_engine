@@ -9,6 +9,7 @@ The complete callable catalog for **Potato Engine 1.0.0** starts at [API referen
 | Area | Document | Covered features |
 | --- | --- | --- |
 | Setup | [Getting started](docs/getting-started.md) | Requirements, build, run, CMake targets, application creation, configuration, tests |
+| API Reference | [API Reference](docs/api-reference.md) | A detailed description of every function and class found in the API  |
 | Core | [Architecture](docs/architecture.md) | Lifecycle, frame order, services, coordinates, ownership, shutdown |
 | Graphics | [Rendering](docs/rendering.md) | Backends, logical presentation, textures, draw queue, cameras, lighting, fonts at render time |
 | Gameplay structure | [Objects, UI, and scripts](docs/objects-ui-scripts.md) | Objects, pools, tags, components, lifecycle scripts, UI widgets, labels, text boxes, entity sample |
