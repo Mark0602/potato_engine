@@ -1,6 +1,15 @@
+# What is Potato Engine
+
+Potato Engine is a 2D game engine or game framework made with C++, it is designed specifically for games made by me, but feel free to use it. The engine is completely open-source. You can find everything in the /src folder, and change it according to the needs of your game, and I am planning to keep it this way. Potato Engine is not meant to be a full fledged AAA engine, it suits developers working on indie 2D pixel art games (tho 3D might come in the far future, I'm not sure yet). As stated, feel free to use it, change the systems how it works in your own ways, and if you release a game with it the only thing I ask for is credit. 
+Updates are planned to happen as frequently as possible but as an university student time is not something I have. Also updates usually come by porting features back from my WIP games to the native engine. A small editor already exists, but not yet moved to the native engine. Please keep in mind the engine will always prioritize creating objects and scripts from a code. If you have suggestions or ideas feel free to let me know
+
+### Disclaimer
+Most of the documentation is still AI written as I did not manage to find the time to write all of it, but it will be hand rewritten in the near future. That said expect some unlogical arrangement, some logical flaws and weird language. Support is appriciated.
+
 # Potato Engine documentation
 
 This manual documents the reusable engine as it exists in the current source tree. All project-owned documentation is written in English. Third-party documentation under `flatbuffers`, `third_party`, and bundled SDL directories belongs to those dependencies.
+
 
 ## Manual
 
