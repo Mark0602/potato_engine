@@ -41,7 +41,9 @@ namespace Save_Game {
     Object_State capture_object(const Object& object) {
         Object_State state;
         state.name = object.name;
-        state.transform = object.transform;
+        // Hierarchy links are runtime relationships. Persist world space so a
+        // snapshot remains meaningful even when loaded without its old parent.
+        state.transform = object.get_world_transform();
         state.texture_path = object.texture ? object.texture->get_path() : "";
         state.visible = object.visible;
         state.input_transparent = object.input_transparent;
@@ -196,7 +198,7 @@ namespace Save_Game {
             }
             if (!target || applied.find(target) != applied.end()) continue;
 
-            target->transform = state.transform;
+            target->set_world_transform(state.transform);
             target->visible = state.visible;
             target->input_transparent = state.input_transparent;
             target->auto_submit = state.auto_submit;

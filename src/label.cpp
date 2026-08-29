@@ -73,14 +73,15 @@ void Label::draw(SDL_Renderer* renderer) {
         return;
     }
 
-    font->draw(renderer, text, transform.pos, tint, scale);
+    font->draw(renderer, text, get_world_transform().pos, tint, scale);
 }
 
 Draw Label::make_draw_command() const {
-    Draw cmd(font, text, transform, tint, z_index, scale);
+    const Transform world = get_world_transform();
+    Draw cmd(font, text, world, tint, z_index, scale);
     cmd.visible = visible && font && font->is_loaded();
     cmd.y_sort = y_sort;
-    cmd.sort_y = transform.pos.y + transform.size.y + y_sort_offset;
+    cmd.sort_y = world.pos.y + world.size.y + y_sort_offset;
     cmd.camera_space = camera_space;
     return cmd;
 }

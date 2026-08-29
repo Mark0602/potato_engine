@@ -29,7 +29,7 @@ Save_Game::load_and_apply("saves/games/slot_1.sav");
 
 Applying a snapshot updates existing objects; it does not create them. Named states match `Object::name`. For old/unnamed layouts, positional fallback is used only when the current object count exactly matches the snapshot count. An object is applied at most once.
 
-The current apply path restores transform, visibility, input flags, auto-submit, z-index, and tint, then immediately calls `SceneManager::set_scene(snapshot.scene_id)`. Although texture paths and scene names are serialized, `apply_snapshot()` does not load/assign textures or resolve scenes by name. It also does not restore tags, scripts, physics, audio, custom entity state, tilemaps, or game rules. Extend or wrap the snapshot workflow for game-specific state.
+The current apply path restores world transform, visibility, input flags, auto-submit, z-index, and tint, then immediately calls `SceneManager::set_scene(snapshot.scene_id)`. Capturing a parented object stores its composed world transform; applying it converts that value into the target object's current parent space. Parent pointers and hierarchy structure are not serialized. Although texture paths and scene names are serialized, `apply_snapshot()` does not load/assign textures or resolve scenes by name. It also does not restore tags, scripts, physics, audio, custom entity state, tilemaps, or game rules. Extend or wrap the snapshot workflow for game-specific state.
 
 `load_snapshot()` verifies FlatBuffer structure but does not currently reject an unfamiliar version. Consumers adding schema evolution should inspect `Snapshot::version` before applying.
 
@@ -37,7 +37,7 @@ The current apply path restores transform, visibility, input flags, auto-submit,
 
 `Vec` is a 2D float vector with component-wise arithmetic/comparison and scalar multiply/divide. Comparisons such as `<` require both components to satisfy the relation.
 
-`Transform` groups `pos`, `size`, and `rotation`; its arithmetic changes position and size while preserving the left operand's rotation. `Vec3` supports audio positioning and `Vec4` supports packed four-component data.
+`Transform` groups `pos`, `size`, and `rotation`; its arithmetic changes position and size while preserving the left operand's rotation. `rotate_vector`, `compose_transform`, and `relative_transform` support object hierarchy conversion. Composition inherits position, angle, and flip flags but deliberately does not scale `size`. `Vec3` supports audio positioning and `Vec4` supports packed four-component data.
 
 `utils.h` provides:
 

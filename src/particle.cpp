@@ -78,7 +78,8 @@ void Particle::draw(SDL_Renderer* renderer) {
 
     float alpha = lifetime / max_lifetime;
     texture->set_texture_opacity(alpha);
-    texture->draw(renderer, transform.pos, transform.size);
+    const Transform world = get_world_transform();
+    texture->draw(renderer, world.pos, world.size, world.rotation);
     texture->set_texture_opacity(1.0f);
 }
 

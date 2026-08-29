@@ -119,8 +119,9 @@ void Camera::follow(Object* target, float smoothing, float dt) {
         return;
     }
 
-    Vec target_pos = target->transform.pos;
-    Vec target_size = target->transform.size;
+    const Transform target_transform = target->get_world_transform();
+    Vec target_pos = target_transform.pos;
+    Vec target_size = target_transform.size;
     Vec centered_target = {
         target_pos.x + (target_size.x * 0.5f) - (m_viewport_width / (2.0f * m_zoom)),
         target_pos.y + (target_size.y * 0.5f) - (m_viewport_height / (2.0f * m_zoom))

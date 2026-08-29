@@ -103,8 +103,9 @@ struct Raycast_Hit {
 /**
  * @brief Lightweight 2D collision body attached to an Object or standalone Transform.
  *
- * When attached to an Object, the body borrows the Object pointer and directly reads
- * and updates `Object::transform`. It does not own or delete the Object. Bodies created
+ * When attached to an Object, the body borrows the Object pointer. Collision tests and
+ * simulation use its world transform, including any parent hierarchy. It does not own
+ * or delete the Object. Bodies created
  * after `Engine::physics_engine` is initialized register themselves automatically and
  * unregister when destroyed.
  *
@@ -152,9 +153,12 @@ public:
     Collision_Body(const Collision_Body&) = delete;
     Collision_Body& operator=(const Collision_Body&) = delete;
 
-    /** @return Mutable transform used by this body. */
+    /**
+     * @return Mutable owner-local transform, or the standalone world transform.
+     * @note Use collision_transform() when a world-space value is required.
+     */
     Transform& transform();
-    /** @return Read-only transform used by this body. */
+    /** @return Read-only owner-local transform, or the standalone world transform. */
     const Transform& transform() const;
     /** @return Effective transform used for collision tests, including optional local bounds. */
     Transform collision_transform() const;
@@ -281,6 +285,8 @@ private:
     int m_previous_active_collision_range = 0;
     bool m_tracking_initialized = false;
     int m_stationary_steps = 0;
+
+    void translate_world(const Vec& delta);
 };
 
 /**

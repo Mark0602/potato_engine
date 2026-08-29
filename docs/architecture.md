@@ -62,6 +62,8 @@ The window has a physical size and the renderer has a logical size. SDL letterbo
 
 `Transform::pos` is the top-left point and `Transform::size` is width/height. `Transform::rotation.x` is an angle in degrees for rendering; `rotation.y` carries an `SDL_FlipMode`-compatible numeric value. Camera rotation is documented by the camera API as radians. Keep that unit difference explicit.
 
+For a root `Object`, `Object::transform` is in world space. For a parented object it is local to the parent. `get_world_transform()` composes the complete chain; rendering, hit testing, camera following, snapshots, and attached collision geometry use that world value. See [Object hierarchy](object-hierarchy.md).
+
 `Object::camera_space=true` means the active camera transforms and culls the draw. UI objects set it to `false`.
 
 ## Ownership rules
@@ -71,6 +73,7 @@ The window has a physical size and the renderer has a logical size. SDL letterbo
 - `Camera_Pool` owns cameras; `main_cam` always exists.
 - `Object_Pool`, `Save_Pool`, `Physics_Engine`, `Render_Pool`, tilemap registry, and light registration store borrowed pointers or commands. They do not own the referenced game objects.
 - `Object` owns an attached `script` after `attach_script()` and deletes it in `detach_script()` or destruction.
+- Object hierarchy links are non-owning in both directions. Destroying a parent detaches its children while preserving their world transforms; it does not delete them. `Object` is non-copyable because its address identifies it to hierarchy and registry relationships and it may own an attached script.
 - `Texture` owns its SDL texture. `light_source` and `Collision_Body` self-register and unregister with the current engine service.
 - A `Draw` command borrows its texture/font only until that frame's `Render_Pool::flush()`.
 

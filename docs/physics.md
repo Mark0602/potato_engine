@@ -4,7 +4,9 @@ Potato Engine provides a lightweight 2D fixed-step physics and collision system 
 
 ## Bodies and shapes
 
-`Collision_Body` can attach to an `Object` and directly use its transform/texture, or own a standalone transform. It automatically registers with `Engine::physics_engine` when that service is available and unregisters on destruction.
+`Collision_Body` can attach to an `Object` and use its transform/texture, or own a standalone transform. Attached bodies obtain collision geometry from `Object::get_world_transform()`, so static, dynamic, and kinematic objects can participate while parented. Physics movement and penetration correction are applied in world space and converted back into the object's parent-local transform. It automatically registers with `Engine::physics_engine` when that service is available and unregisters on destruction.
+
+For compatibility, `Collision_Body::transform()` still returns a mutable reference to the owner's local `transform` (or the standalone body's world transform). Use `collision_transform()` for the effective world-space geometry, and use `Object::set_world_transform()` when manually teleporting a parented owner.
 
 Supported shapes are:
 
@@ -19,7 +21,7 @@ Body types are `STATIC`, `DYNAMIC`, and `KINEMATIC`. Static bodies never move. D
 
 ## Local colliders
 
-An attached body normally uses its owner's full transform. `set_local_transform()` or `set_local_bounds(offset, size)` defines a collider relative to that object without changing visual geometry. `clear_local_bounds()` restores the full owner transform.
+An attached body normally uses its owner's full world transform. `set_local_transform()` or `set_local_bounds(offset, size)` defines a collider relative to that object without changing visual geometry. Collider offset and angle follow the owner's world rotation; collider size remains unscaled. `clear_local_bounds()` restores the full owner transform.
 
 ## Dynamics
 
@@ -90,4 +92,3 @@ Query results and body owner pointers are borrowed. They remain valid only while
 ## Manual worlds
 
 `Physics_Engine::add_body`, `remove_body`, `step`, and `clear` allow isolated or custom-loop worlds. Moving a body to a different world detaches it from the old one. Destroy the bodies before the world, or let the world destructor detach them.
-

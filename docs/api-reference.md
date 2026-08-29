@@ -2,7 +2,7 @@
 
 **Engine version:** Potato Engine 1.0.0  
 **Language:** C++  
-**Documented overloads:** 983
+**Documented overloads:** 1000
 
 Each engine class, struct, and namespace has its own documentation page. Free functions that do not belong to a type or namespace are grouped only by their declaration header. Third-party SDL, simdjson, FlatBuffers, and AngelScript APIs are excluded.
 
@@ -19,6 +19,7 @@ Each engine class, struct, and namespace has its own documentation page. Free fu
 
 - [Transform](api/transform.md) — 12 overloads
 - [Vec](api/vec.md) — 18 overloads
+- [Vec free functions](api/vec-free-functions.md) — 3 overloads
 
 ### `color.h`
 
@@ -100,7 +101,7 @@ Each engine class, struct, and namespace has its own documentation page. Free fu
 ### `object.h`
 
 - [Button](api/button.md) — 3 overloads
-- [Object](api/object.md) — 34 overloads
+- [Object](api/object.md) — 48 overloads
 - [Object_Pool](api/object-pool.md) — 7 overloads
 - [Progress_Bar](api/progress-bar.md) — 4 overloads
 - [Slider](api/slider.md) — 7 overloads
@@ -180,4 +181,3 @@ Each engine class, struct, and namespace has its own documentation page. Free fu
 ## Reading an entry
 
 Every overload includes its exact C++ signature, engine version, access level, return type, description, and parameter information. Unnamed C++ parameters are identified explicitly and remain visible in the signature.
-

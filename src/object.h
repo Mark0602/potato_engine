@@ -43,6 +43,10 @@ public:
     Texture* texture = nullptr;
     SDL_FRect source_rect{};
     bool use_source_rect = false;
+    /**
+     * Local transform when this object has a parent; world transform otherwise.
+     * Use get_world_transform() whenever a world-space value is required.
+     */
     Transform transform = {Vec(0.f, 0.f), Vec(0.f, 0.f), Vec(0.f, 0.f)};
     Logger* logger = nullptr;
 
@@ -140,6 +144,11 @@ public:
         register_with_pool();
     }
 
+    // Object stores borrowed registry and hierarchy pointers plus an owned
+    // script component. Address identity is therefore part of its state.
+    Object(const Object&) = delete;
+    Object& operator=(const Object&) = delete;
+
     virtual ~Object();
 
     /**
@@ -162,21 +171,63 @@ public:
         object_pool = objp;
     }
 
-    /**
-     * @brief Returns the current transform of the object.
-     * @return The transform containing position, size, and rotation.
-     */
+    /** @brief Returns the local transform (identical to world space for root objects). */
     Transform get_transform() const {
         return transform;
     }
 
+    /** @brief Explicit alias for get_transform(). */
+    Transform get_local_transform() const {
+        return transform;
+    }
+
     /**
-     * @brief Sets the transform of the object.
-     * @param new_transform The new transform containing position, size, and rotation.
+     * @brief Returns the transform composed through the complete parent chain.
+     * @return World-space position, size, angle, and flip flags.
      */
+    Transform get_world_transform() const;
+
+    /** @brief Sets the local transform (world transform for root objects). */
     void set_transform(const Transform& new_transform) {
         transform = new_transform;
     }
+
+    /** @brief Explicit alias for set_transform(). */
+    void set_local_transform(const Transform& new_transform) {
+        transform = new_transform;
+    }
+
+    /**
+     * @brief Sets the world transform, converting it to parent-local space when needed.
+     */
+    void set_world_transform(const Transform& new_transform);
+
+    /**
+     * @brief Changes this object's parent.
+     *
+     * Parenting is non-owning. A parent never deletes its children. Cycles and
+     * self-parenting are rejected.
+     *
+     * @param new_parent New parent, or nullptr to make this object a root.
+     * @param keep_world_transform Preserve the current world-space appearance.
+     *        When false, the existing transform is kept as the new local transform.
+     * @return true on success, false if the requested relationship is invalid.
+     */
+    bool set_parent(Object* new_parent, bool keep_world_transform = true);
+
+    /** @brief Makes child a direct child of this object. */
+    bool add_child(Object* child, bool keep_world_transform = true);
+
+    /** @brief Detaches a direct child from this object. */
+    bool remove_child(Object* child, bool keep_world_transform = true);
+
+    /** @brief Detaches every direct child without deleting them. */
+    void clear_children(bool keep_world_transform = true);
+
+    Object* get_parent() const { return m_parent; }
+    const std::vector<Object*>& get_children() const { return m_children; }
+    bool has_parent() const { return m_parent != nullptr; }
+    bool is_ancestor_of(const Object* object) const;
 
     /**
      * @brief Returns `true` if `mouse_pos` is within the object's bounding box.
@@ -184,8 +235,9 @@ public:
      */
     virtual bool on_hover(const Vec& mouse_pos) const {
         if (input_transparent) return false;
-        return (mouse_pos.x >= transform.pos.x && mouse_pos.x <= transform.pos.x + transform.size.x &&
-                mouse_pos.y >= transform.pos.y && mouse_pos.y <= transform.pos.y + transform.size.y);
+        const Transform world = get_world_transform();
+        return (mouse_pos.x >= world.pos.x && mouse_pos.x <= world.pos.x + world.size.x &&
+                mouse_pos.y >= world.pos.y && mouse_pos.y <= world.pos.y + world.size.y);
     }
 
     /**
@@ -303,8 +355,10 @@ public:
      * Uses `Engine::window` to get the current window dimensions.
      */
     void center_on_screen() {
-        transform.pos.x = (Engine::logical_width  - transform.size.x) / 2.0f;
-        transform.pos.y = (Engine::logical_height - transform.size.y) / 2.0f;
+        Transform world = get_world_transform();
+        world.pos.x = (Engine::logical_width  - world.size.x) / 2.0f;
+        world.pos.y = (Engine::logical_height - world.size.y) / 2.0f;
+        set_world_transform(world);
     }
     /**
      * @brief Hides the object by setting its visibility to false and making it input transparent.
@@ -354,6 +408,8 @@ public:
     void register_with_pool();
 
 private:
+    Object* m_parent = nullptr;
+    std::vector<Object*> m_children;
     uint8_t m_free_number = 0; // double freeing protection: 0 = not freed, 1 = freed once, 2 = freed twice
 };
 

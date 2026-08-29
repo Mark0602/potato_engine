@@ -148,7 +148,7 @@ Physics::Collision_Body::Collision_Body(const Collision_Body &) = delete
 >
 > **Access:** public
 
-Constructs a Collision_Body value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
+Copy construction is disabled because a body has registration state and a borrowed owner relationship.
 
 **Parameters:** The declaration uses an unnamed parameter; its exact type is shown in the signature.
 
@@ -211,7 +211,7 @@ Transform Physics::Collision_Body::collision_transform() const
 >
 > **Access:** public · **Returns:** `Transform`
 
-Constructs a Collision_Body value from the parameters shown below. Default arguments provide the engine's standard initial state, while pointer arguments remain subject to the ownership rules of the type.
+Returns the effective world-space collision transform, including the owner's parent hierarchy and optional local collider transform.
 
 **Parameters:** None.
 
@@ -597,7 +597,7 @@ const Transform & Physics::Collision_Body::transform() const
 >
 > **Access:** public · **Returns:** `const Transform &`
 
-Advances or processes the component for the current frame or time interval. Call it from the lifecycle phase expected by the owning service.
+Returns the owner's local transform when attached, or the standalone body's world transform. Use `collision_transform()` for effective world-space geometry.
 
 **Parameters:** None.
 
@@ -613,7 +613,7 @@ Transform & Physics::Collision_Body::transform()
 >
 > **Access:** public · **Returns:** `Transform &`
 
-Performs the transform operation for the owning engine component. The exact inputs, result type, access level, and default values are shown below so callers can validate the required state before invoking it.
+Returns a mutable reference to the owner's local transform when attached, or the standalone body's world transform. For world-space teleports of a parented owner, use `Object::set_world_transform()`.
 
 **Parameters:** None.
 
@@ -632,5 +632,3 @@ void Physics::Collision_Body::wake()
 Advances or processes the component for the current frame or time interval. Call it from the lifecycle phase expected by the owning service.
 
 **Parameters:** None.
-
-

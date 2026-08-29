@@ -16,6 +16,8 @@ Common operations include:
 - `make_draw_command` and `submit_draw_commands` extension points;
 - `attach_script` and `detach_script`.
 
+Objects may also form a non-owning transform hierarchy. A parented object's public `transform` is local, while `get_world_transform()` composes its ancestors. Use `set_parent`, `add_child`, `remove_child`, or `clear_children` to change relationships; direct pointer manipulation is not exposed. Reparenting preserves world space by default. The complete behavior and integration rules are in [Object hierarchy](object-hierarchy.md).
+
 `free()` releases object state and is protected against repeated calls. A texture pointer is generally borrowed from the asset pool; do not delete it through the object. `Object_Pool::find_by_name`, `find_by_tag`, `find_all_by_tag`, and `get_all` return borrowed pointers.
 
 ## Script lifecycle
@@ -105,4 +107,3 @@ While focused, the text box acquires Input's global block. Gameplay-facing key, 
 ## Entity sample
 
 `Entity` is a small example subclass of `Object` with `health`, `lifetime`, `active`, activation helpers, and texture access. It is not a required gameplay model. Games should define their own entity/component types rather than treating this sample as engine policy.
-

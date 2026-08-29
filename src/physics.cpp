@@ -598,13 +598,22 @@ const Transform& Collision_Body::transform() const {
 }
 
 Transform Collision_Body::collision_transform() const {
-    Transform result = transform();
+    Transform result = m_owner ? m_owner->get_world_transform()
+                               : m_standalone_transform;
     if (m_use_local_bounds) {
-        result.pos += m_local_transform.pos;
-        result.size = m_local_transform.size;
-        result.rotation += m_local_transform.rotation;
+        result = compose_transform(result, m_local_transform);
     }
     return result;
+}
+
+void Collision_Body::translate_world(const Vec& delta) {
+    if (m_owner) {
+        Transform world = m_owner->get_world_transform();
+        world.pos += delta;
+        m_owner->set_world_transform(world);
+    } else {
+        m_standalone_transform.pos += delta;
+    }
 }
 
 void Collision_Body::set_local_transform(const Transform& transform) {
@@ -904,7 +913,7 @@ void Physics_Engine::step(float delta_seconds) {
                     );
                     body->m_force = {};
                 }
-                body->transform().pos += body->velocity * delta_seconds;
+                body->translate_world(body->velocity * delta_seconds);
             }
 
             const AABB end_bounds = body_bounds(*body);
@@ -1146,8 +1155,8 @@ void Physics_Engine::resolve(Collision& collision) {
     if (inverse_sum <= EPSILON) return;
 
     const Vec correction = collision.normal * (std::max(collision.penetration - 0.01f, 0.0f) / inverse_sum * 0.8f);
-    if (inverse_a > 0.0f) a.transform().pos -= correction * inverse_a;
-    if (inverse_b > 0.0f) b.transform().pos += correction * inverse_b;
+    if (inverse_a > 0.0f) a.translate_world(correction * -inverse_a);
+    if (inverse_b > 0.0f) b.translate_world(correction * inverse_b);
 
     Vec relative_velocity = b.velocity - a.velocity;
     const float normal_velocity = vec_dot(relative_velocity, collision.normal);

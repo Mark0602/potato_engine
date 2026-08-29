@@ -2,7 +2,7 @@
 
 **Engine version:** Potato Engine 1.0.0  
 **Declaration header:** `object.h`  
-**Documented overloads:** 34
+**Documented overloads:** 48
 
 This page documents the engine-owned callables declared for `Object`. Exact signatures, access levels, return types, parameters, defaults, descriptions, and per-function engine versions are preserved from the source reference.
 
@@ -13,9 +13,250 @@ Object* player = new Object({0.0f, 0.0f}, {32.0f, 32.0f});
 player->name = "player";
 player->add_tag("controllable");
 Engine::object_pool->add(player);
+
+Object weapon(Transform{{20.0f, 8.0f}, {16.0f, 8.0f}});
+weapon.set_parent(player, false); // transform is now a local offset
+Transform weapon_world = weapon.get_world_transform();
 ~~~
 
 ## Functions
+
+### operator=
+
+~~~cpp
+Object & Object::operator=(const Object &) = delete
+~~~
+
+> **Engine version:** Potato Engine 1.0.0
+>
+> **Access:** public
+
+Copy assignment is disabled because object address identity participates in registries and hierarchy links, and an object may own an attached script.
+
+---
+
+### Object
+
+~~~cpp
+Object::Object(const Object &) = delete
+~~~
+
+> **Engine version:** Potato Engine 1.0.0
+>
+> **Access:** public
+
+Copy construction is disabled. Store dynamic objects behind stable owning pointers such as `std::unique_ptr<Object>`.
+
+---
+
+### add_child
+
+~~~cpp
+bool Object::add_child(Object *child, bool keep_world_transform=true)
+~~~
+
+> **Engine version:** Potato Engine 1.0.0
+>
+> **Access:** public · **Returns:** `bool`
+
+Makes `child` a direct child of this object. The relationship is non-owning. Returns `false` for a null child or an invalid cyclic relationship.
+
+| Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| `child` | `Object *` | Borrowed child object. | — |
+| `keep_world_transform` | `bool` | Preserve the child's current world appearance. | `true` |
+
+---
+
+### clear_children
+
+~~~cpp
+void Object::clear_children(bool keep_world_transform=true)
+~~~
+
+> **Engine version:** Potato Engine 1.0.0
+>
+> **Access:** public · **Returns:** `void`
+
+Detaches every direct child without deleting it.
+
+| Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| `keep_world_transform` | `bool` | Preserve each child's current world appearance. | `true` |
+
+---
+
+### get_children
+
+~~~cpp
+const std::vector<Object *> & Object::get_children() const
+~~~
+
+> **Engine version:** Potato Engine 1.0.0
+>
+> **Access:** public · **Returns:** `const std::vector<Object *> &`
+
+Returns the direct, non-owning child list. Do not retain the reference beyond this object's lifetime or modify the referenced vector.
+
+**Parameters:** None.
+
+---
+
+### get_local_transform
+
+~~~cpp
+Transform Object::get_local_transform() const
+~~~
+
+> **Engine version:** Potato Engine 1.0.0
+>
+> **Access:** public · **Returns:** `Transform`
+
+Returns the local transform. It is identical to world space when the object has no parent.
+
+**Parameters:** None.
+
+---
+
+### get_parent
+
+~~~cpp
+Object * Object::get_parent() const
+~~~
+
+> **Engine version:** Potato Engine 1.0.0
+>
+> **Access:** public · **Returns:** `Object *`
+
+Returns the borrowed parent pointer, or `nullptr` for a root object.
+
+**Parameters:** None.
+
+---
+
+### get_world_transform
+
+~~~cpp
+Transform Object::get_world_transform() const
+~~~
+
+> **Engine version:** Potato Engine 1.0.0
+>
+> **Access:** public · **Returns:** `Transform`
+
+Composes the complete parent chain and returns the effective world transform.
+
+**Parameters:** None.
+
+---
+
+### has_parent
+
+~~~cpp
+bool Object::has_parent() const
+~~~
+
+> **Engine version:** Potato Engine 1.0.0
+>
+> **Access:** public · **Returns:** `bool`
+
+Returns whether this object currently has a parent.
+
+**Parameters:** None.
+
+---
+
+### is_ancestor_of
+
+~~~cpp
+bool Object::is_ancestor_of(const Object *object) const
+~~~
+
+> **Engine version:** Potato Engine 1.0.0
+>
+> **Access:** public · **Returns:** `bool`
+
+Returns whether this object occurs in `object`'s parent chain.
+
+| Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| `object` | `const Object *` | Borrowed object whose ancestors are inspected. | — |
+
+---
+
+### remove_child
+
+~~~cpp
+bool Object::remove_child(Object *child, bool keep_world_transform=true)
+~~~
+
+> **Engine version:** Potato Engine 1.0.0
+>
+> **Access:** public · **Returns:** `bool`
+
+Detaches a direct child without deleting it. Returns `false` when the object is null or is not a direct child.
+
+| Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| `child` | `Object *` | Borrowed direct child. | — |
+| `keep_world_transform` | `bool` | Preserve the child's current world appearance. | `true` |
+
+---
+
+### set_local_transform
+
+~~~cpp
+void Object::set_local_transform(const Transform &new_transform)
+~~~
+
+> **Engine version:** Potato Engine 1.0.0
+>
+> **Access:** public · **Returns:** `void`
+
+Replaces the local transform. For a root object this is also its world transform.
+
+| Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| `new_transform` | `const Transform &` | New parent-local transform. | — |
+
+---
+
+### set_parent
+
+~~~cpp
+bool Object::set_parent(Object *new_parent, bool keep_world_transform=true)
+~~~
+
+> **Engine version:** Potato Engine 1.0.0
+>
+> **Access:** public · **Returns:** `bool`
+
+Changes the non-owning parent relationship. Passing `nullptr` creates a root. Self-parenting and cycles are rejected without modifying the hierarchy.
+
+| Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| `new_parent` | `Object *` | Borrowed new parent, or `nullptr`. | — |
+| `keep_world_transform` | `bool` | Preserve the object's current world appearance. | `true` |
+
+---
+
+### set_world_transform
+
+~~~cpp
+void Object::set_world_transform(const Transform &new_transform)
+~~~
+
+> **Engine version:** Potato Engine 1.0.0
+>
+> **Access:** public · **Returns:** `void`
+
+Sets world space and converts the value into current parent-local space when necessary.
+
+| Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| `new_transform` | `const Transform &` | Desired world transform. | — |
+
+---
 
 ### ~Object
 
@@ -162,7 +403,7 @@ Transform Object::get_transform() const
 >
 > **Access:** public · **Returns:** `Transform`
 
-Returns the current transform of the object.
+Returns the local transform of the object. For a root object it is also the world transform.
 
 **Parameters:** None.
 
@@ -575,7 +816,7 @@ void Object::set_transform(const Transform &new_transform)
 >
 > **Access:** public · **Returns:** `void`
 
-Sets the transform of the object.
+Sets the local transform of the object. For a root object it also sets world space.
 
 **Parameters**
 
@@ -657,5 +898,3 @@ void Object::toggle_visibility()
 Toggles the visibility and input transparency of the object. If the object is currently visible, it will be hidden and made input transparent. If the object is currently hidden, it will be shown and made responsive to input.
 
 **Parameters:** None.
-
-

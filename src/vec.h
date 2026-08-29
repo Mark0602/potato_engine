@@ -1,6 +1,8 @@
 #ifndef VEC_H
 #define VEC_H
 
+#include <cmath>
+
 /**
  * @brief 2D floating-point vector used for positions, sizes, and directions.
  *
@@ -180,6 +182,55 @@ struct Transform {
     }
 
 };
+
+/**
+ * @brief Rotates a vector clockwise in screen coordinates.
+ * @param value Vector to rotate.
+ * @param degrees Rotation angle in degrees.
+ */
+inline Vec rotate_vector(const Vec& value, float degrees) {
+    constexpr float degrees_to_radians = 0.01745329251994329577f;
+    const float radians = degrees * degrees_to_radians;
+    const float cosine = std::cos(radians);
+    const float sine = std::sin(radians);
+    return {
+        value.x * cosine - value.y * sine,
+        value.x * sine + value.y * cosine
+    };
+}
+
+/**
+ * @brief Composes a parent world transform and a child local transform.
+ *
+ * Position and angle inherit the parent transform. Size remains local because
+ * Potato Engine's Transform stores dimensions rather than a scale factor.
+ * SDL flip flags are combined as bit flags.
+ */
+inline Transform compose_transform(const Transform& parent, const Transform& local) {
+    const Vec rotated_position = rotate_vector(local.pos, parent.rotation.x);
+    const int combined_flip = static_cast<int>(parent.rotation.y) ^
+                              static_cast<int>(local.rotation.y);
+    return {
+        parent.pos + rotated_position,
+        local.size,
+        {parent.rotation.x + local.rotation.x, static_cast<float>(combined_flip)}
+    };
+}
+
+/**
+ * @brief Converts a world transform into local space relative to a parent.
+ * @see compose_transform
+ */
+inline Transform relative_transform(const Transform& parent, const Transform& world) {
+    const Vec local_position = rotate_vector(world.pos - parent.pos, -parent.rotation.x);
+    const int local_flip = static_cast<int>(parent.rotation.y) ^
+                           static_cast<int>(world.rotation.y);
+    return {
+        local_position,
+        world.size,
+        {world.rotation.x - parent.rotation.x, static_cast<float>(local_flip)}
+    };
+}
 
 /**
  * @brief Represents a 3D vector. Right now only used for 3D audio panning, but could be used for other things in the future.

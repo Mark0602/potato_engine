@@ -21,10 +21,11 @@ void Object::free() {
 }
 
 void Object::draw(SDL_Renderer* renderer) {
+    const Transform world = get_world_transform();
     if (texture && texture->is_loaded()) {
-        texture->draw(renderer, transform.pos, transform.size, transform.rotation);
+        texture->draw(renderer, world.pos, world.size, world.rotation);
     if (logger && logger->is_flood_logging()) {
-        logger->log(Log_Level::DEBUG, "Object", "Object drawn at position: (" + std::to_string(transform.pos.x) + ", " + std::to_string(transform.pos.y) + ") with size: (" + std::to_string(transform.size.x) + ", " + std::to_string(transform.size.y) + ")");
+        logger->log(Log_Level::DEBUG, "Object", "Object drawn at position: (" + std::to_string(world.pos.x) + ", " + std::to_string(world.pos.y) + ") with size: (" + std::to_string(world.size.x) + ", " + std::to_string(world.size.y) + ")");
         }
     } else {
         if (logger) {
@@ -36,13 +37,13 @@ void Object::draw(SDL_Renderer* renderer) {
 Draw Object::make_draw_command() const {
     Draw cmd;
     cmd.texture = texture;
-    cmd.transform = transform;
+    cmd.transform = get_world_transform();
     cmd.source_rect = source_rect;
     cmd.use_source_rect = use_source_rect;
     cmd.tint = tint;
     cmd.z_index = z_index;
     cmd.y_sort = y_sort;
-    cmd.sort_y = transform.pos.y + transform.size.y + y_sort_offset;
+    cmd.sort_y = cmd.transform.pos.y + cmd.transform.size.y + y_sort_offset;
     cmd.camera_space = camera_space;
     return cmd;
 }
@@ -201,13 +202,14 @@ Slider::Slider(float x, float y, float w, float h, float minimum, float maximum,
              t, objp, l, value_step) {}
 
 float Slider::value_at(const Vec& pointer_pos) const {
+    const Transform world = get_world_transform();
     float normalized = 0.0f;
     if (orientation == UI_Orientation::Horizontal) {
-        if (transform.size.x > 0.0f) {
-            normalized = (pointer_pos.x - transform.pos.x) / transform.size.x;
+        if (world.size.x > 0.0f) {
+            normalized = (pointer_pos.x - world.pos.x) / world.size.x;
         }
-    } else if (transform.size.y > 0.0f) {
-        normalized = 1.0f - (pointer_pos.y - transform.pos.y) / transform.size.y;
+    } else if (world.size.y > 0.0f) {
+        normalized = 1.0f - (pointer_pos.y - world.pos.y) / world.size.y;
     }
 
     normalized = std::clamp(normalized, 0.0f, 1.0f);
@@ -221,21 +223,23 @@ bool Slider::update_from_pointer(const Vec& pointer_pos) {
 }
 
 Vec Slider::thumb_center() const {
+    const Transform world = get_world_transform();
     const float normalized = normalized_value();
     if (orientation == UI_Orientation::Horizontal) {
-        return {transform.pos.x + transform.size.x * normalized,
-                transform.pos.y + transform.size.y * 0.5f};
+        return {world.pos.x + world.size.x * normalized,
+                world.pos.y + world.size.y * 0.5f};
     }
 
-    return {transform.pos.x + transform.size.x * 0.5f,
-            transform.pos.y + transform.size.y * (1.0f - normalized)};
+    return {world.pos.x + world.size.x * 0.5f,
+            world.pos.y + world.size.y * (1.0f - normalized)};
 }
 
 Transform Slider::thumb_transform(Vec thumb_size) const {
     const Vec center = thumb_center();
+    const Transform world = get_world_transform();
     return {{center.x - thumb_size.x * 0.5f, center.y - thumb_size.y * 0.5f},
             thumb_size,
-            transform.rotation};
+            world.rotation};
 }
 
 Toggle::Toggle()
@@ -277,14 +281,15 @@ Progress_Bar::Progress_Bar(float x, float y, float w, float h, float minimum,
                    direction, t, objp, l) {}
 
 Transform Progress_Bar::fill_transform() const {
-    Transform fill = transform;
+    const Transform world = get_world_transform();
+    Transform fill = world;
     const float normalized = normalized_value();
 
     if (orientation == UI_Orientation::Horizontal) {
         fill.size.x *= normalized;
     } else {
         fill.size.y *= normalized;
-        fill.pos.y += transform.size.y - fill.size.y;
+        fill.pos.y += world.size.y - fill.size.y;
     }
 
     return fill;
@@ -310,10 +315,79 @@ void Object::detach_script() {
 }
 
 Object::~Object() {
+    clear_children(true);
+    set_parent(nullptr, true);
     if (object_pool) {
         object_pool->remove(this);
     }
     free();
+}
+
+Transform Object::get_world_transform() const {
+    return m_parent ? compose_transform(m_parent->get_world_transform(), transform)
+                    : transform;
+}
+
+void Object::set_world_transform(const Transform& new_transform) {
+    transform = m_parent
+        ? relative_transform(m_parent->get_world_transform(), new_transform)
+        : new_transform;
+}
+
+bool Object::is_ancestor_of(const Object* object) const {
+    if (!object) return false;
+    for (const Object* current = object->m_parent; current; current = current->m_parent) {
+        if (current == this) return true;
+    }
+    return false;
+}
+
+bool Object::set_parent(Object* new_parent, bool keep_world_transform) {
+    if (new_parent == m_parent) return true;
+    if (new_parent == this || (new_parent && is_ancestor_of(new_parent))) {
+        if (logger) {
+            logger->log(Log_Level::WARNING, "Object", "Rejected parent change because it would create a hierarchy cycle.");
+        }
+        return false;
+    }
+
+    const Transform world = keep_world_transform ? get_world_transform() : Transform{};
+
+    if (m_parent) {
+        auto& siblings = m_parent->m_children;
+        siblings.erase(std::remove(siblings.begin(), siblings.end(), this), siblings.end());
+    }
+
+    m_parent = new_parent;
+    if (m_parent) {
+        auto& children = m_parent->m_children;
+        if (std::find(children.begin(), children.end(), this) == children.end()) {
+            children.push_back(this);
+        }
+    }
+
+    if (keep_world_transform) set_world_transform(world);
+    return true;
+}
+
+bool Object::add_child(Object* child, bool keep_world_transform) {
+    return child && child->set_parent(this, keep_world_transform);
+}
+
+bool Object::remove_child(Object* child, bool keep_world_transform) {
+    return child && child->m_parent == this &&
+           child->set_parent(nullptr, keep_world_transform);
+}
+
+void Object::clear_children(bool keep_world_transform) {
+    while (!m_children.empty()) {
+        Object* child = m_children.back();
+        if (!child) {
+            m_children.pop_back();
+            continue;
+        }
+        child->set_parent(nullptr, keep_world_transform);
+    }
 }
 
 void Object::add_tag(const std::string& tag) {
